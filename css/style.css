@@ -12,11 +12,29 @@ body{
 /* -paleta #8c522(violet) ffffff(blanco) #5ce1e6(light-blue) ffb502 fe0000(gold) 000000(negro) */
 
 .fondo{
-    background-image: url(../image/majora_mask_neon.jpg);
+    background-image: url(../image/fondo_pro_degrade.jpg);
     width: 100%;
-    opacity: 0.9;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+}
+
+.slider{
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: 450px;
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+}
+
+.slider img{
+  width: 100%;
+  position: sticky;
+  object-fit: 5px;
+  border-radius: 5px;
+  scroll-snap-align: start;
 }
