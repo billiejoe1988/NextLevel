@@ -31,7 +31,7 @@ body{
   overflow-y: hidden;
 }
 
-.slider img{
+.slider div img{
   width: 100%;
   position: sticky;
   object-fit: 5px;
