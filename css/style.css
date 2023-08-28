@@ -12,6 +12,11 @@ body{
 /* -paleta #8c522(violet) ffffff(blanco) #5ce1e6(light-blue) ffb502 fe0000(gold) 000000(negro) */
 
 .fondo{
-    background-image: url(../image/zelda_fondo.jpg);
+    background-image: url(../image/majora_mask_neon.jpg);
     width: 100%;
+    opacity: 0.9;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
 }
