@@ -26,12 +26,12 @@ body{
   height: 450px;
   position: relative;
   display: flex;
-  overflow-x: scroll;
+  overflow-x:scroll ;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
 }
 
-.slider div img{
+.slider img{
   width: 100%;
   position: sticky;
   object-fit: 5px;
