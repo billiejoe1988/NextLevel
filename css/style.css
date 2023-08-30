@@ -38,3 +38,10 @@ body{
   border-radius: 5px;
   scroll-snap-align: start;
 }
+
+.quienes{
+  background-image: url(../image/fondo_snorlax.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
