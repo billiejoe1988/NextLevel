@@ -45,3 +45,10 @@ body{
   background-repeat: repeat;
   background-position: center;
 }
+
+.experiencias{
+  background-image: url(../image/fondo_kirby.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
