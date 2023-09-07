@@ -48,3 +48,7 @@ body{
   background-repeat: repeat;
   background-position: center;
 }
+.fondo-articulos{
+  background-color: #5c5258;
+  background-image: linear-gradient(225deg, #5c5258 0%, #dacaa3 50%, #f9fbfd 100%);
+}
