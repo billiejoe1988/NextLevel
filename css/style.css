@@ -16,23 +16,52 @@ body{
   background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 }
 
-.slider{
+.slider-container{
   aspect-ratio: 16/9;
   width: 100%;
-  height: 450px;
+  max-width: 100%;
+  height: 550px;
   position: relative;
+  overflow: hidden;
+}
+
+.slider{
   display: flex;
   overflow-x:scroll ;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
 .slider img{
-  width: 100%;
-  position: sticky;
-  object-fit: 5px;
+  flex: 0 0 auto;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 5px;
   scroll-snap-align: start;
+}
+
+#prev-button,
+#next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
 }
 
 .quienes{
@@ -51,4 +80,17 @@ body{
 .fondo-articulos{
   background-color: #5c5258;
   background-image: linear-gradient(225deg, #5c5258 0%, #dacaa3 50%, #f9fbfd 100%);
+}
+/* para q el carrito quede delante */
+#carrito{
+  z-index:999;
+}
+/* nav visible invisible */
+nav {
+  transition: transform 0.3s ease;
+}
+
+.hidden {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
