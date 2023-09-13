@@ -65,3 +65,64 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // carrito y arrays de elementos.
+
+const baseDatos = [];
+const carrito = [];
+
+class Articulo{
+    constructor(id, nombre, precio, stock, categoria){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.categoria = categoria;
+    }
+}
+//creando articulos de estreno
+const zeldaTotk = new Articulo(101, "Zelda Tears the kingdom", 60000, 10, "Estrenos");
+baseDatos.push(zeldaTotk);
+const marioKart8W4 = new Articulo(102, "Mario Kart 8 DLC Wave 4", 20000, 10, "Estrenos");
+baseDatos.push(marioKart8W4);
+const pokemonScarletAreaZero = new Articulo(103, "Pokemon Scarlet DLC Area zero", 35000, 10, "Estrenos");
+baseDatos.push(pokemonScarletAreaZero);
+const amiiboLinkyGanon = new Articulo(104, "Amiibo Link y Ganon", 30000, 10, "Estrenos");
+baseDatos.push(amiiboLinkyGanon);
+//creando articulos de ofertas
+const gbaColorYellow = new Articulo(201, "Game Boy Color Amarillo", 35000, 1, "Ofertas");
+baseDatos.push(gbaColorYellow);
+const marioKart8 = new Articulo(202, "Mario Kart 8", 20000, 10, "Ofertas");
+baseDatos.push(marioKart8);
+const vampireSurvivor = new Articulo(203, "Vampire Survivor", 5000, 10, "Ofertas");
+baseDatos.push(vampireSurvivor);
+const marioMaker2= new Articulo(204, "Mario Maker 2", 40000, 10, "Ofertas");
+baseDatos.push(marioMaker2);
+//creando articulos en retro
+const n64Gris = new Articulo(301, "Nintendo 64 con joystick gris", 80000, 1, "Retro");
+baseDatos.push(n64Gris);
+const nesSinJoystick = new Articulo(302, "Nintendo Usada", 90000, 1, "Retro");
+baseDatos.push(nesSinJoystick);
+const joystickGCNaranja = new Articulo(303, "Joystick GameCube Naraja", 15000, 10, "Retro");
+baseDatos.push(joystickGCNaranja);
+const gbaVioleta= new Articulo(304, "Game boy advance violeta", 40000, 10, "Retro");
+baseDatos.push(gbaVioleta);
+//creando articulos en preventas 
+const marioWonder = new Articulo(401, "Super Mario Wonder", 70000, 99, "Preventas");
+baseDatos.push(marioWonder);
+const marioRPG = new Articulo(402, "Super Mario RPG", 70000, 99, "Preventas");
+baseDatos.push(marioRPG);
+const picmin4 = new Articulo(403, "Picmin 4", 70000, 99, "Preventas");
+baseDatos.push(picmin4);
+const fc24= new Articulo(404, "FS 24", 60000, 99, "Preventas");
+baseDatos.push(fc24);
+//ya esta todo subido al array para base de datos
+
+function buscar() {
+    const keyword = prompt("Qué producto desea buscar?");
+    // Me va a retornar un array con todos los elementos que contengan
+    // la variable "keyword" (string) que lo define el usuario por el prompt
+    const arrayResultados = carrito.filter((el) =>
+      // toLowerCase convierte un string en minúsculas
+      el.nombre().includes(keyword())
+    );
+    console.log(arrayResultados);
+  }
