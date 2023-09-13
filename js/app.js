@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 //funcionalidad botones de todos los sliders
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -119,10 +120,22 @@ baseDatos.push(fc24);
 function buscar() {
     const keyword = prompt("Qué producto desea buscar?");
     // Me va a retornar un array con todos los elementos que contengan
-    // la variable "keyword" (string) que lo define el usuario por el prompt
-    const arrayResultados = carrito.filter((el) =>
-      // toLowerCase convierte un string en minúsculas
-      el.nombre().includes(keyword())
+    const arrayResultados = baseDatos.filter((el) =>
+      el.nombre.includes(keyword)
     );
-    console.log(arrayResultados);
-  }
+
+    if (arrayResultados.length === 0) {
+        alert("No se encontraron resultados para la búsqueda.");
+    } else {
+        // crea array con los resultados del include y los muestra con el alert
+        const resu = arrayResultados.map((producto) => {
+            return `Nombre: ${producto.nombre}, Precio: ${producto.precio}`;
+        });
+        // genera string con elementos y /n para separar
+        alert("Resultados:\n \n" + resu.join("\n"));
+    }
+}
+
+//boton de buscador funcionalidad
+const botonImagen = document.querySelector('.boton-buscador');
+botonImagen.addEventListener('click', buscar);
