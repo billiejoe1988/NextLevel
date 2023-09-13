@@ -24,11 +24,11 @@
                 <h3>Perfil</h3>
             </div>
             <div class="col-start-10 font-bold">
-                <a href="./carrito.html"><img class="w-1/3" src="../assets/Svg/buck.svg" alt="carrito"></a>
+                <img class="w-1/3" src="../assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
                 <h3>Carrito</h3>
             </div>
             <div class="col-start-12 font-bold">
-                <a href="#"><img class ="w-1/3" src="../assets/Svg/burger.svg" alt="menu"></a>
+                <img class ="w-1/3" src="../assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
                 <h3>Menu</h3>
             </div>
         </div>
@@ -67,6 +67,22 @@
     </nav>
     <!-- main -->
     <main class=" min-h-screen">
+      <!-- aside -->
+      <section>
+        <aside id="carrito" class=" h-full fixed top-0 right-0 h-screen w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <!-- Carrito de compras -->
+            <h2 class="text-2xl mb-4 text-center font-bold">Tu Carrito</h2>
+            <ul id="lista-productos">
+                <!-- Lista de productos seleccionados -->
+            </ul>
+            <p class="text-xl mt-4">Total: <span id="total">0</span> $ </p>
+            <div class = "flex justify-end py-5">
+              <button id="" class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl">Comprar!</button>
+              <button id="" class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl">Vaciar Carrito</button>
+              <button id="ocultar-carrito" class="bg-gray-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm">Ocultar Carrito</button>
+            </div>
+        </aside>
+      </section>  
       <section class = "fondo-articulos py-10 ">
         <div class= "bg- p-6 text-center w-11/12 mx-auto">
             <h1 class=" text-3xl font-bold pb-3 text-orange-600 ">Compras y Garantias</h1>
@@ -186,5 +202,6 @@
        </div>
       </div>
     </footer>
+    <script src="../js/app.js"></script>
 </body>
 </html>
