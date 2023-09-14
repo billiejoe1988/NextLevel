@@ -161,7 +161,7 @@ botonAgregar.forEach((boton) =>{
       carrito.push(articulo);
 
     mostrarCarrito ();
-      
+    
       // Mostrar un mensaje de éxito o actualización del carrito
       alert("Se agregó " + articulo.nombre +" con un valor de "+ articulo.precio +" al carrito.");
     } else {
@@ -185,10 +185,35 @@ const mostrarCarrito = () => {
         containerArticulo.innerHTML = `
             <div class="bg-orange-200  p-5 flex">
                 <h3 class =" text-black py-3">${articulo.nombre}</h3>
-                <h4 class=" text-black py-3">$ ${articulo.precio} .</h4>
+                <h4 class=" text-black py-3">$.${articulo.precio}</h4>
             </div>
         `;
        // Agregar el elemento al DOM, por ejemplo, a un div con id "carrito"
        carritoContainer.appendChild(containerArticulo);
     });
 }
+
+//vaciar carrito
+  function vaciar () {
+    //vaciar array de carrito con splice, pasando por toda la longitud del array y borrandolo.
+    carrito.splice(0, carrito.length);
+    //vaciar contenedor de elementos de la lista del carrito. dandole valor de vacio al arrray
+    const carritoContainer = document.getElementById("lista-productos");
+    carritoContainer.innerHTML = ""; 
+
+    alert("Su carrito ah sido borrado"+carrito);
+  }   
+
+  //boton de vaciar carrito con  funcionalidad
+const botonVaciar = document.querySelector('.vaciar-carrito');
+botonVaciar.addEventListener('click', vaciar);
+
+function comprar() {
+    //dar un alert diciendo que pasa al area de pago
+    alert("Su compra ah sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
+}
+
+//boton comprar
+  //boton de vaciar carrito con  funcionalidad
+  const botonComprar = document.querySelector('.comprar-carrito');
+  botonComprar.addEventListener('click', comprar);
