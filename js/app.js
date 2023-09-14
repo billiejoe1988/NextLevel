@@ -159,13 +159,36 @@ botonAgregar.forEach((boton) =>{
       // restar stock del articulo y agregar articulo al carrito
       articulo.stock--;
       carrito.push(articulo);
+
+    mostrarCarrito ();
       
       // Mostrar un mensaje de éxito o actualización del carrito
-      alert(`Se agregó "${articulo.nombre}" al carrito.`);
+      alert("Se agregó " + articulo.nombre +" con un valor de "+ articulo.precio +" al carrito.");
     } else {
-      alert(`El artículo "${articulo.nombre}" no está disponible en stock.`);
+      alert("El artículo "+ articulo.nombre +" no está disponible en stock.");
     }
   });
 });
 
-     
+//mostrar en HTML los articulos del carrito
+const mostrarCarrito = () => {
+    const carritoContainer = document.getElementById("lista-productos");
+
+    //fix : vaciar contenedor antes de volver a agregar otro elemento
+    carritoContainer.innerHTML = ""; 
+
+    //recorrer el array de carrito y buscar objetos para mostrar
+    carrito.forEach(articulo => {
+        const containerArticulo = document.createElement("div");
+        containerArticulo.classList.add("articulo-carrito");
+    // seleccionar que voy a agregar al carrito por cada compra.
+        containerArticulo.innerHTML = `
+            <div class="bg-orange-200  p-5 flex">
+                <h3 class =" text-black py-3">${articulo.nombre}</h3>
+                <h4 class=" text-black py-3">$ ${articulo.precio} .</h4>
+            </div>
+        `;
+       // Agregar el elemento al DOM, por ejemplo, a un div con id "carrito"
+       carritoContainer.appendChild(containerArticulo);
+    });
+}
