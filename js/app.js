@@ -117,6 +117,7 @@ const fc24= new Articulo(404, "FS 24", 60000, 99, "Preventas");
 baseDatos.push(fc24);
 //ya esta todo subido al array para base de datos
 
+//funcion buscar para el boton de moneda en el header
 function buscar() {
     const keyword = prompt("Qué producto desea buscar?");
     // Me va a retornar un array con todos los elementos que contengan
@@ -137,5 +138,34 @@ function buscar() {
 }
 
 //boton de buscador funcionalidad
-const botonImagen = document.querySelector('.boton-buscador');
-botonImagen.addEventListener('click', buscar);
+const botonBuscador = document.querySelector('.boton-buscador');
+botonBuscador.addEventListener('click', buscar);
+
+//boton de agregar al carrito funcionalidad
+//darle click a todos los botones "btn-agregar"
+const botonAgregar = document.querySelectorAll('.btn-agregar');
+botonAgregar.forEach((boton) =>{
+  boton.addEventListener('click', () =>{
+      
+    // traer el id. con el data-id del boton
+    const articuloId = boton.getAttribute('data-id');
+    
+    // Buscar el artículo en la data base por id
+    const articulo = baseDatos.find((el) => el.id === parseInt(articuloId));
+    
+    //verificar si esta disponible
+    if (articulo.stock > 0) {
+
+      // restar stock del articulo y agregar articulo al carrito
+      articulo.stock--;
+      carrito.push(articulo);
+      
+      // Mostrar un mensaje de éxito o actualización del carrito
+      alert(`Se agregó "${articulo.nombre}" al carrito.`);
+    } else {
+      alert(`El artículo "${articulo.nombre}" no está disponible en stock.`);
+    }
+  });
+});
+
+     
