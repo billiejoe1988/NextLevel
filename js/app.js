@@ -165,7 +165,7 @@ botonAgregar.forEach((boton) =>{
     total();
     
     // Mostrar un mensaje de éxito o actualización del carrito
-      alert("Se agregó " + articulo.nombre +" con un valor de "+ articulo.precio +" al carrito.");
+      alert("Se agregó " + articulo.nombre +" con un valor de "+ "$" + articulo.precio +" al carrito.");
     } else {
       alert("El artículo "+ articulo.nombre +" no está disponible en stock.");
     }

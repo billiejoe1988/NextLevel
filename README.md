@@ -32,7 +32,7 @@ Este proyecto es una tienda en línea que ofrece consolas y juegos de Nintendo, 
 - Actualización en tiempo real del valor total en el HTML al agregar, quitar o vaciar el carrito.
 - Devolver stock cuando quitamos un articulo, desde vaciar carrito o quitando indivicualmente por indice
 
-
+#Autor
 - **Mauricio Arbelaiz**
 
 ¡Gracias por visitar nuestro proyecto!
