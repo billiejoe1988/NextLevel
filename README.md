@@ -10,6 +10,15 @@ A tener encuenta para la segunda entrega:
   ---detalles a tener cuenta para la busqueda: recomiendo utilizar palabras como Mario, Zelda, Joystick. (con mayuscula en la primer letra)
 
 otros items en los que utilice Js
+*sliders
+*botones sliders
+*buscador
+*accion al boton del buscador (coin)
+*desplazamiento de carrito y nav
+*darle accion a img de carrito(billete) y nav(burger)
+*darle accion a botones de articulos para sumarlos al carrito
+*funcionalidad al carrito
+*funcionalidad botones de carrito, comprar!, vaciar, y ocultar carrito.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Mauricio Arbelaiz.
 
