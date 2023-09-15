@@ -186,7 +186,7 @@ const mostrarCarrito = () => {
             <div class=" border-2 border-orange-500 bg-orange-200  p-5 flex justify-between">
                 <h3 class =" text-black py-3">${articulo.nombre}</h3>
                 <h4 class=" text-black py-3">$.${articulo.precio}</h4>
-                <span class="delete-articulo text-black font-bold cursor-pointer"> X </span>
+                <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
             </div>
         `;
         const eliminar = containerArticulo.querySelector(".delete-articulo");
