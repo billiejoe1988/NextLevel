@@ -10,6 +10,7 @@ A tener encuenta para la segunda entrega:
   ---detalles a tener cuenta para la busqueda: recomiendo utilizar palabras como Mario, Zelda, Joystick. (con mayuscula en la primer letra)
 
 otros items en los que utilice Js:
+
 *sliders
 *botones sliders
 *buscador
