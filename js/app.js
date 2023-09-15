@@ -220,6 +220,10 @@ const mostrarCarrito = () => {
 }
   //eliminar producto
 const eliminarArticulo = (indice) =>{
+    // giardar elemento eliminar para devolverle 1 de stock
+    const articuloEliminado = carrito[indice];
+    articuloEliminado.stock++;
+    // eliminar articulo del carrito con el indice.
     carrito.splice(indice, 1);
 
     //eliminado con splice y ahora mostrar carrito actualizado // actualizo tambien total para q de el valor correcto
@@ -228,6 +232,10 @@ const eliminarArticulo = (indice) =>{
 }
 //vaciar carrito
   function vaciar () {
+    // auumentando el sstock de los articulos eliminados
+    for (const articuloEliminado of carrito) {
+        articuloEliminado.stock ++
+    }
     //vaciar array de carrito con splice, pasando por toda la longitud del array y borrandolo.
     carrito.splice(0, carrito.length);
     //vaciar contenedor de elementos de la lista del carrito. dandole valor de vacio al arrray
