@@ -178,20 +178,36 @@ const mostrarCarrito = () => {
     carritoContainer.innerHTML = ""; 
 
     //recorrer el array de carrito y buscar objetos para mostrar
-    carrito.forEach(articulo => {
+    carrito.forEach((articulo, indice) => {
         const containerArticulo = document.createElement("div");
         containerArticulo.classList.add("articulo-carrito");
     // seleccionar que voy a agregar al carrito por cada compra.
         containerArticulo.innerHTML = `
-            <div class="bg-orange-200  p-5 flex">
+            <div class=" border-2 border-orange-500 bg-orange-200  p-5 flex justify-between">
                 <h3 class =" text-black py-3">${articulo.nombre}</h3>
                 <h4 class=" text-black py-3">$.${articulo.precio}</h4>
+                <span class="delete-articulo text-black font-bold cursor-pointer"> X </span>
             </div>
         `;
-       // Agregar el elemento al DOM, por ejemplo, a un div con id "carrito"
+        const eliminar = containerArticulo.querySelector(".delete-articulo");
+
+        // agregar evento al click para eliminar
+        eliminar.addEventListener("click", () => {
+            eliminarArticulo(indice);
+        }); 
+       // Agregar el elemento un div con id "carrito"
        carritoContainer.appendChild(containerArticulo);
     });
 }
+  //eliminar producto
+const eliminarArticulo = (indice) =>{
+    carrito.splice(indice, 1);
+
+    //eliminado con splice y ahora mostrar carrito actualizado
+    mostrarCarrito();
+}
+  //sumar tatal
+
 
 //vaciar carrito
   function vaciar () {
@@ -213,7 +229,7 @@ function comprar() {
     alert("Su compra ah sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
 }
 
-//boton comprar
-  //boton de vaciar carrito con  funcionalidad
+//boton comprar en arrito con  funcionalidad
   const botonComprar = document.querySelector('.comprar-carrito');
   botonComprar.addEventListener('click', comprar);
+
