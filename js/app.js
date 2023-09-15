@@ -184,7 +184,7 @@ const mostrarCarrito = () => {
     // seleccionar que voy a agregar al carrito por cada compra.
         containerArticulo.innerHTML = `
             <div class=" border-2 border-orange-500 bg-orange-200  p-5 flex justify-between">
-                <h3 class =" text-black py-3">${articulo.nombre}</h3>
+                <h3 class =" text-black py-3 font-bold">${articulo.nombre}</h3>
                 <h4 class=" text-black py-3">$.${articulo.precio}</h4>
                 <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
             </div>
@@ -226,7 +226,7 @@ botonVaciar.addEventListener('click', vaciar);
 
 function comprar() {
     //dar un alert diciendo que pasa al area de pago
-    alert("Su compra ah sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
+    alert("Su compra ha sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
 }
 
 //boton comprar en arrito con  funcionalidad
