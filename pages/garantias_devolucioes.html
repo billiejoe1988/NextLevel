@@ -10,63 +10,62 @@
 </head>
 <body  class = fondo>
     <!-- header -->
-    <!-- header -->
     <header class ="grid grid-cols-1 w-full">
-      <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400">
-          <div class="col-start-1">
-             <img class ="border rounded-xl" src="../image/logo.jpg" alt="logo gift">
+        <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400">
+            <div class="col-start-1">
+               <a href="../index.html"><img class ="border rounded-xl" src="../image/logo.jpg" alt="logo gift"></a>
+            </div>
+            <div class="flex col-start-3 col-end-6">
+               <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-4 w-9/12 font-thin" type="text" placeholder="Busca aqui tu producto!">
+               <img class="boton-buscador cursor-pointer w-1/6" src="../assets/Svg/./coin.svg" alt="boton_buscar">
+            </div>
+            <div class ="col-start-9 font-bold">
+                <a href="#"><img class ="w-1/3" src="../assets/Svg/female.svg" alt="boton_buscar"></a>
+                <h3 class="cursor-pointer hover:text-orange-700">Perfil</h3>
+            </div>
+            <div class="col-start-10 font-bold">
+                <img class="w-1/3 cursor-pointer" src="../assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
+                <h3 class="cursor-pointer hover:text-orange-700">Carrito</h3>
+            </div>
+            <div class="col-start-11 font-bold">
+              <a href="./catalogo.html"><img class ="w-1/3" src="../assets/chest.svg" alt="catalogo"></a>
+              <h3 class="cursor-pointer hover:text-orange-700">Catalogo</h3>
           </div>
-          <div class="flex col-start-3 col-end-6">
-             <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-4 w-9/12 font-thin" type="text" placeholder="Busca aqui tu producto!">
-             <img class="boton-buscador w-1/6" src="../assets/Svg/./coin.svg" alt="boton_buscar">
-          </div>
-          <div class ="col-start-9 font-bold">
-              <a href="#"><img class ="w-1/3" src="../assets/Svg/female.svg" alt="boton_buscar"></a>
-              <h3>Perfil</h3>
-          </div>
-          <div class="col-start-10 font-bold">
-              <img class="w-1/3" src="../assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
-              <h3>Carrito</h3>
-          </div>
-          <div class="col-start-11 font-bold">
-            <a href="./catalogo.html"><img class ="w-1/3" src="../assets/chest.svg" alt="catalogo"></a>
-            <h3>Catalogo</h3>
+            <div class="col-start-12 font-bold">
+                <img class ="w-1/3 cursor-pointer" src="../assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
+                <h3 class="cursor-pointer hover:text-orange-700">Menu</h3>
+            </div>
         </div>
-          <div class="col-start-12 font-bold">
-              <img class ="w-1/3" src="../assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
-              <h3>Menu</h3>
-          </div>
-      </div>
-  </header>
+    </header>
     <!-- nav -->
     <nav class = "grid grid-cols-1 z-index-1">
         <ul class ="aboute font-bold bg-orange opacity-60 p-2 text-red-800">
             <li class="mx-4 my-3">
-             <a href="../index.html">HOME</a>
+             <a class ="hover:text-gray-800"  href="../index.html">HOME</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">CATALOGO</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">CATALOGO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">ESTRENOS</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">ESTRENOS</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">RETRO</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">RETRO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">PREVENTAS</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">PREVENTAS</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="">COMPRAMOS TU USADO</a>
+             <a class ="hover:text-gray-800" href="">COMPRAMOS TU USADO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href=""> CONTACTO</a>
+             <a class ="hover:text-gray-800" href=""> CONTACTO</a>
            </li>
            <li class="mx-4 my-3">
-            <a href="">CREAR CUENTA</a>
+            <a class ="hover:text-gray-800" href="">CREAR CUENTA</a>
           </li>
           <li class="mx-4 my-3">
-            <a href="">LOGIN</a>
+            <a class ="hover:text-gray-800" href="">LOGIN</a>
           </li>
         </ul>
     </nav>
@@ -76,7 +75,8 @@
       <section>
         <aside id="carrito" class=" h-full fixed top-0 right-0 h-screen w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Carrito de compras -->
-            <h2 class="text-2xl mb-4 text-center font-bold">Tu Carrito</h2>
+            <h2 class="text-2xl mb-4 text-center font-bold hover:underline">Tu Carrito</h2>
+            <h3 class="text xl my-4">Productos seleccionados</h3>
             <ul id="lista-productos">
                 <!-- Lista de productos seleccionados -->
             </ul>
@@ -84,16 +84,16 @@
             <div class = "flex justify-end py-5">
               <button class=" comprar-carrito bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl">Comprar!</button>
               <button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl vaciar-carrito">Vaciar Carrito</button>
-              <button id="ocultar-carrito" class="bg-gray-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm">Ocultar Carrito</button>
+              <button id="ocultar-carrito" class="bg-yellow-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm">Ocultar Carrito</button>
             </div>
         </aside>
       </section>  
       <section class = "fondo-articulos py-10 ">
         <div class= "bg- p-6 text-center w-11/12 mx-auto">
-            <h1 class=" text-3xl font-bold pb-3 text-orange-600 ">Compras y Garantias</h1>
+            <h1 class=" text-3xl font-bold pb-3 text-orange-600 hover:underline">Compras y Garantias</h1>
         </div>
         <div class="px-8 w-11/12 mx-auto">
-           <h2  class ="text-xl font-bold pb-3 text-orange-600" >Comprá con tranquilidad</h2>
+           <h2  class ="text-xl font-bold pb-3 text-orange-600 hover:underline" >Comprá con tranquilidad</h2>
            <p>
                 Queremos transmitirte confianza, para ello contamos con un local físico abierto al público en donde nos encontrarás siempre para atenderte ante cualquier eventualidad o reclamo o para que consultes cualquier duda que tengas con respecto a las garantías de nuestros productos.
 
@@ -115,7 +115,7 @@
           </p>
         </div>
         <div class="px-8 w-11/12 mx-auto">
-         <h2 class=" text-xl font-bold  py-8 text-orange-600" >Política de satisfacción</h2>
+         <h2 class=" text-xl font-bold  py-8 text-orange-600 hover:underline" >Política de satisfacción</h2>
          <p>
             Si por algún motivo quisieras devolver un producto adquirido en nuestra tienda, tendrás 72 horas hábiles para hacerlo. Podés solicitar el reintegro del dinero por el medio que hayas abonado, crédito para comprar en cualquier otro momento o cambiarlo por cualquier otro producto abonando la diferencia correspondiente si se tratara de un artículo de mayor valor.
 
@@ -125,7 +125,7 @@
          </p>
         </div>
         <div class="px-8 w-11/12 mx-auto py-6">
-            <h2 class=" text-xl font-bold py-6 text-orange-600 ">Compromiso con el cliente</h2>
+            <h2 class=" text-xl font-bold py-6 text-orange-600 hover:underline">Compromiso con el cliente</h2>
             <p>Nos enfocamos en bridarte la mejor atención dentro de nuestras posibilidades. A diferencia de otros comercios, te ofrecemos una atención más personalizada y directa para que te sientas cómodo/a y bienvenido/a. Nuestro objetivo es que estés conforme tanto con nuestros productos como con la atención recibida, antes y después de la compra. Y por supuesto, que vuelvas!
                 Recuerda que nuestro mayor objetivo es que te diviertas y consigas en nuestra tienda tu articulo seleccionado tanto para alimientar nuestro nino interior con los articulos retro o pasar al siguiente nivel con consolas de actual generacion y juegos de ultima salida. <br>
                 <span class = "font-bold">Enjoy!</span>
@@ -142,11 +142,11 @@
           </div>
           <div class= "flex p-3">
             <img src="../assets/bx-mail-send.svg" alt="mail">
-            <p class = "text-md px-2">info@nextlevel.com</p>
+            <p class = " hover:text-orange-700 text-md px-2 cursor-pointer">info@nextlevel.com</p>
           </div>
           <div class = "flex p-3">
             <img src="../assets/bx-bell.svg" alt="telefono">
-            <p class = "text-md px-2"> 5491160277880</p>
+            <p class = "hover:text-orange-700 text-md px-2 cursor-pointer"> 5491160277880</p>
           </div>
           <div class="flex p-3">
             <img src="../assets/bx-heart-circle.svg" alt="horario">
@@ -155,37 +155,37 @@
       </div>
       <div class="col-span-3 col-start-4 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Informacion</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Informacion</h2>
         </div>
         <div>
           <ul class="m-2 font-bold">
-            <li class="py-1"><a href="./carrito.html">Mi Carrito</a></li>
-            <li class="py-1"><a href="#">Contacto</a></li>
-            <li class="py-1"><a href="./terminos_y_condiciones.html">Terminos y condiciones</a></li>
-            <li class="py-1"><a href="./garantias_devolucioes.html">Garantia</a></li>
-            <li class="py-1"><a href="#">Enviamos tu pedido</a></li>
-            <li class="py-1"><a href="#">Perfil</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Mi Carrito</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Contacto</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="./terminos_y_condiciones.html">Terminos y condiciones</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="./garantias_devolucioes.html">Garantia</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Enviamos tu pedido</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Perfil</a></li>
           </ul> 
         </div>
        </div>
        <div class="col-span-3 col-start-7 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Categorias</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Categorias</h2>
         </div>
         <div>
           <ul class="m-2 font-bold">
-            <li class="py-1"><a href="./catalogo.html">Catalogo</a></li>
-            <li class="py-1"><a href="./catalogo.html">Estrenos</a></li>
-            <li class="py-1"><a href="./catalogo.html">Retro</a></li>
-            <li class="py-1"><a href="./catalogo.html">Preventas</a></li>
-            <li class="py-1"><a href="#">Compramos tu usado</a></li>
-            <li class="py-1"><a href="./catalogo.html">Amiibos</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Catalogo</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Estrenos</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Retro</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Preventas</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Compramos tu usado</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Amiibos</a></li>
           </ul> 
         </div>
        </div>
        <div class="col-span-2 col-start-10 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Seguinos!</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Seguinos!</h2>
         </div>
         <div class ="flex justify-between p-3 m-3">
           <div>

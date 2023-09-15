@@ -10,63 +10,62 @@
 </head>
 <body  class = fondo>
     <!-- header -->
-    <!-- header -->
     <header class ="grid grid-cols-1 w-full">
-      <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400">
-          <div class="col-start-1">
-             <img class ="border rounded-xl" src="../image/logo.jpg" alt="logo gift">
+        <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400">
+            <div class="col-start-1">
+               <a href="../index.html"><img class ="border rounded-xl" src="../image/logo.jpg" alt="logo gift"></a>
+            </div>
+            <div class="flex col-start-3 col-end-6">
+               <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-4 w-9/12 font-thin" type="text" placeholder="Busca aqui tu producto!">
+               <img class="boton-buscador cursor-pointer w-1/6" src="../assets/Svg/./coin.svg" alt="boton_buscar">
+            </div>
+            <div class ="col-start-9 font-bold">
+                <a href="#"><img class ="w-1/3" src="../assets/Svg/female.svg" alt="boton_buscar"></a>
+                <h3 class="cursor-pointer hover:text-orange-700">Perfil</h3>
+            </div>
+            <div class="col-start-10 font-bold">
+                <img class="w-1/3 cursor-pointer" src="../assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
+                <h3 class="cursor-pointer hover:text-orange-700">Carrito</h3>
+            </div>
+            <div class="col-start-11 font-bold">
+              <a href="./catalogo.html"><img class ="w-1/3" src="../assets/chest.svg" alt="catalogo"></a>
+              <h3 class="cursor-pointer hover:text-orange-700">Catalogo</h3>
           </div>
-          <div class="flex col-start-3 col-end-6">
-             <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-4 w-9/12 font-thin" type="text" placeholder="Busca aqui tu producto!">
-             <img class="boton-buscador w-1/6" src="../assets/Svg/./coin.svg" alt="boton_buscar">
-          </div>
-          <div class ="col-start-9 font-bold">
-              <a href="#"><img class ="w-1/3" src="../assets/Svg/female.svg" alt="boton_buscar"></a>
-              <h3>Perfil</h3>
-          </div>
-          <div class="col-start-10 font-bold">
-              <img class="w-1/3" src="../assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
-              <h3>Carrito</h3>
-          </div>
-          <div class="col-start-11 font-bold">
-            <a href="./catalogo.html"><img class ="w-1/3" src="../assets/chest.svg" alt="catalogo"></a>
-            <h3>Catalogo</h3>
+            <div class="col-start-12 font-bold">
+                <img class ="w-1/3 cursor-pointer" src="../assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
+                <h3 class="cursor-pointer hover:text-orange-700">Menu</h3>
+            </div>
         </div>
-          <div class="col-start-12 font-bold">
-              <img class ="w-1/3" src="../assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
-              <h3>Menu</h3>
-          </div>
-      </div>
-  </header>
+    </header>
     <!-- nav -->
     <nav class = "grid grid-cols-1 z-index-1">
         <ul class ="aboute font-bold bg-orange opacity-60 p-2 text-red-800">
             <li class="mx-4 my-3">
-             <a href="../index.html">HOME</a>
+             <a class ="hover:text-gray-800"  href="../index.html">HOME</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">CATALOGO</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">CATALOGO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">ESTRENOS</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">ESTRENOS</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">RETRO</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">RETRO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="./catalogo.html">PREVENTAS</a>
+             <a class ="hover:text-gray-800" href="./catalogo.html">PREVENTAS</a>
            </li>
            <li class="mx-4 my-3">
-             <a href="">COMPRAMOS TU USADO</a>
+             <a class ="hover:text-gray-800" href="">COMPRAMOS TU USADO</a>
            </li>
            <li class="mx-4 my-3">
-             <a href=""> CONTACTO</a>
+             <a class ="hover:text-gray-800" href=""> CONTACTO</a>
            </li>
            <li class="mx-4 my-3">
-            <a href="">CREAR CUENTA</a>
+            <a class ="hover:text-gray-800" href="">CREAR CUENTA</a>
           </li>
           <li class="mx-4 my-3">
-            <a href="">LOGIN</a>
+            <a class ="hover:text-gray-800" href="">LOGIN</a>
           </li>
         </ul>
     </nav>
@@ -76,7 +75,8 @@
       <section>
         <aside id="carrito" class=" h-full fixed top-0 right-0 h-screen w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Carrito de compras -->
-            <h2 class="text-2xl mb-4 text-center font-bold">Tu Carrito</h2>
+            <h2 class="text-2xl mb-4 text-center font-bold hover:underline">Tu Carrito</h2>
+            <h3 class="text xl my-4">Productos seleccionados</h3>
             <ul id="lista-productos">
                 <!-- Lista de productos seleccionados -->
             </ul>
@@ -84,58 +84,58 @@
             <div class = "flex justify-end py-5">
               <button class=" comprar-carrito bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl">Comprar!</button>
               <button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl vaciar-carrito">Vaciar Carrito</button>
-              <button id="ocultar-carrito" class="bg-gray-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm">Ocultar Carrito</button>
+              <button id="ocultar-carrito" class="bg-yellow-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm">Ocultar Carrito</button>
             </div>
         </aside>
       </section>            
         <!-- terminos y condiciones -->
       <section class = "fondo-articulos py-10">
         <div class= "bg- p-6 text-center w-11/12 mx-auto">
-            <h1 class=" text-3xl font-bold pb-3 text-orange-600 "> Terminos y condiciones de Next Level</h1>
+            <h1 class=" text-3xl font-bold pb-3 text-orange-600 hover:underline"> Terminos y condiciones de Next Level</h1>
         </div>
         <div class="px-8 w-11/12 mx-auto">
             <p class ="pb-15 text-left"> 
-                <span class="font-bold">1. Aceptación de los Términos y Condiciones</span>  <br>
+                <span class="font-bold hover:underline">1. Aceptación de los Términos y Condiciones</span>  <br>
 
                 Por favor, lea detenidamente estos Términos y Condiciones antes de utilizar nuestro sitio web Next Level (en adelante, el "Sitio web"). Al utilizar el Sitio web, usted acepta estar sujeto a estos Términos y Condiciones y acepta cumplir con ellos. Si no está de acuerdo con estos Términos y Condiciones, no debe utilizar el Sitio web. <br>
 
-                <span class="font-bol"d ">2. Descripción del Servicio </span><br>
+                <span class="font-bold hover:underline">2. Descripción del Servicio </span><br>
 
                 Next Level proporciona una plataforma en línea que permite a los usuarios comprar y vender productos electrónicos originales de Nintendo, incluyendo productos retro y actuales (en adelante, los "Productos"). Los usuarios pueden crear cuentas, listar Productos para la venta y comprar Productos a través del Sitio <br>
 
-                <span class="font-bold">3. Cuentas de Usuario </span><br>
+                <span class="font-bold hover:underline">3. Cuentas de Usuario </span><br>
 
                 a. Registro: Para utilizar ciertas funciones del Sitio web, puede ser necesario crear una cuenta de usuario. Usted acepta proporcionar información precisa y actualizada durante el proceso de registro y mantener la seguridad de su contraseña <br>
 
                 b. Responsabilidad de la cuenta: Usted es responsable de todas las actividades que ocurran en su cuenta y debe notificarnos de inmediato cualquier uso no autorizado de su cuenta. <br>
 
-                <span class="font-bold">4. Compra y Venta de Productos</span> <br>
+                <span class="font-bold hover:underline">4. Compra y Venta de Productos</span> <br>
 
                 a. Listados de Productos: Los usuarios pueden crear listados de Productos para su venta en el Sitio web. Al crear un listado, usted declara y garantiza que es el propietario legítimo del Producto y que tiene el derecho de devolverlo. <br>
 
                 b. Transacciones: Las transacciones entre compradores y vendedores son responsabilidad de las partes involucradas. Next Level no es parte de estas transacciones y no se hace responsable de problemas que puedan surgir. <br>
 
-                <span class="font-bold">5. Contenido del Usuario</span> <br>
+                <span class="font-bold hover:underline">5. Contenido del Usuario</span> <br>
 
                 Los usuarios pueden cargar contenido, como imágenes y descripciones de Productos, en el Sitio web. Al cargar contenido, usted concede a Next Level una licencia no exclusiva para utilizar, modificar y mostrar ese contenido en relación con el Sitio web. <br>
 
-                <span class="font-bold">6. Propiedad Intelectual </span><br>
+                <span class="font-bold hover:underline">6. Propiedad Intelectual </span><br>
 
                 Todos los derechos de propiedad intelectual en el Sitio web, incluyendo pero no limitado a logotipos, marcas registradas y contenido, son propiedad de Next Level o de terceros licenciatarios. No se otorga ningún derecho de propiedad intelectual al usuario. <br>
 
-                <span class="font-bold">7. Limitación de Responsabilidad</span> <br>
+                <span class="font-bold hover:underline">7. Limitación de Responsabilidad</span> <br>
 
                 Next Level no se hace responsable de la calidad, autenticidad o entrega de los Productos. No garantizamos la precisión de los listados de Productos en el Sitio web y no somos responsables de ningún daño o pérdida que pueda resultar del uso del Sitio web. <br>
 
-                <span class="font-bold">8. Cambios en los Términos y Condiciones</span> <br>
+                <span class="font-bold hover:underline">8. Cambios en los Términos y Condiciones</span> <br>
 
                 Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán efectivos desde la fecha de su publicación en el Sitio web. Le recomendamos que revise periódicamente estos Términos y Condiciones. <br>
 
-                <span class="font-bold">9. Legislación Aplicable</span><br>
+                <span class="font-bold hover:underline">9. Legislación Aplicable</span><br>
 
                 Estos Términos y Condiciones se rigen por las leyes del [país], y cualquier disputa que surja en relación con estos términos se someterá a la jurisdicción exclusiva de los tribunales de [ciudad]. <br>
 
-                <span class="font-bold">10. Contacto </span> <br>
+                <span class="font-bold hover:underline">10. Contacto </span> <br>
              
                 Si tiene alguna pregunta o comentario sobre estos Términos y Condiciones, por favor contáctenos a través de [dirección de correo electrónico de contacto].
                <br>
@@ -155,11 +155,11 @@
           </div>
           <div class= "flex p-3">
             <img src="../assets/bx-mail-send.svg" alt="mail">
-            <p class = "text-md px-2">info@nextlevel.com</p>
+            <p class = " hover:text-orange-700 text-md px-2 cursor-pointer">info@nextlevel.com</p>
           </div>
           <div class = "flex p-3">
             <img src="../assets/bx-bell.svg" alt="telefono">
-            <p class = "text-md px-2"> 5491160277880</p>
+            <p class = "hover:text-orange-700 text-md px-2 cursor-pointer"> 5491160277880</p>
           </div>
           <div class="flex p-3">
             <img src="../assets/bx-heart-circle.svg" alt="horario">
@@ -168,37 +168,37 @@
       </div>
       <div class="col-span-3 col-start-4 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Informacion</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Informacion</h2>
         </div>
         <div>
           <ul class="m-2 font-bold">
-            <li class="py-1"><a href="./carrito.html">Mi Carrito</a></li>
-            <li class="py-1"><a href="#">Contacto</a></li>
-            <li class="py-1"><a href="./terminos_y_condiciones.html">Terminos y condiciones</a></li>
-            <li class="py-1"><a href="./garantias_devolucioes.html">Garantia</a></li>
-            <li class="py-1"><a href="#">Enviamos tu pedido</a></li>
-            <li class="py-1"><a href="#">Perfil</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Mi Carrito</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Contacto</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="./terminos_y_condiciones.html">Terminos y condiciones</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="./garantias_devolucioes.html">Garantia</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Enviamos tu pedido</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Perfil</a></li>
           </ul> 
         </div>
        </div>
        <div class="col-span-3 col-start-7 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Categorias</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Categorias</h2>
         </div>
         <div>
           <ul class="m-2 font-bold">
-            <li class="py-1"><a href="./catalogo.html">Catalogo</a></li>
-            <li class="py-1"><a href="./catalogo.html">Estrenos</a></li>
-            <li class="py-1"><a href="./catalogo.html">Retro</a></li>
-            <li class="py-1"><a href="./catalogo.html">Preventas</a></li>
-            <li class="py-1"><a href="#">Compramos tu usado</a></li>
-            <li class="py-1"><a href="./catalogo.html">Amiibos</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Catalogo</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Estrenos</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Retro</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Preventas</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Compramos tu usado</a></li>
+            <li class="py-1 hover:text-orange-700"><a href="#">Amiibos</a></li>
           </ul> 
         </div>
        </div>
        <div class="col-span-2 col-start-10 p-2 text-center">
         <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500">Seguinos!</h2>
+          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Seguinos!</h2>
         </div>
         <div class ="flex justify-between p-3 m-3">
           <div>
@@ -220,6 +220,6 @@
        </div>
       </div>
     </footer>
-  <script src="../js/app.js"></script>
+    <script src="../js/app.js"></script>
 </body>
 </html>
