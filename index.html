@@ -12,28 +12,35 @@
     <!-- header -->
     <header class ="grid grid-cols-1 w-full">
         <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400">
-            <div class="col-start-1">
+            <div class="col-start-1 col-end-2">
                <a href="./index.html"><img class ="border rounded-xl" src="./image/logo.jpg" alt="logo gift"></a>
             </div>
-            <div class="flex col-start-3 col-end-6">
-               <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-4 w-9/12 font-thin" type="text" placeholder="Busca aqui tu producto!">
-               <img class="boton-buscador cursor-pointer w-1/6" src="./assets/Svg/./coin.svg" alt="boton_buscar">
+            <div class="flex col-start-2 col-end-8 pt-2 pl-3 search-container">
+              <div id="resultados" class="resultados border-2 border-gray-300 buscador-hidden text-gray-700 font-thin italic">
+                <ul>
+                <!-- acamostramos resultrados busqueda -->
+                </ul>
+              </div>
+              <input class ="bg-orange-300 placeholder:italic placeholder:text-black border-2 mx-auto rounded-3xl drop-shadow-xl p-5 w-11/12 lg:w-9/12  h-2/3 font-thin" id="buscador" type="text" placeholder="Busca aqui tu producto!">
+              <button class=" col-start-8 py-2 px-4">
+                <img class="boton-buscador cursor-pointer w-1/3 lg:w-1/4 hover:shadow-orange-600" src="./assets/Svg/./coin.svg" alt="boton_buscar">
+              </button>
             </div>
             <div class ="col-start-9 font-bold">
-                <a href="#"><img class ="w-1/3" src="./assets/Svg/female.svg" alt="boton_buscar"></a>
-                <h3 class="cursor-pointer hover:text-orange-700">Perfil</h3>
+                <a href="#"><img class ="w-2/3  lg:w-2/5" src="./assets/Svg/female.svg" alt="boton_buscar"></a>
+                <h3 class="hidden lg:inline cursor-pointer hover:text-orange-700">Perfil</h3>
             </div>
             <div class="col-start-10 font-bold">
-                <img class="w-1/3 cursor-pointer" src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
-                <h3 class="cursor-pointer hover:text-orange-700">Carrito</h3>
+                <img class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
+                <h3 class="hidden lg:inline cursor-pointer hover:text-orange-700">Carrito</h3>
             </div>
             <div class="col-start-11 font-bold">
-              <a href="./pages/catalogo.html"><img class ="w-1/3" src="./assets/chest.svg" alt="catalogo"></a>
-              <h3 class="cursor-pointer hover:text-orange-700">Catalogo</h3>
+              <a href="./pages/catalogo.html"><img class ="w-2/3 lg:w-2/5" src="./assets/chest.svg" alt="catalogo"></a>
+              <h3 class="hidden lg:inline cursor-pointer hover:text-orange-700">Catalogo</h3>
           </div>
             <div class="col-start-12 font-bold">
-                <img class ="w-1/3 cursor-pointer" src="./assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
-                <h3 class="cursor-pointer hover:text-orange-700">Menu</h3>
+                <img class ="w-2/3 lg:w-2/5 cursor-pointer" src="./assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
+                <h3 class="hidden lg:inline cursor-pointer hover:text-orange-700">Menu</h3>
             </div>
         </div>
     </header>
@@ -73,30 +80,32 @@
     <main>
       <!-- aside -->
       <section>
-        <aside id="carrito" class=" h-full fixed top-0 right-0 h-screen w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <aside id="carrito" class="fixed opacity-90 top-0 right-0 h-full w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Carrito de compras -->
-            <h2 class="text-2xl mb-4 text-center font-bold hover:underline">Tu Carrito</h2>
-            <h3 class="text xl my-4">Productos seleccionados</h3>
+            <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold hover:underline">Tu Carrito</h2>
+            <h3 class="  text-sm lg:text-base my-4 font-bold">Productos seleccionados</h3>
             <ul id="lista-productos">
                 <!-- Lista de productos seleccionados -->
             </ul>
-            <div id ="total-carrito" class="text-xl mt-4 ">
+            <div id ="total-carrito" class="text-sm lg:text-base mt-4 font-bold">
               El total del carrito es: $ 
             </div>
-            <div class = "flex justify-end py-5">
-              <button class=" comprar-carrito bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Comprar!</button>
-              <button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl vaciar-carrito hover:bg-orange-900">Vaciar Carrito</button>
-              <button id="ocultar-carrito" class="bg-yellow-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-yellow-900">Ocultar Carrito</button>
+            <div class="h-100 w-100">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,64L0,224L96,224L96,32L192,32L192,192L288,192L288,128L384,128L384,224L480,224L480,160L576,160L576,64L672,64L672,224L768,224L768,64L864,64L864,192L960,192L960,96L1056,96L1056,224L1152,224L1152,128L1248,128L1248,288L1344,288L1344,256L1440,256L1440,0L1344,0L1344,0L1248,0L1248,0L1152,0L1152,0L1056,0L1056,0L960,0L960,0L864,0L864,0L768,0L768,0L672,0L672,0L576,0L576,0L480,0L480,0L384,0L384,0L288,0L288,0L192,0L192,0L96,0L96,0L0,0L0,0Z"></path></svg>
+             </div>
+            <div class = "flex justify-end py-5 flex-col">
+              <button class="comprar-carrito text-xs lg:text-base text-bold bg-orange-500 border-2 border-orange-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Comprar</button>
+              <button class="vaciar-carrito text-xs lg:text-base bg-yellow-500 border-2 border-orange-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-yellow-900">Vaciar Carrito</button>
             </div>
         </aside>
       </section>  
              <!-- slider novedades -->
         <section class = "slider-container py-2">
           <div class="slider">
-            <img src="./image/zelda_tears.png" alt="foto_estrenos_1" id="slider-img">
-            <img src="./image/PokemonScarletViolet-Banner.jpg" alt="foto_estrenos_2" id="slider-img">
-            <img src="./image/Banner-Mario-Kart-Deluxe-8-W4.jpg" alt="foto_estrenos_3" id="slider-img">
-            <img src="./image/amiibos-zelda-ganondorf.webp" alt="mario_maker_2" id="slider-img">
+            <img src="./image/1-slide-1684170258455-4473921703-4a9f25171a168189c07a382a80ccdd101684170260-1920-1920.webp" alt="foto_estrenos_1">
+            <img src="./image/1040-banner-mk1-banner-3620.jpg" alt="foto_estrenos_2" >
+            <img src="./image/1-slide-1689964916955-6877443007-a7cfb592463703473ec8d69409c6ef0a1689964855-1920-1920.webp" alt="foto_estrenos_3" >
+            <img src="./image/alfabeta.1690357143.1979.webp" alt="mario_maker_2" >
           </div>
           <div class="slider-buttons">
             <button id="prev-button"><</button>
@@ -106,9 +115,9 @@
             <!-- slider Sale -->
         <section class = "slider-container py-2">
           <div class="slider">
-            <img src="./image/gb_color.jpg" alt="foto_sale_1">
-            <img src="./image/mario_kart.jpg" alt="foto_sale_2">
-            <img src="./image/vampire_survivors.jpg" alt="foto_sale_3">
+            <img src="./image/mario_kart.jpg" alt="foto_sale_1">
+            <img src="./image/pokemon-unite.jpg" alt="foto_sale_2">
+            <img src="./image/Sonic-Origins-1-www.culturageek.com_.ar_.jpg" alt="foto_sale_3">
             <img src="./image/switch_mario_maker.jpg" alt="foto_sale_4">
           </div>
           <div class="slider-buttons">
@@ -119,9 +128,9 @@
             <!-- slider RETRO -->
         <section class = "slider-container py-2">
           <div class="slider">
-            <img src="./image/n64.jpg" alt="foto_retro_1">
             <img src="./image/nes.webp" alt="foto_retro_2">
-            <img src="./image/joystick_naranja_gamecube.png" alt="foto_retro_3">
+            <img src="./image/n64.jpg" alt="foto_retro_1">
+            <img src="./image/snes.jpg" alt="foto_retro_3">
             <img src="./image/gb_advance.jpg" alt="foto_retro_4">
           </div>
           <div class="slider-buttons">
@@ -132,10 +141,10 @@
             <!-- slider PREVENTAS -->
           <section class = "slider-container py-2">
             <div class="slider">
-             <img src="./image/mario_wonder.jpg" alt="foto_preventa_1">
-             <img src="./image/mario_rpg.jpg" alt="foto_preventa_2">
+             <img src="./image/1-slide-1693515506937-8046084764-fdf7c4eb406cc1dc890a82ff79c544121693515358-1920-1920.webp" alt="foto_preventa_1">
              <img src="./image/picmin4.jpg" alt="foto_preventa_3">
-             <img src="./image/fc_24.jpg" alt="foto_preventa_4">
+             <img src="./image/1-slide-1691787470831-6102750034-a102626dc85be7e896997e6b9be5b4811691787364-1920-1920.webp" alt="foto_preventa_4">
+             <img src="./image/mario_rpg.jpg" alt="foto_preventa_2">
             </div>
             <div class="slider-buttons">
               <button id="prev-button"><</button>
@@ -143,33 +152,39 @@
             </div>
           </section>
           <!-- compramos usados y link a catalogo -->
-          <section class="mx-auto bg-white w-full grid grid-cols-1 border-2 border-y-violet-200p py-5">
+          <section class="mx-auto bg-white w-full grid grid-cols-1 border-2 border-y-violet-200 pb-5">
+            <div class="h-100">
+              <svg class="bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ff5500" fill-opacity="1" d="M0,64L0,224L96,224L96,32L192,32L192,192L288,192L288,128L384,128L384,224L480,224L480,160L576,160L576,64L672,64L672,224L768,224L768,64L864,64L864,192L960,192L960,96L1056,96L1056,224L1152,224L1152,128L1248,128L1248,288L1344,288L1344,256L1440,256L1440,0L1344,0L1344,0L1248,0L1248,0L1152,0L1152,0L1056,0L1056,0L960,0L960,0L864,0L864,0L768,0L768,0L672,0L672,0L576,0L576,0L480,0L480,0L384,0L384,0L288,0L288,0L192,0L192,0L96,0L96,0L0,0L0,0Z"></path>
+              </svg>
+            </div>
             <div class="grid grid-cols-12 gap-4 container mx-auto">
-              <div class="col-span-3 p-2 hover:bg-orange-200">
-                <h1 class="py-8 text-center font-bold text-2xl text-orange-500 hover:underline">COMPRAMOS TU USADO</h1> 
+              <div class="col-span-12 md:col-span-3 p-2 hover:bg-orange-200">
+                <h1 class="py-8 text-center font-bold text-2xl text-orange-500 hover:underline">COMPRAMOS TU USADO</h1>
                 <a href="#"><img src="./image/joysticks_usados.jpg" alt="compramos_tu_usado"></a>
               </div>
-              <div class="col-span-9 p-3">
+              <div class="col-span-12 md:col-span-9 p-3">
                 <div class="text-center font-bold p-6 text-2xl">
                   <h1 class="text-orange-500 hover:underline">CATALOGO</h1>
                 </div>
                 <div class="flex flex-wrap justify-between p-3 mx-auto">
-                  <div class=" hover:border-orange-200 w-1/2 border-2">
+                  <div class="hover:border-orange-200 w-full md:w-1/2 border-2">
                     <a href="./pages/catalogo.html"><img src="./image/switch_oled_zelda.jpg" alt="switch"></a>
                   </div>
-                  <div class=" hover:border-orange-200 w-1/2 border-2"> 
+                  <div class="hover:border-orange-200 w-full md:w-1/2 border-2">
                     <a href="./pages/catalogo.html"><img src="./image/nintendo_joysticks.jpg" alt="retro"></a>
                   </div>
-                  <div class=" hover:border-orange-200 w-1/2 border-2">
+                  <div class="hover:border-orange-200 w-full md:w-1/2 border-2">
                     <a href="./pages/catalogo.html"><img src="./image/juegos-swtich.png" alt="juegos"></a>
                   </div>
-                  <div class=" hover:border-orange-200 w-1/2 border-2">
+                  <div class="hover:border-orange-200 w-full md:w-1/2 border-2">
                     <a href="./pages/catalogo.html"><img src="./image/amiibo.jpg" alt="amiibo"></a>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+          
           <!-- QUIENES SOMOS? -->
           <section class="mx-auto w-full grid grid-cols-1 py-10 quienes">
             <div class = "text-start font-bold p-2 bg-white text-xl text-orange-500 opacity-90">
@@ -185,26 +200,28 @@
             </div>
           </section>
           <!-- Garantias y responsabilidad -->
-          <section class="mx-auto w-full grid grid-cols-1 py-10 bg-white">
-            <div class="container mx-auto grid grid-cols-12 gap-4">
-              <div class="col-span-4 p-2 text-center">
-                <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Compra Tranquilo</h2>
-                <p class="text-thin">Todos nuestros productos cuentan con garantia de 3 a 6 meses (con posibilidad de extenderla). Ademas costeamos los gastos de envio si tu pedido fue enviado local o internacionalmente.</p>
-                <a href="./pages/garantias_devolucioes.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Garantia</button></a>
-              </div>
-              <div class="col-span-4 p-2 text-center">
-                <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Politica de Satisfaccion</h2>
-                <p class="text-thin">Te arrepentiste de la compra o te regalaron un producto que ya tenias? No te preocupes, te brindamos la posibilidad de devolverlo y recueperar el dinero.</p>
-                <a href="./pages/garantias_devolucioes.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Devoluciones</button></a>
-              </div>
-              <div class="col-span-4 p-2 text-center">
-                <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Compromiso con el Cliente</h2>
-                <p class="text-thin">Sabemos que lo mas importante es recibir una buena atencion, Queremos que tengas una buena experiencia, tanto personalmente o de manera remota y vuelvas a comprar.</p>
-                <a href="./pages/garantias_devolucioes.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Leer mas</button></a>
+          <section class="mx-auto w-full py-10 bg-white">
+            <div class="container mx-auto">
+              <div class="md:flex md:justify-between">
+                <div class="md:w-1/3 p-2 text-center">
+                  <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Compra Tranquilo</h2>
+                  <p class="text-thin">Todos nuestros productos cuentan con garantía de 3 a 6 meses (con posibilidad de extenderla). Además, costeamos los gastos de envío si tu pedido fue enviado local o internacionalmente.</p>
+                  <a href="./pages/garantias_devoluciones.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Garantía</button></a>
+                </div>
+                <div class="md:w-1/3 p-2 text-center">
+                  <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Política de Satisfacción</h2>
+                  <p class="text-thin">¿Te arrepentiste de la compra o te regalaron un producto que ya tenías? No te preocupes, te brindamos la posibilidad de devolverlo y recuperar el dinero.</p>
+                  <a href="./pages/garantias_devoluciones.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Devoluciones</button></a>
+                </div>
+                <div class="md:w-1/3 p-2 text-center">
+                  <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Compromiso con el Cliente</h2>
+                  <p class="text-thin">Sabemos que lo más importante es recibir una buena atención. Queremos que tengas una buena experiencia, ya sea personalmente o de manera remota, y que vuelvas a comprar.</p>
+                  <a href="./pages/garantias_devoluciones.html"><button class="bg-orange-500 border-2 border-orange-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-orange-900">Leer más</button></a>
+                </div>
               </div>
             </div>
           </section>
-          
+            <div class="text-Left pt-10 mx-auto w-full flex ">
           <section class="mx-auto w-full grid grid-cols-1 py-10 experiencias">
             <div class="grid grid-cols-12 gap-4 container mx-auto bg-white opacity-90">
               <div class="col-span-6 p-2 text-center">
@@ -220,77 +237,80 @@
     </main>
     <!-- foot -->
     <footer class = "grid grid-cols-1 w-full mt-auto">
-      <div class="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-85 border-2 border-y-orange-400 p-2">
-        <div class="col-span-3 p-2 text-center">
+      <div class="h-100">
+        <svg class ="bg-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,64L0,224L96,224L96,32L192,32L192,192L288,192L288,128L384,128L384,224L480,224L480,160L576,160L576,64L672,64L672,224L768,224L768,64L864,64L864,192L960,192L960,96L1056,96L1056,224L1152,224L1152,128L1248,128L1248,288L1344,288L1344,256L1440,256L1440,0L1344,0L1344,0L1248,0L1248,0L1152,0L1152,0L1056,0L1056,0L960,0L960,0L864,0L864,0L768,0L768,0L672,0L672,0L576,0L576,0L480,0L480,0L384,0L384,0L288,0L288,0L192,0L192,0L96,0L96,0L0,0L0,0Z"></path></svg>
+      </div>
+      <div class="mx-auto bg-white grid grid-cols-12 justify-between items-start opacity-85 border-2 border-y-orange-400 p-1">
+        <div class="col-span-4 col-start-1 p-2 text-center">
+          <div class="p-4">
+            <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Información</h2>
+          </div>
+          <div>
+            <ul class="m-2 font-bold">
+              <li class="py-1 hover:text-orange-700 cursor-pointer" id="mostrar-carrito">Mi Carrito</li>
+              <li class="py-1 hover:text-orange-700"><a href="#">Contacto</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/terminos_y_condiciones.html">Términos y condiciones</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/garantias_devoluciones.html">Garantía</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="#">Enviamos tu pedido</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="#">Perfil</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="col-span-4 col-start-5 p-2 text-center">
+          <div class="p-4">
+            <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Categorías</h2>
+          </div>
+          <div>
+            <ul class="m-2 font-bold">
+              <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Catálogo</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Estrenos</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Retro</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Preventas</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="#">Compramos tu usado</a></li>
+              <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Amiibos</a></li>
+            </ul> 
+          </div>
+        </div>
+        <div class="col-span-4 col-start-9 md:col-span-2 md:col-start-10 p-2 text-center md:order-last">
+          <div class="p-4">
+            <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Síguenos!</h2>
+          </div>
+          <div class="flex justify-between p-3 m-3">
+            <div>
+              <a href="#"><img src="./assets/bxl-facebook-square.svg" alt="Facebook" class="w-full md:w-auto"></a>
+            </div>
+            <div>
+              <a href="#"><img src="./assets/bxl-instagram-alt.svg" alt="Instagram" class="w-full md:w-auto"></a>
+            </div>
+            <div>
+              <a href="#"><img src="./assets/bxl-twitter.svg" alt="Twitter" class="w-full md:w-auto"></a>
+            </div>
+            <div>
+              <a href="#"><img src="./assets/bxl-discord-alt.svg" alt="Discord" class="w-full md:w-auto"></a>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <a href="#"><img src="./image/DATAWEB.jpg" alt="Fiscal" class="m-auto w-full md:w-auto"></a>
+          </div>
+        </div>
+        <div class="fondo col-span-12 p-2 text-center md:order-last">
           <div class="flex p-3"> 
-            <img src="./assets/bx-home-alt-2.svg" alt="aqui">       
-            <p class = "text-sm p-2">Av. Cabildo 2280, Local 30, Galería Río de la Plata, CABA, Argentina</p>
-          </div>
-          <div class= "flex p-3">
-            <img src="./assets/bx-mail-send.svg" alt="mail">
-            <p class = " hover:text-orange-700 text-md px-2 cursor-pointer">info@nextlevel.com</p>
-          </div>
-          <div class = "flex p-3">
-            <img src="./assets/bx-bell.svg" alt="telefono">
-            <p class = "hover:text-orange-700 text-md px-2 cursor-pointer"> 5491160277880</p>
+            <img src="./assets/bx-home-alt-2.svg" alt="Ubicación">       
+            <p class="text-sm p-2">Av. Cabildo 2280, Local 30, Galería Río de la Plata, CABA, Argentina</p>
           </div>
           <div class="flex p-3">
-            <img src="./assets/bx-heart-circle.svg" alt="horario">
-            <p class = "text-md px-2"> Lunes a Sábados de 11 a 21hs</p>
+            <img src="./assets/bx-mail-send.svg" alt="Correo">
+            <p class="hover:text-orange-700 text-md px-2 cursor-pointer">info@nextlevel.com</p>
           </div>
-      </div>
-      <div class="col-span-3 col-start-4 p-2 text-center">
-        <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Informacion</h2>
-        </div>
-        <div>
-          <ul class="m-2 font-bold">
-            <li class="py-1 hover:text-orange-700 cursor-pointer" id="mostrar-carrito">Mi Carrito</li>
-            <li class="py-1 hover:text-orange-700"><a href="#">Contacto</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/terminos_y_condiciones.html">Terminos y condiciones</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/garantias_devolucioes.html">Garantia</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="#">Enviamos tu pedido</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="#">Perfil</a></li>
-          </ul> 
-        </div>
-       </div>
-       <div class="col-span-3 col-start-7 p-2 text-center">
-        <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Categorias</h2>
-        </div>
-        <div>
-          <ul class="m-2 font-bold">
-            <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Catalogo</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Estrenos</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Retro</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Preventas</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="#">Compramos tu usado</a></li>
-            <li class="py-1 hover:text-orange-700"><a href="./pages/catalogo.html">Amiibos</a></li>
-          </ul> 
-        </div>
-       </div>
-       <div class="col-span-2 col-start-10 p-2 text-center">
-        <div class="p-4">
-          <h2 class="text-xl font-bold pb-3 text-orange-500 hover:underline">Seguinos!</h2>
-        </div>
-        <div class ="flex justify-between p-3 m-3">
-          <div>
-            <a href="#"><img src="./assets/bxl-facebook-square.svg" alt="face"></a>
+          <div class="flex p-3">
+            <img src="./assets/bx-bell.svg" alt="Teléfono">
+            <p class="hover:text-orange-700 text-md px-2 cursor-pointer">5491160277880</p>
           </div>
-          <div>
-            <a href="#"><img src="./assets/bxl-instagram-alt.svg" alt="insta"></a>
-          </div>
-          <div>
-            <a href="#"><img src="./assets/bxl-twitter.svg" alt="twitter"></a>
-          </div>
-          <div>
-            <a href="#"><img src="./assets/bxl-discord-alt.svg" alt="discord"></a>
+          <div class="flex p-3">
+            <img src="./assets/bx-heart-circle.svg" alt="Horario">
+            <p class="text-md px-2">Lunes a Sábados de 11 a 21hs</p>
           </div>
         </div>
-        <div class="flex justify-center items-center">
-          <a href="#"><img src="./image/DATAWEB.jpg" alt="fiscal" class="m-auto w-1/2"></a>
-        </div>
-       </div>
       </div>
     </footer>
     <script src="./js/app.js"></script>

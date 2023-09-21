@@ -1,21 +1,31 @@
-//hacer visible-invisible el carrito
-
+//hacer visible-invisible el carrito para accesibilidad
 document.addEventListener("DOMContentLoaded", function () {
     const carrito = document.getElementById("carrito");
     const mostrarCarritoButton = document.getElementById("mostrar-carrito");
-    const ocultarCarritoButton = document.getElementById("ocultar-carrito");
 
     mostrarCarritoButton.addEventListener("click", () => {
         carrito.classList.remove("translate-x-full");
     });
+});
 
-    ocultarCarritoButton.addEventListener("click", () => {
-        carrito.classList.add("translate-x-full");
+//hacer visible-invisible el carrito si pasas por la zona derecha
+document.addEventListener("DOMContentLoaded", function () {
+    const carrito = document.getElementById("carrito");
+    const zonaApertura = window.innerWidth * 0.95; //el 0.95 es por el 95% de la pantalla
+
+    document.addEventListener("mousemove", (e) => {
+        if (e.clientX > zonaApertura) {
+            carrito.classList.remove("translate-x-full");
+
+    }
+        // Evento para ocultar el carrito cuando el cursor sale del aside
+        carrito.addEventListener("mouseleave", () => {
+            carrito.classList.add("translate-x-full");
+        });
     });
 });
 
 // hacer visible-invisible el nav
-
 document.addEventListener("DOMContentLoaded", function () {
     const nav = document.querySelector("nav");
     const mostrarOcultarMenuButton = document.getElementById("mostrar-ocultar-menu");
@@ -116,29 +126,52 @@ baseDatos.push(picmin4);
 const fc24= new Articulo(404, "FS 24", "60000", "99", "Preventas");
 baseDatos.push(fc24);
 
-//ya esta todo subido al array para base de datos
+//declarar constantes
+const inputBuscar = document.querySelector("#buscador");
+const divResultados = document.querySelector("#resultados");
 
-//funcion buscar para el boton de moneda en el header
+//definir funcion
 function buscar() {
-    const keyword = prompt("Qué producto desea buscar?");
-    // Me va a retornar un array con todos los elementos que contengan
-    const arrayResultados = baseDatos.filter((el) =>
-      el.nombre.includes(keyword)
-    );
+    //objetener lo buscado en minuscula
+    const ABuscar = inputBuscar.value.toLowerCase();
 
-    if (arrayResultados.length === 0) {
-        alert("No se encontraron resultados para la búsqueda.");
+    // Filtrar elementos de baseDatos si el campo no está vacío
+    const resu = baseDatos.filter((el) => el.nombre.toLowerCase().includes(ABuscar));
+
+    // Limpiar el contenido anterior del div despues inner
+    divResultados.innerHTML = "";
+
+    if (ABuscar === "") {
+        // Ocultar el div si el input está vacío
+        divResultados.style.display = "none";
     } else {
-        // crea array con los resultados del include y los muestra con el alert
-        const resu = arrayResultados.map((producto) => {
-            return `Nombre: ${producto.nombre}, Precio: ${producto.precio}`;
-        });
-        // genera string con elementos y /n para separar
-        alert("Resultados:\n \n" + resu.join("\n"));
+        // Mostrar el div cuando hay resultados
+        divResultados.style.display = "block";
+
+        if (resu.length === 0) {
+            // Mostrar si no se encontraron resultados
+            divResultados.innerHTML = "<p>No se encontraron resultados para la búsqueda.</p>";
+            // Recorrer los elementos y agregarlos a la lista de resultados
+        } else {
+            // Recorrer los elementos y agregarlos al div previamente creado ul para lista, y crea parrafo.
+            for (const producto of resu) {
+                const p = document.createElement("p");
+                p.textContent = `${producto.nombre}, Precio: $ ${producto.precio}`;
+                divResultados.append(p);
+            }
+        }
     }
 }
+// Escuchar el evento "input" en el campo de búsqueda y llamar a la función buscar
+inputBuscar.addEventListener("input", buscar);
 
-//boton de buscador funcionalidad
+inputBuscar.addEventListener("input", function () {
+    if (inputBuscar.value === "") {
+        buscar(); // Llamar a buscar cuando el campo está vacío
+    }
+});
+
+// Botón de buscador funcionalidad (si todavía lo necesitas)
 const botonBuscador = document.querySelector('.boton-buscador');
 botonBuscador.addEventListener('click', buscar);
 
@@ -199,15 +232,14 @@ const mostrarCarrito = () => {
         const containerArticulo = document.createElement("div");
         containerArticulo.classList.add("articulo-carrito");
 
-
     // seleccionar que voy a agregar al carrito por cada compra.
-        containerArticulo.innerHTML = `
-            <div class=" border-2 border-orange-500 bg-orange-200  p-5 flex justify-between">
-                <h3 class =" text-black py-3 font-bold">${articulo.nombre}</h3>
-                <h4 class=" text-black py-3">$.${articulo.precio}</h4>
-                <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
-            </div>
-        `;
+    containerArticulo.innerHTML = `
+        <div class="border-2 border-orange-500 bg-orange-200 p-5 flex justify-between flex-col sm:flex-row">
+            <h3 class="text-sm text-black py-3 font-bold">${articulo.nombre}</h3>
+            <h4 class="text-sm lg:text-base text-black py-3 font-bold">$${articulo.precio}</h4>
+            <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
+        </div>
+    `;
         const eliminar = containerArticulo.querySelector(".delete-articulo");
 
         // agregar evento al click para eliminar
