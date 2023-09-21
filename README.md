@@ -2,8 +2,8 @@
 
 Este proyecto es una tienda en línea que ofrece consolas y juegos de Nintendo, tanto nuevos como retro. El desarrollo web se ha realizado utilizando HTML, Tailwind CSS, y se ha agregado un toque de CSS personalizado. Asegúrate de
 
-## recomendacion para mejor flujo en la web.
-- acceder al sitio desde una computadora o tablet para una mejor experiencia de navegación.
+## Entra desde cualquier dispositivo.
+- acceder al sitio desde una computadora, tablet y celular para tener la misma experiencia de navegacion, solo que en pc, al moverte por el lado derecho, se abre solo el aside de carrito, mas alla de que hay un boton por accesibilidad.
   
 ### Catálogo
 
@@ -16,7 +16,7 @@ Este proyecto es una tienda en línea que ofrece consolas y juegos de Nintendo, 
 
 ### Búsqueda
 
-- Utilice un array de base de datos para el buscador en todas las páginas (dataBase). Se utiliza un prompt para ingresar palabras clave y se muestra una alert los resultados. Recomendamos utilizar palabras como "Mario", "Zelda" o "Joystick" (con la primera letra en mayúscula) para obtener resultados precisos.
+- Utilice un array de base de datos para el buscador en todas las páginas (dataBase). Se utiliza el input de la pagina, dando resultados parciales debajo con el articulo, mas su precio, distingue mayusculas y minusculas. Recomendamos utilizar palabras como "Mario", "Zelda" o "Joystick".
 
 ### Funcionalidades Implementadas con JS
 
@@ -31,6 +31,8 @@ Este proyecto es una tienda en línea que ofrece consolas y juegos de Nintendo, 
 - Función para calcular el total del carrito utilizando un bucle forEach.
 - Actualización en tiempo real del valor total en el HTML al agregar, quitar o vaciar el carrito.
 - Devolver stock cuando quitamos un articulo, desde vaciar carrito o quitando indivicualmente por indice
+-busqueda en tiempo real, a los resultados parciales por debajo de lo ingresado por su input sobre nuestra base de datos, con nombre y precio de articulo. 
+-En desktop, al mover le mouse por el 5% del margen derecho de la web se desliza el carrito haciendose visible, al sacar el mouse del carrito, se oculta automaticamente.  En el caso de dispositivo movil, se hacer un toque en este 5% para q se abra el aside o abrirlo desde el boton del nav.
 
 #Autor
 - **Mauricio Arbelaiz**
