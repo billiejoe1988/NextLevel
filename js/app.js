@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //hacer visible-invisible el carrito si pasas por la zona derecha
 document.addEventListener("DOMContentLoaded", function () {
     const carrito = document.getElementById("carrito");
-    const zonaApertura = window.innerWidth * 0.97; //el 0.97 es por el 97% de la pantalla
+    const zonaApertura = window.innerWidth * 0.95; //el 0.95 es por el 97% de la pantalla
 
     document.addEventListener("mousemove", (e) => {
         if (e.clientX > zonaApertura) {
