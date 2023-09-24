@@ -12,8 +12,8 @@ body{
 /* -paleta #8c522(violet) ffffff(blanco) #5ce1e6(light-blue) ffb502 fe0000(gold) 000000(negro) */
 
 .fondo{
-  background-color: #FBAB7E;
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  background: rgb(190,24,93);
+  background: linear-gradient(0deg, rgba(190,24,93,1) 52%, rgba(30,27,75,1) 100%);
 }
 
 .slider-container{
@@ -79,8 +79,8 @@ body{
   background-position: center;
 }
 .fondo-articulos{
-  background-color: #5c5258;
-  background-image: linear-gradient(225deg, #5c5258 0%, #dacaa3 50%, #f9fbfd 100%);
+  background: rgb(190,24,93);
+  background: linear-gradient(62deg, rgba(190,24,93,1) 52%, rgba(30,27,75,1) 100%);
 }
 /* para q el carrito quede delante */
 #carrito{
@@ -91,9 +91,26 @@ body{
 nav {
   transition: transform 0.3s ease;
 }
+.login-alert {
+  width: 80%; 
+  max-width: 400px; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-image: url(../image/fondo_pro_azul.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.carrito-fondo{
+  background-image: url(../image/fondo_pro_azul.jpg);
+  background-position: center;
+  background-size: cover;
+}
 
 .hidden {
-  transform: translateX(-100%);
+  transform: translateX(100%);
   transition: transform 0.3s ease;
 }
 

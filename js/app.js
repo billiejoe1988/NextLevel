@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //hacer visible-invisible el carrito si pasas por la zona derecha
 document.addEventListener("DOMContentLoaded", function () {
     const carrito = document.getElementById("carrito");
-    const zonaApertura = window.innerWidth * 0.95; //el 0.95 es por el 95% de la pantalla
+    const zonaApertura = window.innerWidth * 0.97; //el 0.97 es por el 97% de la pantalla
 
     document.addEventListener("mousemove", (e) => {
         if (e.clientX > zonaApertura) {
@@ -22,6 +22,25 @@ document.addEventListener("DOMContentLoaded", function () {
         carrito.addEventListener("mouseleave", () => {
             carrito.classList.add("translate-x-full");
         });
+    });
+});
+
+//hacer visible-invisible el login para accesibilidad
+document.addEventListener("DOMContentLoaded", function () {
+    const login = document.querySelector("#login");
+    const mostrarOcultarLoginButton = document.getElementById("btn-login");
+  
+    mostrarOcultarLoginButton.addEventListener("click", () => {
+      login.classList.toggle("hidden");
+    });
+  });
+
+// Evento para ocultar el carrito cuando el cursor sale del aside
+document.addEventListener("DOMContentLoaded", function () {
+    const login = document.querySelector("#login");
+
+    login.addEventListener("mouseleave", () => {
+    login.classList.add("hidden");
     });
 });
 
@@ -283,6 +302,8 @@ const botonVaciar = document.querySelector('.vaciar-carrito');
 botonVaciar.addEventListener('click', vaciar);
 
 function comprar() {
+    
+    
     //dar un alert diciendo que pasa al area de pago
     alert("Su compra ha sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
 }
