@@ -134,3 +134,17 @@ nav {
 .buscador-hidden{
   display: none;
 }
+/* INICIAR SESION Y REGISTRO  */
+.container-form{
+  width: 90vw;
+  height: 90vh;
+}
+.formulario{
+  width: 450px;
+  max-width: 90vw;
+}
+.fornulario input{
+  width: 70%;
+  border-bottom: white thin solid ;
+  outline: none;
+}
