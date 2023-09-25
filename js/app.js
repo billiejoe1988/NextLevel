@@ -1,17 +1,22 @@
 //hacer visible-invisible el carrito para accesibilidad
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const carrito = document.getElementById("carrito");
     const mostrarCarritoButton = document.getElementById("mostrar-carrito");
+    const minimizarCarritoButton = document.getElementsByClassName("minimizar-carrito")[0];
 
     mostrarCarritoButton.addEventListener("click", () => {
         carrito.classList.remove("translate-x-full");
     });
+
+    minimizarCarritoButton.addEventListener("click", () => {
+        carrito.classList.add("translate-x-full");
+    });
 });
 
 //hacer visible-invisible el carrito si pasas por la zona derecha
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const carrito = document.getElementById("carrito");
-    const zonaApertura = window.innerWidth * 0.95; //el 0.95 es por el 97% de la pantalla
+    const zonaApertura = window.innerWidth * 0.95; //el 0.95 es por el 95% de la pantalla
 
     document.addEventListener("mousemove", (e) => {
         if (e.clientX > zonaApertura) {
@@ -26,17 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //hacer visible-invisible el login para accesibilidad
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const login = document.querySelector("#login");
     const mostrarOcultarLoginButton = document.getElementById("btn-login");
-  
-    mostrarOcultarLoginButton.addEventListener("click", () => {
-      login.classList.toggle("hidden");
-    });
-  });
+    const minimizarLogin = document.getElementsByClassName("minimizar-login")[0]; //el 0 es necesario xq hay varios iguales.
 
-// Evento para ocultar el carrito cuando el cursor sale del aside
-document.addEventListener("DOMContentLoaded", function () {
+    mostrarOcultarLoginButton.addEventListener("click", () => {
+        login.classList.toggle("hidden");
+    });
+
+    minimizarLogin.addEventListener("click", () => {
+        login.classList.add("hidden");
+    });
+});
+
+// Evento para ocultar el login cuando el cursor sale del aside
+window.addEventListener("load", function () {
     const login = document.querySelector("#login");
 
     login.addEventListener("mouseleave", () => {
@@ -45,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // hacer visible-invisible el nav
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const nav = document.querySelector("nav");
     const mostrarOcultarMenuButton = document.getElementById("mostrar-ocultar-menu");
 
@@ -56,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //slider cambire de imagenes solo cada 3000 milisegundos
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
     const sliderContainers = document.querySelectorAll(".slider-container");
 
     // Función crea array, identifica y muestra la siguiente imagen
@@ -284,10 +294,13 @@ const botonVaciar = document.querySelector('.vaciar-carrito');
 botonVaciar.addEventListener('click', vaciar);
 
 function comprar() {
-    
-    
-    //dar un alert diciendo que pasa al area de pago
-    alert("Su compra ha sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
+    //verificar si esta vacio o lleno el carrito para dar distintos mensajes midiendo su longitud
+        if (carrito.length === 0) {
+            alert("El carrito se encuentra vacio, porfavor verifique agregar los articulos antes de confirmar la compra");
+        } else{
+            //dar un alert diciendo que pasa al area de pago
+            alert("Su compra ha sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
+        }
 }
 
 //boton comprar en arrito con  funcionalidad
