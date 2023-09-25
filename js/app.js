@@ -308,5 +308,51 @@ function comprar() {
   botonComprar.addEventListener('click', comprar);
 
 //ingreso inputs formularios a array
+
 //creo el array q despues pushea al crear la cuenta
 const users = []
+//formacion de objeto formulario 
+class Usuario {
+    constructor (nombre, mail, contrasena) {
+        this.nombre = nombre;
+        this.mail = mail;
+        this.contrasena = contrasena;
+    }
+}
+//funcion para agregar nombre, apellido y contrasena desde form
+function agregarUsuario (){
+    let nombre = document.getElementById("form-nombre").value;
+    let mail = document.getElementById("mail-form").value;
+    let contrasena = document.getElementById("contrasena-form").value;
+
+    let usuario= new Usuario(nombre, mail, contrasena);
+    users.push(usuario);
+
+    // Convertir array de usuarios a JSON y guardar en local
+    localStorage.setItem("usuarios", JSON.stringify(users));
+
+    alert(`Bienvenido ${usuario.nombre} su usuario ah sido creado con exito, ingrese desde el Log In!`);
+
+    mostrarUsuarios()
+}
+
+//funcion boton crear-cuenta
+const botonCrear = document.querySelector('#btn-crearCuenta');
+botonCrear.addEventListener('click', agregarUsuario);
+
+// Función para mostrar usuarios de localStorage
+function mostrarUsuarios() {
+    // Obtener la cadena JSON de localStorage y convertirla de nuevo a un array de objetos
+    const usuariosJSON = localStorage.getItem("usuarios");
+    const usuarios = JSON.parse(usuariosJSON);
+  
+    if (usuarios) {
+      let usuariosTexto = "Usuarios:\n";
+      for (let i = 0; i < usuarios.length; i++) {
+        usuariosTexto += `Nombre: ${usuarios[i].nombre}, Mail: ${usuarios[i].mail}\n`;
+      }
+      alert(usuariosTexto);
+    } else {
+      alert("No hay usuarios registrados en localStorage.");
+    }
+  }
