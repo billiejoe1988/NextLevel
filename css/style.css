@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 
-html{
+html, body, header, nav, main, footer {
   width: 100%;
 }
+
 body{
   height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -18,17 +18,17 @@ body{
   background: linear-gradient(0deg, rgba(190,24,93,1) 52%, rgba(30,27,75,1) 100%);
 }
 
-.slider-container{
+.slider-container {
   aspect-ratio: 16/9;
   width: 100%;
   max-width: 100%;
   height: 50vh;
-  position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .slider{
-  display: flex;
+  display: relative;
   overflow-x:scroll ;
   scroll-snap-type: x mandatory;
   overflow-y: hidden;
@@ -45,26 +45,8 @@ body{
   border-radius: 5px;
   scroll-snap-align: start;
 }
-
-#prev-button,
-#next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#prev-button {
-  left: 10px;
-}
-
-#next-button {
-  right: 10px;
+.slider img:not(.active) {
+  display: none;
 }
 
 .quienes{
@@ -118,21 +100,23 @@ nav {
 
 .search-container {
   position: relative;
-  display: inline-block; /* Opcional, dependiendo de tu diseño */
+  display: inline-block;
+}
+.resultados-buscador {
+  position: relative;
+  z-index: 997;
 }
 .resultados {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: orange;
-  border: 1px solid gray;
+  background-color: rgb(202, 42, 109);
+  border: 1px solid white;
   padding: 10px;
   min-width: 200px;
   max-height: 200px;
   overflow-y: auto; 
-  z-index: 1;
 }
-
 .buscador-hidden{
   display: none;
 }

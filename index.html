@@ -16,7 +16,7 @@
                <a href="./index.html"><img class ="border rounded-xl" src="./image/logo.jpg" alt="logo gift"></a>
             </div>
             <div class="flex col-start-2 col-end-8 pt-2 pl-3 search-container">
-              <div id="resultados" class="resultados border-2 border-gray-300 buscador-hidden text-gray-700 font-thin italic">
+              <div id="resultados" class="resultados z-50 border-2 border-gray-300 buscador-hidden text-white font-thin italic">
                 <ul>
                 <!-- acamostramos resultrados busqueda -->
                 </ul>
@@ -28,7 +28,7 @@
             </div>
             <div class ="col-start-9 font-bold">
                 <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="btn-login" src="./assets/Svg/female.svg" alt="perfil">
-                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">  Login  </h3>
+                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">  Log in  </h3>
             </div>
             <div class="col-start-10 font-bold">
                 <img class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
@@ -101,7 +101,7 @@
       <!-- Alert login -->
       <section class="log">
         <aside id="login" class="login-alert hidden fixed top-1/2 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6">
-          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold hover:underline text-rose-700">LOGIN</h2>
+          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold hover:underline text-rose-700">LOG IN</h2>
           <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" type="email" name="" id="" placeholder="Ingrese aqui su e-mail">
           <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl"  type="text" id ="" placeholder="Ingrese aqui su contrasena">
           <div class="h-100 w-100">
@@ -114,16 +114,12 @@
         </aside>
       </section>  
              <!-- slider novedades -->
-        <section class = "slider-container py-2">
-          <div class="slider">
-            <img src="./image/1-slide-1684170258455-4473921703-4a9f25171a168189c07a382a80ccdd101684170260-1920-1920.webp" alt="foto_estrenos_1">
+        <section class = "slider-container z-10 py-2">
+          <div class="slider z-10">
+            <img class ="z-10" src="./image/1-slide-1684170258455-4473921703-4a9f25171a168189c07a382a80ccdd101684170260-1920-1920.webp" alt="foto_estrenos_1">
             <img src="./image/1040-banner-mk1-banner-3620.jpg" alt="foto_estrenos_2" >
             <img src="./image/1-slide-1689964916955-6877443007-a7cfb592463703473ec8d69409c6ef0a1689964855-1920-1920.webp" alt="foto_estrenos_3" >
             <img src="./image/alfabeta.1690357143.1979.webp" alt="mario_maker_2" >
-          </div>
-          <div class="slider-buttons">
-            <button id="prev-button"><</button>
-            <button id="next-button">></button>
           </div>
         </section>
             <!-- slider Sale -->
@@ -134,10 +130,6 @@
             <img src="./image/Sonic-Origins-1-www.culturageek.com_.ar_.jpg" alt="foto_sale_3">
             <img src="./image/switch_mario_maker.jpg" alt="foto_sale_4">
           </div>
-          <div class="slider-buttons">
-            <button id="prev-button"><</button>
-            <button id="next-button">></button>
-          </div>
         </section>
             <!-- slider RETRO -->
         <section class = "slider-container py-2">
@@ -147,10 +139,6 @@
             <img src="./image/snes.jpg" alt="foto_retro_3">
             <img src="./image/gb_advance.jpg" alt="foto_retro_4">
           </div>
-          <div class="slider-buttons">
-            <button id="prev-button"><</button>
-            <button id="next-button">></button>
-          </div>
          </section>
             <!-- slider PREVENTAS -->
           <section class = "slider-container py-2">
@@ -159,10 +147,6 @@
              <img src="./image/picmin4.jpg" alt="foto_preventa_3">
              <img src="./image/1-slide-1691787470831-6102750034-a102626dc85be7e896997e6b9be5b4811691787364-1920-1920.webp" alt="foto_preventa_4">
              <img src="./image/mario_rpg.jpg" alt="foto_preventa_2">
-            </div>
-            <div class="slider-buttons">
-              <button id="prev-button"><</button>
-              <button id="next-button">></button>
             </div>
           </section>
           <!-- compramos usados y link a catalogo -->
@@ -197,8 +181,7 @@
                 </div>
               </div>
             </div>
-          </section>
-          
+          </section>       
           <!-- QUIENES SOMOS? -->
           <section class="mx-auto w-full grid grid-cols-1 py-10 quienes">
             <div class = "text-start font-bold p-2 bg-white text-xl text-rose-500 opacity-90">

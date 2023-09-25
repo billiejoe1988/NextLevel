@@ -55,45 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//funcionalidad botones de todos los sliders
-
+//slider cambire de imagenes solo cada 3000 milisegundos
 document.addEventListener("DOMContentLoaded", function() {
     const sliderContainers = document.querySelectorAll(".slider-container");
-    
-    //selecciona los slidercontainer y con foreach itera cada elemento con esta clase.
+
+    // Función crea array, identifica y muestra la siguiente imagen
+    function showNextImage(sliderContainer) {
+        const images = Array.from(sliderContainer.querySelectorAll(".slider img"));
+        let currentIndex = images.findIndex(img => img.classList.contains("active"));
+        currentIndex = currentIndex === -1 ? 0 : currentIndex;
+        images[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add("active");
+    }
+
+    // Agregar intervalo para cambiar automáticamente las imágenes
     sliderContainers.forEach(function(sliderContainer) {
-
-        //dentro de cada contenedor busca las src y se almacenan en array image.
-        const images = Array.from(sliderContainer.querySelectorAll(".slider img")).map(img => img.getAttribute("src"));
-        let currentIndex = 0;
-        const imgElement = sliderContainer.querySelector(".slider img");
-        const prevButton = sliderContainer.querySelector("#prev-button");
-        const nextButton = sliderContainer.querySelector("#next-button");
-
-        // muestra imagen en slider, si el indice es menor que 0 se muestra la ultima, si es mayor o igual muestra la primera.
-        function showImage(index) {
-            if (index < 0) {
-                index = images.length - 1;
-            } else if (index >= images.length) {
-                index = 0;
-            }
-            imgElement.src = images[index];
-            currentIndex = index;
-        }
-
-        prevButton.addEventListener("click", function() {
-            showImage(currentIndex - 1);
-        });
-
-        nextButton.addEventListener("click", function() {
-            showImage(currentIndex + 1);
-        });
-
-        // para mopstrar la primera imagen 
-        showImage(currentIndex);
+        setInterval(() => {
+            showNextImage(sliderContainer);
+        }, 3000);
     });
 });
-
 // carrito y arrays de elementos.
 
 const baseDatos = [];
@@ -253,9 +235,9 @@ const mostrarCarrito = () => {
 
     // seleccionar que voy a agregar al carrito por cada compra.
     containerArticulo.innerHTML = `
-        <div class="border-2 border-orange-500 bg-orange-200 p-5 flex justify-between flex-col sm:flex-row">
-            <h3 class="text-sm text-black py-3 font-bold">${articulo.nombre}</h3>
-            <h4 class="text-sm lg:text-base text-black py-3 font-bold">$${articulo.precio}</h4>
+        <div class="border-2 border-rose-500 bg-rose-200 p-5 flex justify-between flex-col sm:flex-row">
+            <h3 class="text-sm text-blue-900 py-3 font-bold">${articulo.nombre}</h3>
+            <h4 class="text-sm lg:text-base text-blue-900 py-3 font-bold">$${articulo.precio}</h4>
             <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
         </div>
     `;
@@ -312,3 +294,6 @@ function comprar() {
   const botonComprar = document.querySelector('.comprar-carrito');
   botonComprar.addEventListener('click', comprar);
 
+//ingreso inputs formularios a array
+//creo el array q despues pushea al crear la cuenta
+const users = []
