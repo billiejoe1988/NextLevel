@@ -31,20 +31,29 @@ window.addEventListener("load", function () {
 });
 
 //hacer visible-invisible el login para accesibilidad
-window.addEventListener("load", function () {
-    const login = document.querySelector("#login");
-    const mostrarOcultarLoginButton = document.getElementById("btn-login");
-    const minimizarLogin = document.getElementsByClassName("minimizar-login")[0]; //el 0 es necesario xq hay varios iguales.
-
-    mostrarOcultarLoginButton.addEventListener("click", () => {
-        login.classList.toggle("hidden");
-    });
-
-    minimizarLogin.addEventListener("click", () => {
-        login.classList.add("hidden");
-    });
-});
-
+document.addEventListener("DOMContentLoaded", function () {
+    const btnLogin = document.getElementById("btn-login");
+    const btnLogin2 = document.getElementById("btn-login2");
+    const loginAlert = document.getElementById("login");
+  
+    if (btnLogin && loginAlert) {
+      btnLogin.addEventListener("click", function () {
+        loginAlert.classList.remove("hidden");
+      });
+  
+      const minimizarLogin = document.querySelector(".minimizar-login");
+      minimizarLogin.addEventListener("click", function () {
+        loginAlert.classList.add("hidden");
+      });
+    }
+  
+    if (btnLogin2 && loginAlert) {
+      btnLogin2.addEventListener("click", function () {
+        loginAlert.classList.remove("hidden");
+      });
+    }
+  });
+  
 // Evento para ocultar el login cuando el cursor sale del aside
 window.addEventListener("load", function () {
     const login = document.querySelector("#login");
