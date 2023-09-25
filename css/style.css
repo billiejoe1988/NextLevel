@@ -111,9 +111,17 @@ nav {
   min-width: 200px;
   max-height: 200px;
   overflow-y: auto; 
+  z-index: 999;
+  color: white;
 }
 .buscador-hidden{
   display: none;
+}
+.estrenos{
+  z-index: -1;
+}
+.back-estrenos{
+  z-index: -2;
 }
 /* INICIAR SESION Y REGISTRO  */
 .container-form{
@@ -122,7 +130,7 @@ nav {
 }
 .formulario{
   width: 450px;
-  max-width: 90vw;
+  height: 400px;
 }
 .fornulario input{
   width: 70%;
