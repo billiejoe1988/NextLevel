@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
 });
 
 //hacer visible-invisible el login para accesibilidad
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const btnLogin = document.getElementById("btn-login");
     const btnLogin2 = document.getElementById("btn-login2");
     const loginAlert = document.getElementById("login");
@@ -239,8 +239,6 @@ function total (){
    totalCarritoElement.textContent = `El total del carrito es: $${totalCarrito}`;
 
 }
-// Llamar a esta función cuando la página se carga para mostrar el total.
-actualizarTotalCarrito();
 //mostrar en HTML los articulos del carrito
 const mostrarCarrito = () => {
     const carritoContainer = document.getElementById("lista-productos");
