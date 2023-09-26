@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   });
-  
+
 // Evento para ocultar el login cuando el cursor sale del aside
 window.addEventListener("load", function () {
     const login = document.querySelector("#login");
@@ -239,7 +239,8 @@ function total (){
    totalCarritoElement.textContent = `El total del carrito es: $${totalCarrito}`;
 
 }
-
+// Llamar a esta función cuando la página se carga para mostrar el total.
+actualizarTotalCarrito();
 //mostrar en HTML los articulos del carrito
 const mostrarCarrito = () => {
     const carritoContainer = document.getElementById("lista-productos");
@@ -365,3 +366,23 @@ function mostrarUsuarios() {
       alert("No hay usuarios registrados en localStorage.");
     }
   }
+
+  //funcion login 
+  function logIn() {
+    const usuariosJSON = localStorage.getItem("usuarios");
+    const usuarios = JSON.parse(usuariosJSON);
+  
+    const mail = document.getElementById("login-mail").value;
+    const contrasena = document.getElementById("login-contrasena").value;
+  
+    const usuarioEncontrado = usuarios.find((usuario) => usuario.mail === mail);
+  
+    if (usuarioEncontrado && usuarioEncontrado.contrasena === contrasena) {
+      alert(`Bienvenido ${usuarioEncontrado.nombre}`);
+    } else {
+      alert("Error. Ingresar Nuevamente los datos.");
+    }
+  }
+  //boton login
+  const botonLogear = document.querySelector('.login-ingresar');
+botonLogear.addEventListener('click', logIn);
