@@ -79,8 +79,9 @@
       <section>
         <aside id="carrito" class="fixed carrito-fondo opacity-90 top-0 right-0 h-full w-1/3 bg-gray-900 text-white p-4 transform translate-x-full transition-transform duration-300 ease-in-out">
             <!-- Carrito de compras -->
-            <img class="minimizar-carrito cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAn9JREFUWEftmM1r03AYx79PkiLCNppCdYhvBxXxhaKpBzcmsn9BBBEZeJ1L8T8QvYuzLZ5E8KB4EO/iZag4kLabeFBBcEoZA0ejqwhr88sjac1Ia9qkS+Z6aE+lv+fl0+/z/J48hNBnH+ozHgyA/Cryj0KlIT2JGF1gwqifc5hzYqxYZuxpunp71R2nBagU11OWRM8J2B0mWVBfBq9QTZ7Ufs1+cHxagIqqvgiiVNCAkdgxz2tGbswTqKDqNSKKRZIoaBBGTTOyO7wVSmQ4aJwo7bRKdqNSrSXrc6CbUargEeuG81sghdxGWwFWdFVjAOSlcKQKFdTMfgI/gRBT2tq9z+6ExZHpQ5DlB7TOl07/zi93KndvQMysGTnJK9jCSOawpfAcQHvsSStb8tlTP2aXbNuF+PWDQhLzBBplxreYZZ1P/cx/Ca9QF6DC8MxRUugliJJ2IgaXZUuesL8LSbwi0N4GAPN3CDHWrqADF5lCdsBSQj/GjNcgUpvJsQQwgehAkwWrMK2JdDX/cctL5iQoqDMnAWmOCAl3UmZUYFrj3WBs+0gVcgBKcX2KJXrYogLzFc3IPfKbXT0CwdKMrNwt6H9WqDvQOzVzwgTbjf23h/hrA97VQ1SXzrn3nPY/F5lC23TLOiu0LXOImUXayCmdeuh9YnrfOiuPSZhX2+fM4vC1I0KR7iuEy6lKrhzJtfcD8rtBQc576qEBUKcVdmPJZ2YQ3QoifQib5sbos+S/BXAmRJLeXRlvNCM77ji2LPn2wKsTv7DXh94jb8aDl5W6NJmq3v3kCdR4kg/pSSvGF4mkXZtJEdSHgfJOU352fO1Oxe0zePvhp+BAIT+F/gDqS6g0UxC0rwAAAABJRU5ErkJggg=="/>
-            <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold hover:underline text-rose-800">Tu Carrito</h2>
+            <div class="container minimizar-carrito">  
+            <img class="minimizar-carrito cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
+            <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold text-rose-800 hover:underline">Tu Carrito</h2>
             <h3 class="  text-sm lg:text-base my-4 font-bold">Productos seleccionados</h3>
             <ul id="lista-productos">
                 <!-- Lista de productos seleccionados -->
@@ -93,17 +94,16 @@
                 <path fill="#be185d" fill-opacity="1" d="M0,96L60,101.3C120,107,240,117,360,112C480,107,600,85,720,106.7C840,128,960,192,1080,202.7C1200,213,1320,171,1380,149.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
               </svg>
              </div>
-            <div class = "flex justify-end py-5 flex-col">
-              <button class="comprar-carrito text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Comprar</button>
-              <button class="vaciar-carrito text-xs lg:text-base bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-rose-900">Vaciar Carrito</button>
+             <button class="comprar-carrito text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Comprar</button>
+             <button class="vaciar-carrito text-xs lg:text-base bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-rose-900">Vaciar Carrito</button>
             </div>
         </aside>
       </section>
       <!-- Alert login -->
       <section class="log">
         <aside id="login" class="login-alert hidden fixed top-1/2 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6">
-          <img class="minimizar-login cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAn9JREFUWEftmM1r03AYx79PkiLCNppCdYhvBxXxhaKpBzcmsn9BBBEZeJ1L8T8QvYuzLZ5E8KB4EO/iZag4kLabeFBBcEoZA0ejqwhr88sjac1Ia9qkS+Z6aE+lv+fl0+/z/J48hNBnH+ozHgyA/Cryj0KlIT2JGF1gwqifc5hzYqxYZuxpunp71R2nBagU11OWRM8J2B0mWVBfBq9QTZ7Ufs1+cHxagIqqvgiiVNCAkdgxz2tGbswTqKDqNSKKRZIoaBBGTTOyO7wVSmQ4aJwo7bRKdqNSrSXrc6CbUargEeuG81sghdxGWwFWdFVjAOSlcKQKFdTMfgI/gRBT2tq9z+6ExZHpQ5DlB7TOl07/zi93KndvQMysGTnJK9jCSOawpfAcQHvsSStb8tlTP2aXbNuF+PWDQhLzBBplxreYZZ1P/cx/Ca9QF6DC8MxRUugliJJ2IgaXZUuesL8LSbwi0N4GAPN3CDHWrqADF5lCdsBSQj/GjNcgUpvJsQQwgehAkwWrMK2JdDX/cctL5iQoqDMnAWmOCAl3UmZUYFrj3WBs+0gVcgBKcX2KJXrYogLzFc3IPfKbXT0CwdKMrNwt6H9WqDvQOzVzwgTbjf23h/hrA97VQ1SXzrn3nPY/F5lC23TLOiu0LXOImUXayCmdeuh9YnrfOiuPSZhX2+fM4vC1I0KR7iuEy6lKrhzJtfcD8rtBQc576qEBUKcVdmPJZ2YQ3QoifQib5sbos+S/BXAmRJLeXRlvNCM77ji2LPn2wKsTv7DXh94jb8aDl5W6NJmq3v3kCdR4kg/pSSvGF4mkXZtJEdSHgfJOU352fO1Oxe0zePvhp+BAIT+F/gDqS6g0UxC0rwAAAABJRU5ErkJggg=="/>
-          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold hover:underline text-rose-700">LOG IN</h2>
+          <img class="minimizar-login cursor-pointer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
+          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold text-rosrse-700 hover:underline">LOG IN</h2>
           <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" type="email" id="login-mail" placeholder="Ingrese aqui su e-mail">
           <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl"  type="text" id ="login-contrasena" placeholder="Ingrese aqui su contrasena">
           <div class="h-100 w-100">
@@ -111,8 +111,8 @@
               <path fill="#be185d" fill-opacity="1" d="M0,96L60,101.3C120,107,240,117,360,112C480,107,600,85,720,106.7C840,128,960,192,1080,202.7C1200,213,1320,171,1380,149.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
             </svg>
            </div>
-              <button type="submit" class="login-ingresar text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Login</button>
-              <a href="./pages/crear_cuenta.html"><button type="link" class=" text-xs lg:text-base bg-rose-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-blue-900">Crear Cuenta</button></a>
+            <button type="submit" class="login-ingresar text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Login</button>
+             <a href="./pages/crear_cuenta.html"><button type="link" class=" text-xs lg:text-base bg-rose-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-blue-900">Crear Cuenta</button></a>  
         </aside>
       </section>  
              <!-- slider novedades -->
@@ -319,8 +319,8 @@
             </div>
            </div>
           </section>
-          <!-- comentar  sobre la compra y venta de ediciones especiales  -->
-          <section class="mx-auto w-full grid grid-cols-1 py-12 experiencias">
+          <!-- deja comentario y cotiza vedicion exclusivva -->
+          <section class="mx-auto w-full grid grid-cols-1 py-10 experiencias">
             <div class="grid grid-cols-12 gap-4 container mx-auto bg-white opacity-90">
               <div class="col-span-6 p-2 text-center">
                 <h2 class="text-xl font-bold pb-3 text-rose-500">Queres una edicion exclusiva?</h2>
@@ -336,21 +336,21 @@
             <h1 class="text-center text-white text-xl font-bold col-span-6">Contactanos!, solicita tu cotizacion de Edicion Especial o simplemente dejanos tu comentario!</h1>
             <textarea placeholder="Your feedback..." class="bg-slate-100 text-slate-600 h-28 placeholder:text-slate-600 placeholder:opacity-50 border border-slate-200 col-span-6 resize-none outline-none rounded-lg p-2 duration-300 focus:border-slate-600"></textarea>
             <button class="fill-slate-600 col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 hover:border-slate-600 focus:fill-blue-200 focus:bg-blue-400 border border-slate-200">
-          <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
-          <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
-          </svg>
-          </button>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
+                <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
+                </svg>
+            </button>
             <button class="fill-slate-600 col-span-1 flex justify-center items-center rounded-lg p-2 duration-300 bg-slate-100 hover:border-slate-600 focus:fill-blue-200 focus:bg-blue-400 border border-slate-200">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 512 512">
-          <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM174.6 384.1c-4.5 12.5-18.2 18.9-30.7 14.4s-18.9-18.2-14.4-30.7C146.9 319.4 198.9 288 256 288s109.1 31.4 126.6 79.9c4.5 12.5-2 26.2-14.4 30.7s-26.2-2-30.7-14.4C328.2 358.5 297.2 336 256 336s-72.2 22.5-81.4 48.1zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg>
+                     <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM174.6 384.1c-4.5 12.5-18.2 18.9-30.7 14.4s-18.9-18.2-14.4-30.7C146.9 319.4 198.9 288 256 288s109.1 31.4 126.6 79.9c4.5 12.5-2 26.2-14.4 30.7s-26.2-2-30.7-14.4C328.2 358.5 297.2 336 256 336s-72.2 22.5-81.4 48.1zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path></svg>
                 </button>
-            <span class="col-span-2"></span>
+              <span class="col-span-2"></span>
             <button class="bg-slate-100 stroke-slate-600 border border-slate-200 col-span-2 flex justify-center rounded-lg p-2 duration-300 hover:border-slate-600 hover:text-white focus:stroke-blue-200 focus:bg-blue-400">
                 <svg fill="none" viewBox="0 0 24 24" height="30px" width="30px" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M7.39999 6.32003L15.89 3.49003C19.7 2.22003 21.77 4.30003 20.51 8.11003L17.68 16.6C15.78 22.31 12.66 22.31 10.76 16.6L9.91999 14.08L7.39999 13.24C1.68999 11.34 1.68999 8.23003 7.39999 6.32003Z"></path>
                 <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M10.11 13.6501L13.69 10.0601"></path>
                 </svg>
-              </button>      
+             </button>      
           </div>
     </main>
     <!-- foot -->

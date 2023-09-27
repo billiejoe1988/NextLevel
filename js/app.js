@@ -381,6 +381,7 @@ function mostrarUsuarios() {
       alert("Error. Ingresar Nuevamente los datos.");
     }
   }
+  
   //boton login
   const botonLogear = document.querySelector('.login-ingresar');
 botonLogear.addEventListener('click', logIn);
