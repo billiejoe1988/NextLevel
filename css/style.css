@@ -12,12 +12,12 @@ body{
   background: rgb(30,27,75);
   background: linear-gradient(143deg, rgba(30,27,75,1) 0%, rgba(253,46,162,0.6) 50%, rgba(190,24,93,1) 100%);
 }
-
+/* slider img */
 .slider-container {
   aspect-ratio: 16/9;
   width: 100%;
   max-width: 100%;
-  height: 50vh;
+  height: 45vh;
   overflow: hidden;
   z-index: 1;
 }
@@ -35,7 +35,7 @@ body{
   aspect-ratio: 16/9;
   flex: 0 0 auto;
   width: 100%;
-  height: 50vh;
+  height: 45vh;
   object-fit: cover;
   border-radius: 5px;
   scroll-snap-align: start;
@@ -44,6 +44,17 @@ body{
   display: none;
 }
 
+/* slider cards */
+.slider-container-cards {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.slider-cards {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* quienes */
 .quienes{
   background-image: url(../image/fondo_snorlax.jpg);
   background-size: cover;
@@ -66,13 +77,10 @@ body{
   z-index:999;
     overflow-y: auto;
 }
-/* nav visible invisible */
-nav {
-  transition: transform 0.3s ease;
-}
+/* asides */
 .login-alert {
-  width: 80%; 
-  max-width: 400px; 
+  width: 90%; 
+  max-width: 500px; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -123,25 +131,15 @@ nav {
 .back-estrenos{
   z-index: -2;
 }
-/* INICIAR SESION Y REGISTRO  */
-.container-form{
-  width: 90vw;
-  height: 90vh;
-}
-.formulario{
-  width: 450px;
-  height: 400px;
-}
-.fornulario input{
-  width: 70%;
-  border-bottom: white thin solid ;
-  outline: none;
-}
+/* detalle input */
+.iinput:active {
+  box-shadow: 2px 2px 15px #8707ff inset;
+ }
 /* ------------------------------ cards ----------------------------------- */
 .card {
   position: relative;
-  width: 550px;
-  height: 400px;
+  width: 400px;
+  height: 300px;
   background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
   border-radius: 10px;
   display: flex;
@@ -200,9 +198,25 @@ nav {
   transform: rotate(-45deg);
 }
 
+.input {
+  border-radius: 10px;
+  outline: 2px solid #FEBF00;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #e2e2e2;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+}
+
+.input:focus {
+  outline-offset: 5px;
+  background-color: #fff
+}
 /* --------------------media cards--------------- */
 @media (min-width: 1000px) and (max-width: 1199px) {
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+

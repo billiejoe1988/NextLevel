@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
 //hacer visible-invisible el carrito si pasas por la zona derecha
 window.addEventListener("load", function () {
     const carrito = document.getElementById("carrito");
-    const zonaApertura = window.innerWidth * 0.98; //el 0.98 es por el 98% de la pantalla
+    const zonaApertura = window.innerWidth * 0.98; //el 0.98 es por el 98% de la pantalla para que sea de la derecha
 
     document.addEventListener("mousemove", (e) => {
         if (e.clientX > zonaApertura) {
@@ -63,17 +63,28 @@ window.addEventListener("load", function () {
     });
 });
 
-// hacer visible-invisible el nav
 window.addEventListener("load", function () {
-    const nav = document.querySelector("nav");
-    const mostrarOcultarMenuButton = document.getElementById("mostrar-ocultar-menu");
+  const crearCuenta = document.getElementById("crearCuenta");
+  const mostrarCrearCuentaButton = document.getElementById("mostrarCrearCuenta");
+  const ocultarCrearCuentaButton = document.getElementById("ocultarCrearCuenta");
 
-    mostrarOcultarMenuButton.addEventListener("click", () => {
-        nav.classList.toggle("hidden");
-    });
+  mostrarCrearCuentaButton.addEventListener("click", () => {
+    crearCuenta.classList.remove("hidden");
+  });
+
+  ocultarCrearCuentaButton.addEventListener("click", () => {
+    crearCuenta.classList.add("hidden");
+  });
 });
 
+// Evento para ocultar alert de crear cuenta cuando el cursor sale del aside
+window.addEventListener("load", function () {
+  const crearCuenta = document.querySelector("#crearCuenta");
 
+  crearCuenta.addEventListener("mouseleave", () => {
+  crearCuenta.classList.add("hidden");
+  });
+});
 //slider cambire de imagenes solo cada 3000 milisegundos
 window.addEventListener("load", function() {
     const sliderContainers = document.querySelectorAll(".slider-container");
@@ -101,49 +112,50 @@ const baseDatos = [];
 const carrito = [];
 
 class Articulo{
-    constructor(id, nombre, precio, stock, categoria){
+    constructor(id, nombre, precio, stock, categoria, imagen){
         this.id = id;
         this.nombre = nombre;
         this.precio = parseInt(precio);
         this.stock = parseInt(stock);
         this.categoria = categoria;
+        this.imagen = imagen;
     }
 }
 //creando articulos de estreno
-const zeldaTotk = new Articulo(101, "Zelda Tears the kingdom", "60000", "10", "Estrenos");
+const zeldaTotk = new Articulo(101, "Zelda Tears the kingdom", "60000", "10", "Estrenos", "zelda_tears.png");
 baseDatos.push(zeldaTotk);
-const marioKart8W4 = new Articulo(102, "Mario Kart 8 DLC Wave 4", "20000", "10", "Estrenos");
+const marioKart8W4 = new Articulo(102, "Mario Kart 8 DLC Wave 4", "20000", "10", "Estrenos", "Banner-Mario-Kart-Deluxe-8-W4.jpg");
 baseDatos.push(marioKart8W4);
-const pokemonScarletAreaZero = new Articulo(103, "Pokemon Scarlet DLC Area zero", "35000", "10", "Estrenos");
+const pokemonScarletAreaZero = new Articulo(103, "Pokemon Scarlet DLC Area zero", "35000", "10", "Estrenos", "PokemonScarletViolet-Banner.jpg");
 baseDatos.push(pokemonScarletAreaZero);
-const amiiboLinkyGanon = new Articulo(104, "Amiibo Link y Ganon", "30000", "10", "Estrenos");
+const amiiboLinkyGanon = new Articulo(104, "Amiibo Link y Ganon", "30000", "10", "Estrenos", "amiibos-zelda-ganondorf.webp");
 baseDatos.push(amiiboLinkyGanon);
 //creando articulos de ofertas
-const gbaColorYellow = new Articulo(201, "Game Boy Color Amarillo", "35000", "1", "Ofertas");
+const gbaColorYellow = new Articulo(201, "Game Boy Color Amarillo", "35000", "1", "Ofertas", "gb_color.jpg");
 baseDatos.push(gbaColorYellow);
-const marioKart8 = new Articulo(202, "Mario Kart 8", "20000", "10", "Ofertas");
+const marioKart8 = new Articulo(202, "Mario Kart 8", "20000", "10", "Ofertas", "mario_kart.jpg");
 baseDatos.push(marioKart8);
-const vampireSurvivor = new Articulo(203, "Vampire Survivor", "5000", "10", "Ofertas");
+const vampireSurvivor = new Articulo(203, "Vampire Survivor", "5000", "10", "Ofertas", "vampire_survivors.jpg");
 baseDatos.push(vampireSurvivor);
-const marioMaker2= new Articulo(204, "Mario Maker 2", "40000", "10", "Ofertas");
+const marioMaker2= new Articulo(204, "Mario Maker 2", "40000", "10", "Ofertas", "switch_mario_maker.jpg");
 baseDatos.push(marioMaker2);
 //creando articulos en retro
-const n64Gris = new Articulo(301, "Nintendo 64 con joystick gris", "80000", "1", "Retro");
+const n64Gris = new Articulo(301, "Nintendo 64 con joystick gris", "80000", "1", "Retro","n64.jpg");
 baseDatos.push(n64Gris);
-const nesSinJoystick = new Articulo(302, "Nintendo Usada", "90000", "1", "Retro");
+const nesSinJoystick = new Articulo(302, "Nintendo Usada", "90000", "1", "Retro","nes.webp");
 baseDatos.push(nesSinJoystick);
-const joystickGCNaranja = new Articulo(303, "Joystick GameCube Naraja", "15000", "10", "Retro");
+const joystickGCNaranja = new Articulo(303, "Joystick GameCube Naraja", "15000", "10", "Retro","joystick_naranja_gamecube.png");
 baseDatos.push(joystickGCNaranja);
-const gbaVioleta= new Articulo(304, "Game boy advance violeta", "40000", "10", "Retro");
+const gbaVioleta= new Articulo(304, "Game boy advance violeta", "40000", "10", "Retro","gb_advance.jpg");
 baseDatos.push(gbaVioleta);
 //creando articulos en preventas 
-const marioWonder = new Articulo(401, "Super Mario Wonder", "70000", "99", "Preventas");
+const marioWonder = new Articulo(401, "Super Mario Wonder", "70000", "99", "Preventas", "mario_rpg");
 baseDatos.push(marioWonder);
-const marioRPG = new Articulo(402, "Super Mario RPG", "70000", "99", "Preventas");
+const marioRPG = new Articulo(402, "Super Mario RPG", "70000", "99", "Preventas", "mario_rpg.jpg");
 baseDatos.push(marioRPG);
-const picmin4 = new Articulo(403, "Picmin 4", "70000", "99", "Preventas");
+const picmin4 = new Articulo(403, "Picmin 4", "70000", "99", "Preventas", "picmin4.jpg");
 baseDatos.push(picmin4);
-const fc24= new Articulo(404, "FS 24", "60000", "99", "Preventas");
+const fc24= new Articulo(404, "FS 24", "60000", "99", "Preventas", "fc_24.jpg");
 baseDatos.push(fc24);
 
 //declarar constantes
@@ -256,7 +268,11 @@ const mostrarCarrito = () => {
         <div class="border-2 border-rose-500 bg-rose-200 p-5 flex justify-between flex-col sm:flex-row">
             <h3 class="text-sm text-blue-900 py-3 font-bold">${articulo.nombre}</h3>
             <h4 class="text-sm lg:text-base text-blue-900 py-3 font-bold">$${articulo.precio}</h4>
-            <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> X </span>
+            <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="peer ring-0 bg-rose-400  rounded-full outline-none duration-300 after:duration-500 w-12 h-12  shadow-md peer-checked:bg-emerald-500  peer-focus:outline-none  after:content-['✖️'] after:rounded-full after:absolute after:outline-none after:h-10 after:w-10 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center  peer-hover:after:scale-75 peer-checked:after:content-['✔️'] after:-rotate-180 peer-checked:after:rotate-0">
+            </div>
+          </label></span>
         </div>
     `;
         const eliminar = containerArticulo.querySelector(".delete-articulo");
@@ -271,7 +287,7 @@ const mostrarCarrito = () => {
 }
   //eliminar producto
 const eliminarArticulo = (indice) =>{
-    // giardar elemento eliminar para devolverle 1 de stock
+    // guardar elemento eliminar para devolverle 1 de stock
     const articuloEliminado = carrito[indice];
     articuloEliminado.stock++;
     // eliminar articulo del carrito con el indice.
@@ -385,3 +401,25 @@ function mostrarUsuarios() {
   //boton login
   const botonLogear = document.querySelector('.login-ingresar');
 botonLogear.addEventListener('click', logIn);
+
+//slider cards
+  const sliderCards = document.querySelector('.slider-cards');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let slideCardsIndex = 0;
+
+  prevBtn.addEventListener('click', () => {
+    slideCardsIndex = Math.max(slideCardsIndex - 1, 0);
+    updateSliderPosition();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    slideCardsIndex = Math.min(slideCardsIndex + 1, sliderCards.children.length - 1);
+    updateSliderPosition();
+  });
+
+  function updateSliderPosition() {
+    const cardWidth = sliderCards.children[0].offsetWidth;
+    const offset = -slideCardsIndex * cardWidth;
+    sliderCards.style.transform = `translateX(${offset}px)`;
+  }

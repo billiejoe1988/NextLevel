@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
-<body  class = fondo>
+<body class = "fondo-articulos" >
     <!-- header -->
     <header class ="grid grid-cols-1 w-full">
         <div class ="mx-auto bg-white grid grid-cols-12 justify-between items-center opacity-90 border-2 border-y-rose-600">
@@ -21,58 +21,25 @@
                 <!-- acamostramos resultrados busqueda -->
                 </ul>
               </div>
-              <input class ="bg-rose-400 placeholder:italic placeholder:text-blue-950 border-2 mx-auto rounded-3xl drop-shadow-xl p-5 w-11/12 lg:w-9/12  h-2/3 font-thin" id="buscador" type="text" placeholder="Busca aqui tu producto!">
+              <input class ="input bg-rose-400 placeholder:italic placeholder:text-blue-950 border-2 mx-auto rounded-3xl drop-shadow-xl p-5 w-11/12 lg:w-9/12  h-2/3 font-thin" id="buscador" type="text" placeholder="Busca aqui tu producto!">
               <button class=" col-start-8 py-2 px-4">
                 <img class="boton-buscador cursor-pointer w-1/3 lg:w-1/4 hover:shadow-rose-600" src="./assets/Svg/./coin.svg" alt="boton_buscar">
               </button>
             </div>
-            <div class ="col-start-9 font-bold">
-                <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="btn-login" src="./assets/Svg/female.svg" alt="perfil">
-                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">  Log in  </h3>
-            </div>
-            <div class="col-start-10 font-bold">
-                <img class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
-                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">Carrito</h3>
+            <div class ="col-start-10 font-bold">
+                <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="btn-login" src="./assets/Svg/female.svg" alt="Log In">
+                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Log in  </h3>
             </div>
             <div class="col-start-11 font-bold">
-              <a href="./pages/catalogo.html"><img class ="w-2/3 lg:w-2/5" src="./assets/chest.svg" alt="catalogo"></a>
-              <h3 class="hidden lg:inline cursor-pointer  text-blue-950 hover:text-rose-700">Catalogo</h3>
-          </div>
-            <div class="col-start-12 font-bold">
-                <img class ="w-2/3 lg:w-2/5 cursor-pointer" src="./assets/Svg/burger.svg" alt="menu" id="mostrar-ocultar-menu">
-                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">Menu</h3>
+              <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="mostrarCrearCuenta" src="./assets/male.svg" alt="Sign in">
+              <h3 class="hidden lg:inline cursor-pointer  text-blue-950 hover:text-rose-700">  Sign in</h3>
             </div>
+            <div class="col-start-12 font-bold">
+              <img class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
+              <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Carrito</h3>
+          </div>
         </div>
     </header>
-    <!-- nav -->
-    <nav class = "grid grid-cols-1 z-index-1 hidden">
-        <ul class ="aboute font-bold bg-orange opacity-60 p-2 text-white">
-            <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400"  href="./index.html">HOME</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./pages/catalogo.html">CATALOGO</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./pages/catalogo.html">ESTRENOS</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./pages/catalogo.html">RETRO</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./pages/catalogo.html">PREVENTAS</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./index.html">COMPRAMOS TU USADO</a>
-           </li>
-           <li class="mx-4 my-3">
-             <a class ="hover:text-rose-400" href="./index.html"> CONTACTO</a>
-           </li>
-           <li class="mx-4 my-3">
-            <a class ="hover:text-rose-400" href="./pages/crear_cuenta.html">CREAR CUENTA</a>
-          </li>
-        </ul>
-    </nav>
     <!-- main -->
     <main class="w-full">
       <!-- aside derecho carrito-->
@@ -81,7 +48,7 @@
             <!-- Carrito de compras -->
             <div class="container minimizar-carrito">  
             <img class="minimizar-carrito cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
-            <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold text-rose-800 hover:underline">Tu Carrito</h2>
+            <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold text-rose-600 hover:underline">Tu Carrito</h2>
             <h3 class="  text-sm lg:text-base my-4 font-bold">Productos seleccionados</h3>
             <ul id="lista-productos">
                 <!-- Lista de productos seleccionados -->
@@ -89,11 +56,6 @@
             <div id ="total-carrito" class="text-sm lg:text-base mt-4 font-bold">
               El total del carrito es: $ 
             </div>
-            <div class="h-100 w-100">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#be185d" fill-opacity="1" d="M0,96L60,101.3C120,107,240,117,360,112C480,107,600,85,720,106.7C840,128,960,192,1080,202.7C1200,213,1320,171,1380,149.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-              </svg>
-             </div>
              <button class="comprar-carrito text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Comprar</button>
              <button class="vaciar-carrito text-xs lg:text-base bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-rose-900">Vaciar Carrito</button>
             </div>
@@ -103,20 +65,44 @@
       <section class="log">
         <aside id="login" class="login-alert hidden fixed top-1/2 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6">
           <img class="minimizar-login cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
-          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold text-rose-700 hover:underline">LOG IN</h2>
-          <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" type="email" id="login-mail" placeholder="Ingrese aqui su e-mail">
-          <input class ="p-5 m-5 text-blue-950 italic opacity-80 rounded-xl"  type="text" id ="login-contrasena" placeholder="Ingrese aqui su contrasena">
-          <div class="h-100 w-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-              <path fill="#be185d" fill-opacity="1" d="M0,96L60,101.3C120,107,240,117,360,112C480,107,600,85,720,106.7C840,128,960,192,1080,202.7C1200,213,1320,171,1380,149.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-            </svg>
-           </div>
-            <button type="submit" class="login-ingresar text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Login</button>
-             <a href="./pages/crear_cuenta.html"><button type="link" class=" text-xs lg:text-base bg-rose-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-blue-900">Crear Cuenta</button></a>  
+          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold text-rose-600 hover:underline">LOG IN</h2>
+          <input class="input p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" id="login-mail" placeholder="Ingrese aqui su e-mail"required="@" type="email">
+          <input class="input p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" id ="login-contrasena"  placeholder="Ingrese aqui su password" required="" type="pass">             
+          <div class= "p-10">
+            <button type="submit" class="login-ingresar text-xs lg:text-base px-10 text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Login</button>
+          </div>
         </aside>
-      </section>  
+      </section> 
+      <!-- alert crear cuenta -->
+      <section class = "w-full">
+        <aside id="crearCuenta" class=" login-alert mostrar-crearCuenta hidden fixed  transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6 w-full lg:w-90 xl:w-90 rounded-xl flex flex-col items-center justify-center">
+          <img id="ocultarCrearCuenta" class="self-left cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
+          <form class="p-4 md:p-8 mx-auto my-10 mb-16 bg-gray-300 opacity-90 text-center md:w-2/5 lg:w-2/3 xl:w-2/3 rounded-xl">
+              <div>                
+                <h2 class="create-account py-4 text-2xl text-blue-950">Crear Cuenta</h2>
+              </div>
+              <div class="icons flex justify-around md:pl-10 md:pr-10">
+                  <div>
+                      <img src="./assets/bxl-facebook-square.svg" alt="facebook" class="w-9 md:w-auto cursor-pointer hover:bg-rose-200">
+                  </div>
+                  <div>
+                      <img src="./assets/bxl-instagram-alt.svg" alt="insta" class="w-9 md:w-auto cursor-pointer hover:bg-rose-200">
+                  </div>
+                  <div>
+                      <img src="./assets/bxl-twitter.svg" alt="twitter" class="w-9 md:w-auto cursor-pointer hover:bg-rose-200">
+                  </div>
+              </div>
+              <div class="pt-10">
+                  <input id="form-nombre" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" placeholder="Nombre">
+                  <input id="mail-form" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" type="email" placeholder="Email">
+                  <input id="contrasena-form" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" type="password" placeholder="Password">
+                  <input id="btn-crearCuenta" class="p-5 my-4 text-lg border-2 border-gray-500 hover:bg-rose-800 bg-rose-500 rounded-xl text-white cursor-pointer mt-3" type="button" value="Crear Cuenta">
+              </div>
+          </form>
+         </aside>
+      </section>
              <!-- slider novedades -->
-        <section class = "slider-container z-10 py-2">
+        <section class = "slider-container z-10">
           <div class="slider z-10">
             <img class ="z-10" src="./image/1-slide-1684170258455-4473921703-4a9f25171a168189c07a382a80ccdd101684170260-1920-1920.webp" alt="foto_estrenos_1">
             <img src="./image/1040-banner-mk1-banner-3620.jpg" alt="foto_estrenos_2" >
@@ -124,8 +110,50 @@
             <img src="./image/alfabeta.1690357143.1979.webp" alt="mario_maker_2" >
           </div>
         </section>
+            <!-- section novedades -->
+            <div class="estrenos text-Left w-full mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
+              <h2 class="hover:underline estrenos">Estrenos</h2> 
+            </div>
+            <div class="relative slider-container-cards">
+              <div class="flex  slider-cards space-x-4">
+                  <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                    <img src="./image/zelda_tears.png" alt="zelda_Totk">
+                    <div class="card__content">
+                      <p class="card__title text-blue-950">Zelda: Tears of the Kingdom</p>
+                      <p class="card__description text-blue-400">Unete a esta increible aventura de Link en el nuevo juego, nominado a Game of the Year <br> <br><span class="font-bold text-blue-950">Precio: $60000</span></p>
+                      <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="101">Agregar al carrito</button>
+                    </div>
+                  </div>
+                  <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                        <img src="./image/Banner-Mario-Kart-Deluxe-8-W4.jpg" alt="mk8_wave4">
+                        <div class="card__content">
+                          <p class="card__title text-blue-950">Mario Kart 8 DLC, Wave 4.</p>
+                          <p class="card__description text-blue-400">Adquiere la cuarta wave de circuitos y personajes en Mario Kart 8<br> <br><span class="font-bold text-blue-950">Precio: $20000</span></p>
+                          <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"   data-id="102">Agregar al carrito</button>
+                        </div>
+                      </div>
+                      <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                      <img src="./image/PokemonScarletViolet-Banner.jpg" alt="poke_scarlet">
+                      <div class="card__content">
+                        <p class="card__title text-blue-950">Pokemon Scarlet: Area zero</p>
+                        <p class="card__description text-blue-400">Vive las aventuras en el nuevo DLC de la fanquicie exito de Nintendo<br> <br><span class="font-bold text-blue-950">Precio: $35000</span></p>
+                        <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="103">Agregar al carrito</button>
+                      </div>
+                    </div>
+                    <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                        <img src="./image/amiibos-zelda-ganondorf.webp" alt="amiibos_estrenos">
+                      <div class="card__content">
+                            <p class="card__title text-blue-950">Amiibos: Princesa Link y Ganon</p>
+                            <p class="card__description text-blue-400">Llegaron los nuevos Amiibos, la princesa Zelda y El gran villano Ganon, con los skins vistos en Zelda: Tears of the kingdom<br> <br><span class="font-bold text-blue-900">Precio: $30000</span></p>
+                            <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="104">Agregar al carrito</button>
+                        </div>
+                    </div>
+              </div>
+              <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-l-lg cursor-pointer"><</button>
+              <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2 rounded-r-lg cursor-pointer">></button>
+            </div>
             <!-- slider Sale -->
-        <section class = "slider-container py-2">
+        <section class = "slider-container">
           <div class="slider">
             <img src="./image/mario_kart.jpg" alt="foto_sale_1">
             <img src="./image/pokemon-unite.jpg" alt="foto_sale_2">
@@ -133,8 +161,47 @@
             <img src="./image/switch_mario_maker.jpg" alt="foto_sale_4">
           </div>
         </section>
+                  <!-- section sale -->
+        <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
+          <h2 class="hover:underline">Ofertas</h2> 
+         </div>
+         <div class="relative slider-container-cards">
+          <div class="flex  slider-cards space-x-4">
+              <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                    <img src="./image/gb_color.jpg" alt="gb_color">
+                    <div class="card__content">
+                      <p class="card__title text-blue-950">Game Boy Color Amarillo</p>
+                      <p class="card__description text-blue-400">Perfecto estado, Game boy color amarilla, viene con juego de regalo!.<br> <br><span class="font-bold text-blue-900">Precio: $35000</span></p>
+                      <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="201">Agregar al carrito</button>
+                    </div>
+                   </div>
+                   <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                        <img src="./image/mario_kart.jpg" alt="mk8">
+                       <div class="card__content">
+                          <p class="card__title text-blue-950">Mario Kart 8</p>
+                          <p class="card__description text-blue-400">Adquiere Mario Kart 8 esdte maraviloso juego multijugador divertido para jugar con amigos o familia<br> <br><span class="font-bold text-blue-900">Precio: $30000</span></p>
+                          <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"   data-id="202">Agregar al carrito</button>
+                       </div>
+                    </div>
+                    <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                      <img src="./image/vampire_survivors.jpg" alt="Vampire_surviver">
+                      <div class="card__content">
+                        <p class="card__title text-blue-950">Vampire Survivor</p>
+                        <p class="card__description text-blue-400">Uno de los mejores juegos de este ultimo tiempo, en precio de locos!<br> <br><span class="font-bold text-blue-900"> Precio: $5000</span></p>
+                        <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="203">Agregar al carrito</button>
+                      </div>
+                    </div>
+                    <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                      <img src="./image/switch_mario_maker.jpg" alt="mario_maker2">
+              <div class="card__content">
+                <p class="card__title text-blue-950">Mario Maker 2</p>
+                <p class="card__description text-blue-400">No te podes perder esta oportunidad, Mario Maker 2, Increible online de nintendo switch, con esta rebaja!<br> <br><span class="font-bold text-blue-900">Precio: $40000</span></p>
+                <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="204">Agregar al carrito</button>
+              </div>
+            </div>
+        </div>
             <!-- slider RETRO -->
-        <section class = "slider-container py-2">
+        <section class = "slider-container">
           <div class="slider">
             <img src="./image/nes.webp" alt="foto_retro_2">
             <img src="./image/n64.jpg" alt="foto_retro_1">
@@ -142,8 +209,46 @@
             <img src="./image/gb_advance.jpg" alt="foto_retro_4">
           </div>
          </section>
+         <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
+          <h2 class="hover:underline">Retro</h2> 
+        </div>
+        <div class="relative slider-container-cards">
+          <div class="flex  slider-cards space-x-4">
+          <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+          <img src="./image/n64.jpg" alt="n64">
+          <div class="card__content">
+            <p class="card__title text-blue-950">Nintendo 64 Gris con Joystick</p>
+            <p class="card__description text-blue-400">Mitica consola de nintendo, en perfecto estado, color tradicional.<br> <br><span class="font-bold text-blue-900">Precio: $90000</span></p>
+            <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="301">Agregar al carrito</button>
+          </div>
+          </div>
+          <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+              <img src="./image/nes.webp" alt="nes">
+              <div class="card__content">
+                <p class="card__title text-blue-950">NES sin Joystick con juego</p>
+                <p class="card__description text-blue-400">Consola NES, traida desde japon, sin desperfectos, con caja y cables originales.<br> <br><span class="font-bold text-blue-900">Precio: $30000</span></p>
+                <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"   data-id="302">Agregar al carrito</button>
+          </div>
+         </div>
+         <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+            <img src="./image/joystick_naranja_gamecube.png" alt="josytick_gc">
+            <div class="card__content">
+              <p class="card__title text-blue-950">Joystick GameCube Naranja</p>
+              <p class="card__description text-blue-400">Joystick Naranja de GameCube en perfecto estado, sin detalles<br> <br><span class="font-bold text-blue-900"> Precio: $15000</span></p>
+              <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="303">Agregar al carrito</button>
+            </div>
+            </div>
+            <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                <img src="./image/gb_advance.jpg" alt="gb_advance">
+                <div class="card__content">
+                  <p class="card__title text-blue-950">Game Boy Advance Violeta</p>
+                  <p class="card__description text-blue-400">Consola, con detalles esteticos en la pintura, trae la tapa trasera, y con juego.<br> <br><span class="font-bold text-blue-900">Precio: $40000</span></p>
+                  <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="304">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>  
             <!-- slider PREVENTAS -->
-          <section class = "slider-container py-2">
+          <section class = "slider-container">
             <div class="slider">
              <img src="./image/1-slide-1693515506937-8046084764-fdf7c4eb406cc1dc890a82ff79c544121693515358-1920-1920.webp" alt="foto_preventa_1">
              <img src="./image/picmin4.jpg" alt="foto_preventa_3">
@@ -151,6 +256,45 @@
              <img src="./image/mario_rpg.jpg" alt="foto_preventa_2">
             </div>
           </section>
+              <!-- section preventas -->
+            <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
+              <h2 class="hover:underline">Preventas</h2> 
+            </div>
+            <div class="relative slider-container-cards">
+              <div class="flex  slider-cards space-x-4 ">
+                <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                  <img src="./image/mario_wonder.jpg" alt="mario_wonder">
+                    <div class="card__content">
+                      <p class="card__title text-blue-950">Super Mario Wonder</p>
+                      <p class="card__description  text-blue-400">Preparate para las aventuras de mario con su hermano en este fabuloso mundo.<br> <br><span class="font-bold  text-blue-900">Precio: $70000</span></p>
+                      <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="401">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                  <img src="./image/mario_rpg.jpg" alt="mario_rpg">
+                    <div class="card__content">
+                      <p class="card__title text-blue-950">Super Mario RPG</p>
+                      <p class="card__description text-blue-400">Reaviva este hermoso juego traido a la ultima consola de nintendo!.<br> <br><span class="font-bold  text-blue-900">Precio: $70000</span></p>
+                      <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"   data-id="402">Agregar al carrito</button>
+                    </div>
+                 </div>
+                <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                    <img src="./image/picmin4.jpg" alt="picmin_4">
+                  <div class="card__content">
+                    <p class="card__title text-blue-950">Picmin 4</p>
+                    <p class="card__description text-blue-400">Vive las aventuras de esta fabulosa fanquicie exito de Nintendo en esta 4ta entrega.<br> <br><span class="font-bold text-blue-900"> Precio: $70000</span></p>
+                    <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900"  data-id="403">Agregar al carrito</button>
+                  </div>
+                </div>
+                <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
+                  <img src="./image/fc_24.jpg" alt="fc_24">
+                 <div class="card__content">
+                  <p class="card__title text-blue-950">FC 24</p>
+                  <p class="card__description  text-blue-400"> Ah llegado nintendo switch la nueva entrega de este mitico juego de futbol.<br> <br><span class="font-bold text-blue-900">Precio: $70000</span></p>
+                  <button class="btn-agregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="404">Agregar al carrito</button>
+                </div>
+              </div>
+          </div>  
           <!-- compramos usados y link a catalogo -->
           <section class="mx-auto bg-white w-full grid grid-cols-1 border-2 border-y-violet-200 pb-5">
             <div class="h-100">
@@ -158,27 +302,20 @@
                 <path fill="#be185d" fill-opacity="1" d="M0,96L60,101.3C120,107,240,117,360,112C480,107,600,85,720,106.7C840,128,960,192,1080,202.7C1200,213,1320,171,1380,149.3L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
               </svg>
             </div>
-            <div class="grid grid-cols-12 gap-4 container mx-auto">
-              <div class="col-span-12 md:col-span-3 p-2">
-                <h1 class="py-8 text-center font-bold text-2xl text-rose-500 hover:underline">COMPRAMOS TU USADO</h1>
-                <a href="#"><img class="border-2 hover:border-rose-400" src="./image/joysticks_usados.jpg" alt="compramos_tu_usado"></a>
-              </div>
-              <div class="col-span-12 md:col-span-9 p-3">
-                <div class="text-center font-bold p-6 text-2xl">
-                  <h1 class="text-rose-500 hover:underline">CATALOGO</h1>
-                </div>
+              <div class="col-span-12 md:col-span-12 p-3">
+                  <h1 class="text-center font-bold text-2xl text-rose-500 hover:underline"><span class="text-rose-900">EN NEXT LEVEL! </span> PODES COMPRAR JUEGOS NUEVOS, RETRO, CONSOLAS, AMIIBOS Y MUCHO MAS!</h1>
                 <div class="flex flex-wrap justify-between p-3 mx-auto">
-                  <div class="hover:border-rose-400 w-full md:w-1/2 border-2">
-                    <a href="./pages/catalogo.html"><img src="./image/switch_oled_zelda.jpg" alt="switch"></a>
+                  <div class=" w-full md:w-1/2">
+                    <img src="./image/switch_oled_zelda.jpg" alt="switch">
                   </div>
-                  <div class="hover:border-rose-400 w-full md:w-1/2 border-2">
-                    <a href="./pages/catalogo.html"><img src="./image/nintendo_joysticks.jpg" alt="retro"></a>
+                  <div class=" w-full md:w-2/5">
+                    <img src="./image/nintendo_joysticks.jpg" alt="retro">
                   </div>
-                  <div class="hover:border-rose-400 w-full md:w-1/2 border-2">
-                    <a href="./pages/catalogo.html"><img src="./image/juegos-swtich.png" alt="juegos"></a>
+                  <div class=" w-full md:w-1/2">
+                    <img src="./image/juegos-swtich.png" alt="juegos">
                   </div>
-                  <div class="hover:border-rose-400 w-full md:w-1/2 border-2">
-                    <a href="./pages/catalogo.html"><img src="./image/amiibo.jpg" alt="amiibo"></a>
+                  <div class=" w-full md:w-1/2 ">
+                    <img src="./image/amiibo.jpg" alt="amiibo">
                   </div>
                 </div>
               </div>
@@ -363,56 +500,41 @@
       <div class="mx-auto bg-white grid grid-cols-12 justify-between items-start opacity-85 border-2 border-y-rose-400 p-1">
         <div class="col-span-4 col-start-1 p-2 text-center">
           <div class="p-4">
-            <h2 class="text-xl font-bold pb-3 text-rose-500 hover:underline">Información</h2>
+            <h2 class="text-xl font-bold pb-2 text-rose-500 hover:underline">Información</h2>
           </div>
           <div>
             <ul class="m-2 font-bold">
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./index.html">Contacto</a></li>
               <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/terminos_y_condiciones.html">Términos y condiciones</a></li>
               <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/garantias_devoluciones.html">Garantía</a></li>
               <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/garantias_devoluciones.html">Enviamos tu pedido</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/crear_cuenta.html">Crear Cuenta</a></li>
             </ul> 
           </div>
         </div>
         <div class="col-span-4 col-start-5 p-2 text-center">
           <div class="p-4">
-            <h2 class="text-xl font-bold pb-3 text-rose-500 hover:underline">Categorías</h2>
-          </div>
-          <div>
-            <ul class="m-2 font-bold">
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/catalogo.html">Catálogo</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/catalogo.html">Estrenos</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/catalogo.html">Retro</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/catalogo.html">Preventas</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./index.html">Compramos tu usado</a></li>
-              <li class="py-1 text-blue-950 hover:text-rose-700"><a href="./pages/catalogo.html">Amiibos</a></li>
-            </ul> 
-          </div>
-        </div>
-        <div class="col-span-4 col-start-9 md:col-span-2 md:col-start-10 p-2 text-center md:order-last">
-          <div class="p-4">
             <h2 class="text-xl font-bold pb-3 text-rose-500 hover:underline">Síguenos!</h2>
           </div>
           <div class="flex justify-between p-3 m-3">
-            <div>
+            <div class="hover:bg-rose-100 p-2 round-xl">
               <a href="#"><img src="./assets/bxl-facebook-square.svg" alt="Facebook" class="w-full md:w-auto"></a>
             </div>
-            <div>
+            <div class="hover:bg-rose-100 p-2 round-xl">
               <a href="#"><img src="./assets/bxl-instagram-alt.svg" alt="Instagram" class="w-full md:w-auto"></a>
             </div>
-            <div>
+            <div class="hover:bg-rose-100 p-2 round-xl">
               <a href="#"><img src="./assets/bxl-twitter.svg" alt="Twitter" class="w-full md:w-auto"></a>
             </div>
-            <div>
+            <div class="hover:bg-rose-100 p-2 round-xl">
               <a href="#"><img src="./assets/bxl-discord-alt.svg" alt="Discord" class="w-full md:w-auto"></a>
             </div>
           </div>
-          <div class="flex justify-center items-center ">
+        </div>
+        <div class="col-span-4 col-start-9 md:col-span-2 md:col-start-10 p-2 text-center md:order-last">
+          <div class="flex justify-center items-center w-1/2">
             <a href="#"><img src="./image/DATAWEB.jpg" alt="Fiscal" class="m-auto w-full md:w-auto"></a>
           </div>
         </div>
-        <div class="fondo col-span-12 p-2 text-center md:order-last">
+        <div class="fondo-articulos col-span-12 p-2 text-center md:order-last">
           <div class="flex p-3"> 
             <img src="./assets/bx-home-alt-2.svg" alt="Ubicación">       
             <p class="text-sm p-2 text-white">Av. Cabildo 2280, Local 30, Galería Río de la Plata, CABA, Argentina</p>
