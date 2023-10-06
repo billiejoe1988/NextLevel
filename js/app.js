@@ -30,6 +30,21 @@ window.addEventListener("load", function () {
     });
 });
 
+//hacer bisible-invisible terminos y condiciones
+window.addEventListener("load", function () { 
+  const terminos = document.getElementById("terminos");
+  const mostrarTerminos = document.getElementById("btn-terminos");
+  const ocultarTerminos = document.getElementById("btn-ocultar-terminos");
+
+      mostrarTerminos.addEventListener("click", () => {
+      terminos.classList.remove("hidden");
+    });
+
+      ocultarTerminos.addEventListener("click", () => {
+        terminos.classList.add("hidden");
+      });
+  });
+
 //hacer visible-invisible el login para accesibilidad
 window.addEventListener("load", function () {
     const btnLogin = document.getElementById("btn-login");
@@ -85,6 +100,7 @@ window.addEventListener("load", function () {
   crearCuenta.classList.add("hidden");
   });
 });
+
 //slider cambire de imagenes solo cada 3000 milisegundos
 window.addEventListener("load", function() {
     const sliderContainers = document.querySelectorAll(".slider-container");
@@ -268,11 +284,13 @@ const mostrarCarrito = () => {
         <div class="border-2 border-rose-500 bg-rose-200 p-5 flex justify-between flex-col sm:flex-row">
             <h3 class="text-sm text-blue-900 py-3 font-bold">${articulo.nombre}</h3>
             <h4 class="text-sm lg:text-base text-blue-900 py-3 font-bold">$${articulo.precio}</h4>
-            <span class="delete-articulo text-red-500 font-bold cursor-pointer hover:text-white"> <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer">
-            <div class="peer ring-0 bg-rose-400  rounded-full outline-none duration-300 after:duration-500 w-12 h-12  shadow-md peer-checked:bg-emerald-500  peer-focus:outline-none  after:content-['✖️'] after:rounded-full after:absolute after:outline-none after:h-10 after:w-10 after:bg-gray-50 after:top-1 after:left-1 after:flex after:justify-center after:items-center  peer-hover:after:scale-75 peer-checked:after:content-['✔️'] after:-rotate-180 peer-checked:after:rotate-0">
-            </div>
-          </label></span>
+            <button class="delete-articulo borrarArticulo">
+            <span>Eliminar</span>
+            <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
+                <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
+            </svg>
+            </button>
         </div>
     `;
         const eliminar = containerArticulo.querySelector(".delete-articulo");
@@ -292,11 +310,12 @@ const eliminarArticulo = (indice) =>{
     articuloEliminado.stock++;
     // eliminar articulo del carrito con el indice.
     carrito.splice(indice, 1);
-
+    alert(`El articulo ${articuloEliminado.nombre}ah sido borrado`);
     //eliminado con splice y ahora mostrar carrito actualizado // actualizo tambien total para q de el valor correcto
     total ();
     mostrarCarrito();
 }
+
 //vaciar carrito
   function vaciar () {
     // auumentando el sstock de los articulos eliminados
@@ -390,7 +409,7 @@ function mostrarUsuarios() {
     const contrasena = document.getElementById("login-contrasena").value;
   
     const usuarioEncontrado = usuarios.find((usuario) => usuario.mail === mail);
-  
+  // si coincicen ambos, da la bienvenida con el nombre de usuario ingresado, sino mensaje de error
     if (usuarioEncontrado && usuarioEncontrado.contrasena === contrasena) {
       alert(`Bienvenido ${usuarioEncontrado.nombre}`);
     } else {
@@ -406,18 +425,20 @@ botonLogear.addEventListener('click', logIn);
   const sliderCards = document.querySelector('.slider-cards');
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
+//iniciamos en index 0
   let slideCardsIndex = 0;
-
+//cambiar imagen hacia atras
   prevBtn.addEventListener('click', () => {
     slideCardsIndex = Math.max(slideCardsIndex - 1, 0);
     updateSliderPosition();
   });
-
+//cambiar imagen hacia adelante
   nextBtn.addEventListener('click', () => {
     slideCardsIndex = Math.min(slideCardsIndex + 1, sliderCards.children.length - 1);
     updateSliderPosition();
   });
 
+// funcion para cambiar de posicion las imgenes del slider
   function updateSliderPosition() {
     const cardWidth = sliderCards.children[0].offsetWidth;
     const offset = -slideCardsIndex * cardWidth;

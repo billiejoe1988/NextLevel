@@ -113,7 +113,7 @@ body{
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgb(202, 42, 109);
+  background-color: rgb(190,24,93);
   border: 1px solid white;
   padding: 10px;
   min-width: 200px;
@@ -131,10 +131,39 @@ body{
 .back-estrenos{
   z-index: -2;
 }
-/* detalle input */
-.iinput:active {
-  box-shadow: 2px 2px 15px #8707ff inset;
- }
+/* btn borrar arcitulo */
+.borrarArticulo {
+  cursor: pointer;
+  font-weight: 400;
+  font-family: Helvetica,"sans-serif";
+  transition: all .2s;
+  padding: 5px 10px;
+  border-radius: 50px;
+  background: rgb(190,24,93);
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+}
+
+.borrarArticulo:hover {
+  background: orange;
+}
+
+.borrarArticulo > svg {
+  width: 20px;
+  margin-left: 10px;
+  transition: transform .3s ease-in-out;
+}
+
+.borrarArticulo:hover svg {
+  transform: translateX(5px);
+}
+
+.borrarArticulo:active {
+  transform: scale(0.95);
+}
+
 /* ------------------------------ cards ----------------------------------- */
 .card {
   position: relative;
