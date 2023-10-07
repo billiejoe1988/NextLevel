@@ -456,57 +456,6 @@ cargarProductos(bd.traerRegistro());
     carrito.agregar(producto);
     });
   }
-// Buscador
-inputBuscar.addEventListener("input", () => {
-  const palabra = inputBuscar.value.toLowerCase();
-  const productos = bd.registroPorNombre(palabra); // Cambia esto
-
-  divResultados.innerHTML = "";
-  if (palabra === "") {
-    // Ocultar el div si el input está vacío
-    divResultados.style.display = "none";
-  } else {
-    // Mostrar el div cuando hay resultados
-    divResultados.style.display = "block";
-
-    if (productos.length === 0) {
-      // Mostrar si no se encontraron resultados
-      divResultados.innerHTML = "<p>No se encontraron resultados para la búsqueda.</p>";
-    } else {
-      // Recorrer los elementos y agregarlos al div
-      for (const producto of productos) {
-        const divProducto = document.createElement("div");
-        divProducto.className = "card", "p-5";
-
-        // Utiliza los datos del producto actual para crear el contenido
-        divProducto.innerHTML = `
-          <img src="./image/${producto.imagen}" alt="${producto.nombre}">
-          <div class="card__content">
-            <p class="card__title text-blue-950">${producto.nombre}</p>
-            <p class="card__description text-blue-400">${producto.texto} <br> <br><span class="font-bold text-blue-950">Precio: $${producto.precio}</span></p>
-            <button class="btnAgregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="${producto.id}">Agregar al carrito</button>
-          </div>
-        `;
-
-        // Agrega el producto al contenedor
-        divResultados.appendChild(divProducto);
-      }
-    }
-  }
-    // Lista dinámica con todos los botones que haya en nuestro catálogo
-    const botonesAgregar = document.querySelectorAll(".btnAgregar");  
-
-  for (const boton of botonesAgregar){
-    boton.addEventListener('click', () => {
-    //guardar dataset Id del boton
-    const idProducto = Number(boton.dataset.id);
-    const producto = bd.registroPorId(idProducto);
-    //cargar al carrito
-    alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
-    carrito.agregar(producto);
-    });
-};
-
 
 function comprar() {
   //verificar si esta vacio o lleno el carrito para dar distintos mensajes midiendo su longitud
@@ -565,8 +514,56 @@ btnMostrarConsolas.addEventListener("click", () => {
 
   cargarProductos(productosConsolas, divProductosPorFiltro);
   });
-
-})
  
+// Buscador
+inputBuscar.addEventListener("input", () => {
+  const palabra = inputBuscar.value.toLowerCase();
+  const productos = bd.registroPorNombre(palabra); // Cambia esto
 
+  divResultados.innerHTML = "";
+  if (palabra === "") {
+    // Ocultar el div si el input está vacío
+    divResultados.style.display = "none";
+  } else {
+    // Mostrar el div cuando hay resultados
+    divResultados.style.display = "block";
 
+    if (productos.length === 0) {
+      // Mostrar si no se encontraron resultados
+      divResultados.innerHTML = "<p>No se encontraron resultados para la búsqueda.</p>";
+    } else {
+      // Recorrer los elementos y agregarlos al div
+      for (const producto of productos) {
+        const divProducto = document.createElement("div");
+        divProducto.className = "card", "p-5";
+
+        // Utiliza los datos del producto actual para crear el contenido
+        divProducto.innerHTML = `
+          <img src="./image/${producto.imagen}" alt="${producto.nombre}">
+          <div class="card__content">
+            <p class="card__title text-blue-950">${producto.nombre}</p>
+            <p class="card__description text-blue-400">${producto.texto} <br> <br><span class="font-bold text-blue-950">Precio: $${producto.precio}</span></p>
+            <button class="btnAgregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="${producto.id}">Agregar al carrito</button>
+          </div>
+        `;
+
+        // Agrega el producto al contenedor
+        divResultados.appendChild(divProducto);
+      }
+    }
+        // Lista dinámica con todos los botones que haya en nuestro catálogo
+        const botonesAgregar = document.querySelectorAll(".btnAgregar");  
+
+        for (const boton of botonesAgregar){
+          boton.addEventListener('click', () => {
+          //guardar dataset Id del boton
+          const idProducto = Number(boton.dataset.id);
+          const producto = bd.registroPorId(idProducto);
+          //cargar al carrito
+          alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
+          carrito.agregar(producto);
+          });
+    
+        }
+ }
+});
