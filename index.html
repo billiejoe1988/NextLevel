@@ -16,14 +16,14 @@
                <a href="./index.html"><img class ="border rounded-xl" src="./image/logo.jpg" alt="logo gift"></a>
             </div>
             <div class="flex col-start-2 col-end-8 pt-2 pl-3 search-container">
-              <div id="resultados" class="resultados z-50 border-2 border-gray-300 buscador-hidden text-white font-thin italic">
+              <div id="resultadosBusqueda" class="resultados z-50 border-2 border-gray-300 buscador-hidden text-white font-thin italic">
                 <ul>
                 <!-- acamostramos resultrados busqueda -->
                 </ul>
               </div>
-              <input class ="input placeholder:italic placeholder:text-blue-950 border-2 mx-auto rounded-3xl drop-shadow-xl p-5 w-11/12 lg:w-9/12  h-2/3 font-thin" id="buscador" type="text" placeholder="Busca aqui tu producto!">
+              <input  id="inputBuscar" class ="input placeholder:italic placeholder:text-blue-950 border-2 mx-auto rounded-3xl drop-shadow-xl p-5 w-11/12 lg:w-9/12  h-2/3 font-thin" placeholder="Busca aqui tu producto!">
               <button class=" col-start-8 py-2 px-4">
-                <img class="boton-buscador cursor-pointer w-1/3 lg:w-1/4 hover:shadow-rose-600" src="./assets/Svg/./coin.svg" alt="boton_buscar">
+                <img class="boton-buscador cursor-pointer  w-1/3 lg:w-1/4 hover:shadow-rose-600" src="./assets/Svg/./coin.svg" alt="boton_buscar">
               </button>
             </div>
             <div class ="col-start-10 font-bold">
@@ -35,7 +35,7 @@
               <h3 class="hidden lg:inline cursor-pointer  text-blue-950 hover:text-rose-700">  Sign up</h3>
             </div>
             <div class="col-start-12 font-bold">
-              <img class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
+              <img  class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
               <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Carrito</h3>
           </div>
         </div>
@@ -50,12 +50,11 @@
             <img class="minimizar-carrito cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
             <h2 class="  text-xl lg:text-2xl mb-4 text-center font-bold text-rose-600 hover:underline">Tu Carrito</h2>
             <h3 class="  text-sm lg:text-base my-4 font-bold">Productos seleccionados</h3>
-            <ul id="lista-productos">
+            <ul id="listaProductos">
                 <!-- Lista de productos seleccionados -->
             </ul>
-            <div id ="total-carrito" class="text-sm lg:text-base mt-4 font-bold">
-              El total del carrito es: $ 
-            </div>
+            <h4>Cantidad de Articulos: <span id="cantidadProductos">0</span></h4>
+            <h2>Total: $<span id="totalCarrito">0</span></h2>
              <button class="comprar-carrito text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Comprar</button>
              <button class="vaciar-carrito text-xs lg:text-base bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-rose-900">Vaciar Carrito</button>
             </div>
@@ -76,12 +75,12 @@
       <!-- alert crear cuenta -->
       <section class = "w-full">
         <aside id="crearCuenta" class=" login-alert mostrar-crearCuenta hidden fixed  transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6 w-full lg:w-90 xl:w-90 rounded-xl flex flex-col items-center justify-center">
-          <img id="ocultarCrearCuenta" class="self-left cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
+          <img id="ocultarCrearCuenta" class="flex item-left cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
           <form class="p-4 md:p-8 mx-auto my-10 mb-16 bg-gray-300 opacity-90 text-center md:w-2/5 lg:w-2/3 xl:w-2/3 rounded-xl">
               <div>                
-                <h2 class="create-account py-4 text-2xl text-blue-950">Crear Cuenta</h2>
+                <h2 class="create-account pb-4 text-2xl text-blue-950">Sign up</h2>
               </div>
-              <div class="icons flex justify-around md:pl-10 md:pr-10">
+              <div class="icons my-auto flex justify-around md:pl-10 md:pr-10">
                   <div>
                       <img src="./assets/bxl-facebook-square.svg" alt="facebook" class="w-9 md:w-auto cursor-pointer hover:bg-rose-200">
                   </div>
@@ -92,15 +91,17 @@
                       <img src="./assets/bxl-twitter.svg" alt="twitter" class="w-9 md:w-auto cursor-pointer hover:bg-rose-200">
                   </div>
               </div>
-              <div class="pt-10">
+              <div class="pt-4">
                   <input id="form-nombre" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" placeholder="Nombre">
                   <input id="mail-form" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" type="email" placeholder="Email">
                   <input id="contrasena-form" class="input p-1 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" type="password" placeholder="Password">
-                  <input id="btn-crearCuenta" class="p-5 my-4 text-lg border-2 border-gray-500 hover:bg-rose-800 bg-rose-500 rounded-xl text-white cursor-pointer mt-3" type="button" value="Crear Cuenta">
+                  <input id="btn-crearCuenta" class="p-1 text-lg border-2 border-gray-500 hover:bg-rose-800 bg-rose-500 rounded-xl text-white cursor-pointer mt-3" type="button" value="Sign up">
               </div>
           </form>
          </aside>
-      </section>
+        </section>
+        <section class="flex slider-cards space-x-4">
+        </section>
              <!-- slider novedades -->
         <section class = "slider-container z-10">
           <div class="slider z-10">
@@ -110,9 +111,14 @@
             <img src="./image/alfabeta.1690357143.1979.webp" alt="mario_maker_2" >
           </div>
         </section>
-            <!-- section novedades -->
+            <!-- section estrenos -->
             <div class="estrenos text-Left w-full mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
               <h2 class="hover:underline estrenos">Estrenos</h2> 
+            </div>
+            <div class="relative slider-container-cards">
+              <div id="sliderEstrenos" class="flex slider-cards space-x-4">
+              <!-- cargado de cards con productos -->
+             </div>
             </div>
             <div class="relative slider-container-cards">
               <div class="flex  slider-cards space-x-4">
@@ -162,9 +168,12 @@
           </div>
         </section>
                   <!-- section sale -->
-        <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
+         <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
           <h2 class="hover:underline">Ofertas</h2> 
          </div>
+          <div id="sliderSale" class="flex flex-wrap">
+            <!-- cargado de cards con productos -->
+          </div>
          <div class="relative slider-container-cards">
           <div class="flex  slider-cards space-x-4">
               <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
@@ -211,6 +220,9 @@
          </section>
          <div class="text-Left grid grid-cols-1 mx-auto w-full text-2xl font-bold text-blue-950 bg-white opacity-75 border-2 border-y-rose-400">
           <h2 class="hover:underline">Retro</h2> 
+        </div>
+        <div id="sliderRetro"class="flex flex-nowrap">
+              <!-- Slides -->
         </div>
         <div class="relative slider-container-cards">
           <div class="flex  slider-cards space-x-4">
@@ -261,6 +273,11 @@
               <h2 class="hover:underline">Preventas</h2> 
             </div>
             <div class="relative slider-container-cards">
+              <div id="sliderPreventas" class="flex slider-cards space-x-4">
+              <!-- cargado de cards con productos -->
+             </div>
+            </div>
+            <div class="relative slider-container-cards">
               <div class="flex  slider-cards space-x-4 ">
                 <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/3">
                   <img src="./image/mario_wonder.jpg" alt="mario_wonder">
@@ -305,21 +322,24 @@
               <div class="col-span-12 md:col-span-12 p-3">
                   <h1 class="text-center font-bold text-2xl text-rose-500 hover:underline"><span class="text-rose-900">EN NEXT LEVEL! </span> PODES COMPRAR JUEGOS NUEVOS, RETRO, CONSOLAS, AMIIBOS Y MUCHO MAS!</h1>
                 <div class="flex flex-wrap justify-between p-3 mx-auto">
-                  <div class=" w-full md:w-1/2">
-                    <img src="./image/switch_oled_zelda.jpg" alt="switch">
+                  <div class=" w-1/6">
+                    <img id="btnMostrarJuegos"class="cursor-pointer" src="./assets/icons8-joy-con-100.png" alt="switch">
+                    <h2 class="text-xl hover:underline">Juegos</h2>
                   </div>
-                  <div class=" w-full md:w-2/5">
-                    <img src="./image/nintendo_joysticks.jpg" alt="retro">
+                  <div class="w-1/5">
+                    <img  id="btnMostrarAccesorios"class="cursor-pointer"src="./assets/icons8-nintendo-switch-pro-controller-100.png" alt="retro">
+                    <h2 class="text-xl hover:underline">Accesorios</h2>
                   </div>
-                  <div class=" w-full md:w-1/2">
-                    <img src="./image/juegos-swtich.png" alt="juegos">
-                  </div>
-                  <div class=" w-full md:w-1/2 ">
-                    <img src="./image/amiibo.jpg" alt="amiibo">
+                  <div class=" w-1/6">
+                    <img id="btnMostrarConsolas"class="cursor-pointer" src="./assets/icons8-joystick-100.png" alt="juegos">
+                    <h2 class="text-xl hover:underline">Consolas</h2>
                   </div>
                 </div>
               </div>
             </div>
+              <div class="receptorProductos" id="productos">
+              <!-- cargado de cards con productos -->
+             </div>
           </section> 
           <!-- compramos tu usado cotizar       -->
           <section>
