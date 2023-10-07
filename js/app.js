@@ -420,11 +420,11 @@ carrito.listar();
 cargarProductos(bd.traerRegistro());
 
 //funcion para mostrar productos del catalogo o buscador o por clases, dando dos parametros, q productos y donde
-//function cargarProductos(productos, donde) {
-  function cargarProductos(productos){
+function cargarProductos(productos, donde) {
+  //function cargarProductos(productos){ lo dejo comentado pero habilitando estas dos. me funciona bien el codigo con 1 parametro
   //clean contenedor
-  //donde.innerHTML = "";
-  divProductosPorFiltro.innerHTML ="";
+  donde.innerHTML = "";
+  //divProductosPorFiltro.innerHTML =""; este tambien, al reemplazar, me funciona bien pero con 1 solo parametro
   // Filtrar productos por categoría
   for (const producto of productos) {
   //donde.innerHTML += `
