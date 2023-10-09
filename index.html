@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Level - Games Shop - Encontra tu proximo juego aca!</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
@@ -16,8 +17,8 @@
                <a href="./index.html"><img class ="border rounded-xl" src="./image/logo.jpg" alt="logo gift"></a>
             </div>
             <div class="flex col-start-2 col-end-8 pt-2 pl-3 search-container">
-              <div id="resultadosBusqueda" class="resultados z-50 border-2 border-gray-300 buscador-hidden text-white font-thin italic">
-                <ul>
+              <div id="resultadosBusqueda" class="resultados z-50 border-2 border-yellow-300 buscador-hidden text-white font-thin italic">
+                <ul class="flex flex-row">
                 <!-- acamostramos resultrados busqueda -->
                 </ul>
               </div>
@@ -27,14 +28,19 @@
               </button>
             </div>
             <div class ="col-start-10 font-bold">
-                <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="btn-login" src="./assets/Svg/female.svg" alt="Log In">
-                <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Log in  </h3>
+              <br>
+              <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="btn-login" src="./assets/Svg/female.svg" alt="Log In">
+              <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Log in  </h3>
             </div>
             <div class="col-start-11 font-bold">
+              <br>
               <img class ="w-2/3  lg:w-2/5 cursor-pointer" id="mostrarCrearCuenta" src="./assets/male.svg" alt="Sign up">
               <h3 class="hidden lg:inline cursor-pointer  text-blue-950 hover:text-rose-700">  Sign up</h3>
             </div>
             <div class="col-start-12 font-bold">
+              <h1>
+                <span id="cantidadProductos" class="text-rose-700">0</span>
+              </h1>
               <img  class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
               <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Carrito</h3>
           </div>

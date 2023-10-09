@@ -170,18 +170,30 @@ class Usuario {
 }
 //funcion para agregar nombre, apellido y contrasena desde form
 function agregarUsuario (){
+  //declarar ingresos de datos
   let nombre = document.getElementById("form-nombre").value;
   let mail = document.getElementById("mail-form").value;
   let contrasena = document.getElementById("contrasena-form").value;
 
-  let usuario= new Usuario(nombre, mail, contrasena);
+  // Verificar si los campos están vacíos
+  if (nombre.trim() === '' || mail.trim() === '' || contrasena.trim() === '') {
+    Swal.fire({
+      icon: 'error',
+      title: 'OOOPs..',
+      text: 'Por favor, complete todos los campos del formulario.',
+      showConfirmButton: true,
+    });
+    return;
+  }
+
+  let usuario = new Usuario(nombre, mail, contrasena);
   users.push(usuario);
 
   // Convertir array de usuarios a JSON y guardar en local
   localStorage.setItem("usuarios", JSON.stringify(users));
   
   Swal.fire({
-    title: `Bienvenido ${usuario.nombre}!!!<br>Su usuario ah sido creado con exito.  <br> <br> Ingrese desde el Log In!`,
+    title: `Bienvenido ${usuario.nombre}!!!<br>Su usuario ha sido creado con éxito.  <br> <br> Ingrese desde el Log In!`,
     showClass: {
       popup: 'animate__animated animate__fadeInDown'
     },
@@ -197,15 +209,28 @@ botonCrear.addEventListener('click', agregarUsuario);
 
 //funcion login 
 function logIn() {
+  //traer de localstorage
   const usuariosJSON = localStorage.getItem("usuarios");
   const usuarios = JSON.parse(usuariosJSON);
-
+  //declarar ingreso de datos
   const mail = document.getElementById("login-mail").value;
   const contrasena = document.getElementById("login-contrasena").value;
 
+  // Verificar si el correo electrónico y la contraseña están vacíos
+  if (mail.trim() === '' || contrasena.trim() === '') {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'OOOPs.. Error!!! <br> <br> Por favor, ingrese su correo electrónico y contraseña.',
+      showConfirmButton: false,
+      timer: 5000
+    });
+    return;
+  }
+
   const usuarioEncontrado = usuarios.find((usuario) => usuario.mail === mail);
 
-// si coincicen ambos, da la bienvenida con el nombre de usuario ingresado, sino mensaje de error
+  // Si se encuentra un usuario con el correo electrónico ingresado y la contraseña coincide, dar la bienvenida
   if (usuarioEncontrado && usuarioEncontrado.contrasena === contrasena) {
     Swal.fire({
       title: `Bienvenido ${usuarioEncontrado.nombre}`,
@@ -215,15 +240,15 @@ function logIn() {
       hideClass: {
         popup: 'animate__animated animate__fadeOutUp'
       }
-    })   
+    });
   } else {
     Swal.fire({
       position: 'center',
       icon: 'error',
-      title: 'Error!!! <br> <br> Ingresar Nuevamente los datos.',
+      title: 'Error!!! <br> <br> El correo electrónico o la contraseña son incorrectos. Por favor, inténtelo nuevamente.',
       showConfirmButton: false,
       timer: 5000
-    })    
+    });
   }
 }
 
@@ -354,10 +379,14 @@ class BaseDeDatos {
       }
       Toastify({
         text: `Se elimino el producto de su carrito!!!`,
-        className: "info",
+        gravity: "bottom",
+        classList: "toastify",
+        position: "left",
         style: {
           background: "linear-gradient(to right, #b80e31, #c9c33d)",
-        }
+          color: "white",
+          position: "fixed",
+        },
       }).showToast();
       // Actualizo el storage
       localStorage.setItem("carrito", JSON.stringify(this.carrito));
@@ -473,10 +502,14 @@ function agregarProductoAlCarrito(event) {
   const producto = bd.registroPorId(idProducto);
   Toastify({
     text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
-    className: "info",
+    classList: "toastify",
+    gravity: "bottom",
+    position: "left",
     style: {
       background: "linear-gradient(to right, #00b09b, #96c93d)",
-    }
+      color: "white",
+      position: "fixed",
+    },
   }).showToast();
   carrito.agregar(producto);
 }
@@ -597,8 +630,7 @@ inputBuscar.addEventListener("input", () => {
       // Recorrer los elementos y agregarlos al div
       for (const producto of productos) {
         const divProducto = document.createElement("div");
-        divProducto.className = "card", "p-5";
-
+        divProducto.className = "card", "p-5" ,"flex-shrink-0";
         // Utiliza los datos del producto actual para crear el contenido
         divProducto.innerHTML = `
           <img src="./image/${producto.imagen}" alt="${producto.nombre}">
@@ -624,10 +656,14 @@ inputBuscar.addEventListener("input", () => {
           //cargar al carrito
           Toastify({
             text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
-            className: "info",
+            classList: "toastify",
+            gravity: "bottom",
+            position: "left",
             style: {
               background: "linear-gradient(to right, #00b09b, #96c93d)",
-            }
+              color: "white",
+              position: "fixed",
+            },
           }).showToast();
           carrito.agregar(producto);
     
