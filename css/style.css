@@ -118,7 +118,7 @@ body{
   padding: 10px;
   min-width: 80vw; 
   max-height: 45vh; 
-  overflow-y: auto;
+  overflow-y: hidden;
   z-index: 998;
   color: white;
   display: none;

@@ -613,7 +613,7 @@ asignarEventosAgregarAlCarrito();
 // Buscador
 inputBuscar.addEventListener("input", () => {
   const palabra = inputBuscar.value.toLowerCase();
-  const productos = bd.registroPorNombre(palabra); // Cambia esto
+  const productos = bd.registroPorNombre(palabra);
 
   divResultados.innerHTML = "";
   if (palabra === "") {
@@ -622,29 +622,39 @@ inputBuscar.addEventListener("input", () => {
   } else {
     // Mostrar el div cuando hay resultados
     divResultados.style.display = "block";
-
+  
     if (productos.length === 0) {
       // Mostrar si no se encontraron resultados
       divResultados.innerHTML = "<p>No se encontraron resultados para la búsqueda.</p>";
     } else {
-      // Recorrer los elementos y agregarlos al div
-      for (const producto of productos) {
-        const divProducto = document.createElement("div");
-        divProducto.className = "card", "p-5" ,"flex-shrink-0";
-        // Utiliza los datos del producto actual para crear el contenido
-        divProducto.innerHTML = `
-          <img src="./image/${producto.imagen}" alt="${producto.nombre}">
-          <div class="card__content">
-            <p class="card__title text-blue-950">${producto.nombre}</p>
-            <p class="card__description text-blue-400">${producto.texto} <br> <br><span class="font-bold text-blue-950">Precio: $${producto.precio}</span></p>
-            <button class="btnAgregar bg-rose-500 border-2 border-rose-200 m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900" data-id="${producto.id}">Agregar al carrito</button>
-          </div>
-        `;
-
-        // Agrega el producto al contenedor
-        divResultados.appendChild(divProducto);
+      // Recorrer los elementos y agregarlos en filas de 3
+      for (let i = 0; i < productos.length; i += 3) {
+        const divFila = document.createElement("div");
+        divFila.className = "flex flex-row";
+  
+        // Agregar productos a la fila actual (hasta 3 productos)
+        for (let j = i; j < i + 3 && j < productos.length; j++) {
+          const producto = productos[j];
+          const divProducto = document.createElement("div");
+          divProducto.className = "card mx-auto w-1/5 flex-shrink-0 h-1/2";
+          
+          // Utiliza los datos del producto actual para crear el contenido
+          divProducto.innerHTML = `
+            <img src="./image/${producto.imagen}" alt="${producto.nombre}">
+            <div class="card__content p-4">
+              <p class="card__title text-blue-950 text-sm font-semibold">${producto.nombre}</p>
+              <p class="font-bold text-blue-950 mt-2 text-sm">Precio: $${producto.precio}</p>
+              <button class="btnAgregar mt-1 bg-rose-500 border-2 border-rose-200 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900 text-sm" data-id="${producto.id}">Agregar al carrito</button>
+            </div>
+          `;
+        // Agregar el producto al div de la fila
+          divFila.appendChild(divProducto);
+        }
+        // Agregar la fila completa al div de resultados
+        divResultados.appendChild(divFila);
       }
     }
+  }
         // Lista dinámica con todos los botones que haya en nuestro catálogo
         const botonesAgregar = document.querySelectorAll(".btnAgregar");  
 
@@ -669,5 +679,4 @@ inputBuscar.addEventListener("input", () => {
     
         });
  }
-};
-})
+});
