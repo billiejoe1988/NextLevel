@@ -158,8 +158,6 @@ for (let i = 0; i < prevButtons.length; i++) {
   setInterval(nextSlide(i), 3000);
 }
 
-
-
 //creo el array q despues pushea al crear la cuenta
 const users = []
 //formacion de objeto formulario 
@@ -181,33 +179,21 @@ function agregarUsuario (){
 
   // Convertir array de usuarios a JSON y guardar en local
   localStorage.setItem("usuarios", JSON.stringify(users));
-
-  alert(`Bienvenido ${usuario.nombre} su usuario ah sido creado con exito, ingrese desde el Log In!`);
-
-  mostrarUsuarios()
+  
+  Swal.fire({
+    title: `Bienvenido ${usuario.nombre}!!!<br>Su usuario ah sido creado con exito.  <br> <br> Ingrese desde el Log In!`,
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+    }
+  })
 }
 
 //funcion boton crear-cuenta
 const botonCrear = document.querySelector('#btn-crearCuenta');
 botonCrear.addEventListener('click', agregarUsuario);
-
-// Función para mostrar usuarios de localStorage
-function mostrarUsuarios() {
-
-  // Obtener la cadena JSON de localStorage y convertirla de nuevo a un array de objetos
-  const usuariosJSON = localStorage.getItem("usuarios");
-  const usuarios = JSON.parse(usuariosJSON);
-
-  if (usuarios) {
-    let usuariosTexto = "Usuarios:\n";
-    for (let i = 0; i < usuarios.length; i++) {
-      usuariosTexto += `Nombre: ${usuarios[i].nombre}, Mail: ${usuarios[i].mail}\n`;
-    }
-    alert(usuariosTexto);
-  } else {
-    alert("No hay usuarios registrados en localStorage.");
-  }
-}
 
 //funcion login 
 function logIn() {
@@ -221,9 +207,23 @@ function logIn() {
 
 // si coincicen ambos, da la bienvenida con el nombre de usuario ingresado, sino mensaje de error
   if (usuarioEncontrado && usuarioEncontrado.contrasena === contrasena) {
-    alert(`Bienvenido ${usuarioEncontrado.nombre}`);
+    Swal.fire({
+      title: `Bienvenido ${usuarioEncontrado.nombre}`,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })   
   } else {
-    alert("Error. Ingresar Nuevamente los datos.");
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Error!!! <br> <br> Ingresar Nuevamente los datos.',
+      showConfirmButton: false,
+      timer: 5000
+    })    
   }
 }
 
@@ -352,7 +352,13 @@ class BaseDeDatos {
         // Y sino, borramos del carrito el producto a quitar
         this.carrito.splice(indice, 1);
       }
-      alert(`Se elimino el producto de su carrito!!!`);
+      Toastify({
+        text: `Se elimino el producto de su carrito!!!`,
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #b80e31, #c9c33d)",
+        }
+      }).showToast();
       // Actualizo el storage
       localStorage.setItem("carrito", JSON.stringify(this.carrito));
       // Muestro los productos en el HTML
@@ -369,11 +375,10 @@ class BaseDeDatos {
     //recorrer producto elegido y draw en el html
     for (const producto of this.carrito) {
       divCarrito.innerHTML += `
-      <div class="productoCarrito border-2 border-rose-500 bg-rose-200 p-5 flex justify-between flex-col sm:flex-row">
+      <div class="productoCarrito border-2 border-rose-500 bg-rose-200 p-3 flex flex-col">
         <h3 class="text-sm text-blue-900 py-3 font-bold">${producto.nombre}</h3>
         <h4 class="text-sm lg:text-base text-blue-900 py-3 font-bold">$${producto.precio}</h4>
-        <br>
-        <p class="text-sm lg:text-base text-blue-900 py-3 font-bold">${producto.cantidad}</p>
+        <p class="text-sm lg:text-base text-blue-900 py-3 font-bold">Cantidad: ${producto.cantidad}</p>
         <button class="btnQuitar delete-articulo borrarArticulo" data-id="${producto.id}">
         <span>Eliminar</span>
         <svg width="34" height="18" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -466,18 +471,35 @@ function agregarProductoAlCarrito(event) {
   const boton = event.target;
   const idProducto = Number(boton.dataset.id);
   const producto = bd.registroPorId(idProducto);
-  alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
+  Toastify({
+    text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
+    className: "info",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    }
+  }).showToast();
   carrito.agregar(producto);
 }
-
 
 function comprar() {
   //verificar si esta vacio o lleno el carrito para dar distintos mensajes midiendo su longitud
       if (carrito.carrito.length === 0) {
-          alert("El carrito se encuentra vacio, porfavor verifique agregar los articulos antes de confirmar la compra");
+        Swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: 'El carrito se encuentra vacio!!! <br> <br> Porfavor verifique agregar los articulos antes de confirmar la compra.',
+          showConfirmButton: false,
+          timer: 5000
+        })        
       } else{
           //dar un alert diciendo que pasa al area de pago
-          alert("Su compra ha sido realizada con exito, seleccione medio de pago y metodo de envio, gracias por su compra en NEXT LEVEL!");
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Su compra ha sido realizada con exito!!!<br> <br> Seleccione medio de pago y metodo de envio.  <br> <br> gracias por su compra en NEXT LEVEL!',
+            showConfirmButton: false,
+            timer: 5000
+          })      
       }
 }
 function vaciar() {
@@ -488,7 +510,13 @@ function vaciar() {
   const divCarrito = document.getElementById("listaProductos");
   divCarrito.innerHTML = "";
   //alert y reiniciar
-  alert("Su carrito ha sido borrado!");
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Su carrito ha sido borrado!',
+    showConfirmButton: false,
+    timer: 5000
+  })  
   listar();
 }
 
@@ -594,11 +622,16 @@ inputBuscar.addEventListener("input", () => {
           const idProducto = Number(boton.dataset.id);
           const producto = bd.registroPorId(idProducto);
           //cargar al carrito
-          alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
+          Toastify({
+            text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #00b09b, #96c93d)",
+            }
+          }).showToast();
           carrito.agregar(producto);
-          });
     
-        }
+        });
  }
-});
-
+};
+})
