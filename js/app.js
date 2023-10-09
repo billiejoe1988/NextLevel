@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
     });
 });
 
-//hacer bisible-invisible terminos y condiciones
+//hacer visible-invisible terminos y condiciones
 window.addEventListener("load", function () { 
   const terminos = document.getElementById("terminos");
   const mostrarTerminos = document.getElementById("btn-terminos");
@@ -124,31 +124,41 @@ window.addEventListener("load", function() {
 });
 
 //declara slider cards y botones
-const sliderCards = document.querySelector('.slider-cards');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
+const prevButtons = document.querySelectorAll('.prev-btn');
+const nextButtons = document.querySelectorAll('.next-btn');
+const sliderContainers = document.querySelectorAll('.slider-container-cards');
 
-//iniciamos en index 0
-let slideCardsIndex = 0;
-
-//cambiar imagen hacia atras
-prevBtn.addEventListener('click', () => {
-  slideCardsIndex = Math.max(slideCardsIndex - 1, 0);
-  updateSliderPosition();
-});
-
-//cambiar imagen hacia adelante
-nextBtn.addEventListener('click', () => {
-  slideCardsIndex = Math.min(slideCardsIndex + 1, sliderCards.children.length - 1);
-  updateSliderPosition();
-});
-
-// funcion para cambiar de posicion las imgenes del slider
-function updateSliderPosition() {
-  const cardWidth = sliderCards.children[0].offsetWidth;
-  const offset = -slideCardsIndex * cardWidth;
-  sliderCards.style.transform = `translateX(${offset}px)`;
+// Función para avanzar la imagen hacia adelante
+function nextSlide(sliderIndex) {
+  return () => {
+    slideCardsIndex[sliderIndex] = (slideCardsIndex[sliderIndex] + 1) % sliderContainers[sliderIndex].children.length;
+    updateSliderPosition(sliderIndex);
+  };
 }
+
+// Función para cambiar de posición las imágenes del slider
+function updateSliderPosition(sliderIndex) {
+  const cardWidth = sliderContainers[sliderIndex].children[0].offsetWidth;
+  const offset = -slideCardsIndex[sliderIndex] * cardWidth;
+  sliderContainers[sliderIndex].style.transform = `translateX(${offset}px)`;
+}
+
+const slideCardsIndex = Array.from(sliderContainers).map(() => 0);
+
+// Agregar evento a los botones "Anterior" y "Siguiente" para cada slider
+for (let i = 0; i < prevButtons.length; i++) {
+  prevButtons[i].addEventListener('click', () => {
+    slideCardsIndex[i] = Math.max(slideCardsIndex[i] - 1, 0);
+    updateSliderPosition(i);
+  });
+
+  nextButtons[i].addEventListener('click', nextSlide(i));
+
+  // Iniciar el cambio automático cada cierto tiempo (por ejemplo, cada 3 segundos)
+  setInterval(nextSlide(i), 3000);
+}
+
+
 
 //creo el array q despues pushea al crear la cuenta
 const users = []
@@ -242,7 +252,7 @@ class BaseDeDatos {
       this.agregarRegistro(101, "Zelda Tears the kingdom", 60000, 10, "Estrenos", "zelda_tears.png", "Juego", "Increible aventura de Link en el nuevo juego, nominado a Game of the Year");
       this.agregarRegistro(102, "Mario Kart 8 DLC Wave 4", 20000, 10, "Estrenos", "Banner-Mario-Kart-Deluxe-8-W4.jpg", "Juego", "Adquiere la cuarta wave de circuitos y personajes en Mario Kart 8");
       this.agregarRegistro(103, "Pokemon Scarlet DLC Area zero", 35000, 10, "Estrenos", "PokemonScarletViolet-Banner.jpg", "Juego", "Vive las aventuras en el nuevo DLC de la franquicia exitosa de Nintendo");
-      this.agregarRegistro(104, "Amiibo Link y Ganon", 30000, 10, "Estrenos", "amiibos-zelda-ganondorf.webp", "Juego", "Llegaron los nuevos Amiibos, la princesa Zelda y El gran villano Ganon, con los skins vistos en Zelda: Tears of the kingdom");
+      this.agregarRegistro(104, "Amiibo Link y Ganon", 30000, 10, "Estrenos", "amiibos-zelda-ganondorf.webp", "Accesorio", "Llegaron los nuevos Amiibos, la princesa Zelda y El gran villano Ganon, con los skins vistos en Zelda: Tears of the kingdom");
       
       //creando articulos de ofertas
       this.agregarRegistro(201, "Game Boy Color Amarillo", 35000, 1, "Ofertas", "gb_color.jpg", "Consola", "Perfecto estado, Game boy color amarilla, viene con juego de regalo!.");
@@ -417,19 +427,17 @@ const carrito = new Carrito();
 carrito.listar();
 
  // Mostramos el catalogo de db, al cargar la pagina
-cargarProductos(bd.traerRegistro());
+cargarProductos(bd.traerRegistro(), divProductosPorFiltro, sliderSale, sliderRetro, sliderPreventas, sliderEstrenos);
 
 //funcion para mostrar productos del catalogo o buscador o por clases, dando dos parametros, q productos y donde
 function cargarProductos(productos, donde) {
-  //function cargarProductos(productos){ lo dejo comentado pero habilitando estas dos. me funciona bien el codigo con 1 parametro
   //clean contenedor
   donde.innerHTML = "";
-  //divProductosPorFiltro.innerHTML =""; este tambien, al reemplazar, me funciona bien pero con 1 solo parametro
   // Filtrar productos por categoría
   for (const producto of productos) {
   //donde.innerHTML += `
-  divProductosPorFiltro.innerHTML +=`
-      <div class="card  m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
+  donde.innerHTML +=`
+      <div class="card m-10 flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/4">
         <img src="./image/${producto.imagen}" alt="zelda_Totk">
         <div class="card__content">
           <p class="card__title text-blue-950">${producto.nombre}</p>
@@ -440,22 +448,28 @@ function cargarProductos(productos, donde) {
     `;
   }
 }
-  // Lista dinámica con todos los botones que haya en nuestro catálogo
-  const botonesAgregar = document.querySelectorAll(".btnAgregar");  
 
-  //recoremos botones del producto y le agregamos evento a cada uno
-  for (const boton of botonesAgregar){
-    boton.addEventListener('click', (event) => {
-    //evitar comportamiento defauuult en HTML
-    event.preventDefault();
-    //guardar dataset Id del boton
-    const idProducto = Number(boton.dataset.id);
-    const producto = bd.registroPorId(idProducto);
-    //cargar al carrito
-    alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
-    carrito.agregar(producto);
-    });
+//anti duplicacion evento agregar
+function asignarEventosAgregarAlCarrito() {
+  const botonesAgregar = document.querySelectorAll(".btnAgregar");
+  for (const boton of botonesAgregar) {
+    // Eliminar cualquier evento previo para evitar duplicaciones
+    boton.removeEventListener('click', agregarProductoAlCarrito);
+    
+    boton.addEventListener('click', agregarProductoAlCarrito);
   }
+}
+
+//agregar funcion al boton de agregar carrito a articulos dibujados en index
+function agregarProductoAlCarrito(event) {
+  event.preventDefault();
+  const boton = event.target;
+  const idProducto = Number(boton.dataset.id);
+  const producto = bd.registroPorId(idProducto);
+  alert(`Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`);
+  carrito.agregar(producto);
+}
+
 
 function comprar() {
   //verificar si esta vacio o lleno el carrito para dar distintos mensajes midiendo su longitud
@@ -493,6 +507,7 @@ btnMostrarJuegos.addEventListener("click", () => {
   const divProductosPorFiltro = document.querySelector("#productos");   
 
   cargarProductos(productosJuegos, divProductosPorFiltro);
+  asignarEventosAgregarAlCarrito();
 });
 
 //  mostrar productos del tipo accesorios
@@ -503,6 +518,7 @@ btnMostrarAccesorios.addEventListener("click", () => {
   const divProductosPorFiltro = document.querySelector("#productos");
   
   cargarProductos(productosAccesorios, divProductosPorFiltro);
+  asignarEventosAgregarAlCarrito();
 });
 
 // mostrar productos deel tipo consolas 
@@ -513,7 +529,25 @@ btnMostrarConsolas.addEventListener("click", () => {
   const divProductosPorFiltro = document.querySelector("#productos");
 
   cargarProductos(productosConsolas, divProductosPorFiltro);
+  asignarEventosAgregarAlCarrito();
   });
+
+//cargar productos a sliders por Categorias
+const productosEstrenos= bd.registroPorCategoria("Estrenos");
+cargarProductos(productosEstrenos, sliderEstrenos);
+asignarEventosAgregarAlCarrito();
+
+const productosSale= bd.registroPorCategoria("Ofertas");
+cargarProductos(productosSale, sliderSale);
+asignarEventosAgregarAlCarrito();
+
+const productosRetro= bd.registroPorCategoria("Retro");
+cargarProductos(productosRetro, sliderRetro);
+asignarEventosAgregarAlCarrito();
+
+const productosPreventas= bd.registroPorCategoria("Preventas");
+cargarProductos(productosPreventas, sliderPreventas);
+asignarEventosAgregarAlCarrito();
  
 // Buscador
 inputBuscar.addEventListener("input", () => {
@@ -567,3 +601,4 @@ inputBuscar.addEventListener("input", () => {
         }
  }
 });
+

@@ -47,7 +47,6 @@ body{
 /* slider cards */
 .slider-container-cards {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 .slider-cards {
