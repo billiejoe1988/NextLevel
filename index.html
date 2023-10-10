@@ -38,9 +38,9 @@
               <h3 class="hidden lg:inline cursor-pointer  text-blue-950 hover:text-rose-700">  Sign up</h3>
             </div>
             <div class="col-start-12 font-bold">
-              <h1>
+              <h2>
                 <span id="cantidadProductos" class="text-rose-700">0</span>
-              </h1>
+              </h2>
               <img  class="w-2/3 lg:w-2/5  cursor-pointer"  src="./assets/Svg/buck.svg" alt="carrito" id="mostrar-carrito">
               <h3 class="hidden lg:inline cursor-pointer text-blue-950 hover:text-rose-700">   Carrito</h3>
           </div>
@@ -59,7 +59,7 @@
             <ul id="listaProductos">
                 <!-- Lista de productos seleccionados -->
             </ul>
-            <h4>Cantidad de Articulos: <span id="cantidadProductos">0</span></h4>
+            <h4>Cantidad de Articulos: <span id="cantidadProductos2">0</span></h4>
             <h2>Total: $<span id="totalCarrito">0</span></h2>
              <button class="comprar-carrito text-xs lg:text-base text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Comprar</button>
              <button class="vaciar-carrito text-xs lg:text-base bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl font-thin font-sm hover:bg-rose-900">Vaciar Carrito</button>
@@ -68,14 +68,18 @@
       </section>
       <!-- Alert login -->
       <section class="log">
-        <aside id="login" class="login-alert hidden fixed top-1/2 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6">
-          <img class="minimizar-login cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
-          <h2 class="text-xl lg:text-2xl mb-4 text-center font-bold text-rose-600 hover:underline">LOG IN</h2>
-          <input class="input p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" id="login-mail" placeholder="Ingrese aqui su e-mail"required="@" type="email">
-          <input class="input p-5 m-5 text-blue-950 italic opacity-80 rounded-xl" id ="login-contrasena"  placeholder="Ingrese aqui su password" required="" type="pass">             
-          <div class= "p-10">
-            <button type="submit" class="login-ingresar text-xs lg:text-base px-10 text-bold bg-blue-950 border-2 border-rose-200 m-1 lg:m-5 p-2 rounded-xl text-white shadow-xl hover:bg-rose-900">Log In</button>
-          </div>
+        <aside id="login" class="login-alert hidden fixed  transform -translate-x-1/2 -translate-y-1/2 bg-gray-900 text-white p-6 w-full lg:w-90 xl:w-90 rounded-xl flex flex-col items-center justify-center">
+          <img class="minimizar-login flex item-left cursor-pointer transform scale-100 hover:scale-125" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAABJNJREFUWEfVmFuoVVUUhv9/zbnKlLIyw+xQhicFMcqXiHoxxG52T4ResjuRWkl4q8hISrs81EmxCMuQHpIok5RC6QpJL5JdoKiMEsPSogtRceZYf8x91t6us/dae+/jBWy+nTXHGPtb/xhzzLEOcYQtHmE8+P8DSRoFs0syYDqlySBPBjA6V3ovpJ9FfpYAW+Dc2yR/GUoWulZI0sjM7BECdwBwXf6ICVidOHc/yT+68ekKSCFcI2ANgBO6CVpis4/A7fT+9U7+HYFktljS8qZAfwp4NQE2wLmvAewGYABOg9mZGXA1gZkAji36kVxE5x5vB9UWyEJYSWBOIcAeko8hSZ4l+U+7wJKGIcvmSFoIINZZbQlY5byfW+VbCSSzeyU9WXB8g85dT/LvTrIX9yWNkNnLAK6qPye5kM49URanFEghXCZgU+GtVjrv5w0FpNnWQugj0IhBYAa939xs1wIkyclsZ60eahrrA3o/laQOBkgSZfYOgKl5nO/p3HiSsfYaqxUohFsFPJ9b7KNzE0n+ejAwDaWlUTL7EsBJ8RmBW+j9C22BshC+AzCu5kDOpXOrDgVMA8psnqS+/O+diffjK4EkTZHZ9txgV+L9QNpKlkKYnUlnVO0nwPtM03fL9rMQYpsYW3tp5yaT/KJuNyhlMlsq6aGB0lGfS9O7K4GkHpltA9BTCiwtc2n6YNmehbA67/gxC0vo3IpSoCyErQCm1cili5imW9qlS9K4HGpMs53aACmEKwRszH02Jd5fXg7U3/8VyAm5lKeT/KFT/UjqldnnAI4u2kp62KXp0gr1JubFHVPxSZKmU6oU+gvA8JgxOpc2H8kK+Z8h0NJ52yokHSez3/N4PyXeNxQeVENZCP8COCoCJd4nndSxEJphfgNwfF6D7RQaKbNoG1dboP1H3rkekvE0tKzY5DKz5wjcVt+MvSuOGTL7CEBvh5RNktnAyZJ2JGl6TlUNbQN5Xl7UFzJN3ysp1gizlsANBZh1iXOzYzeXNCYWuqR1VacsH2dey/3fSry/tBSoeBzjxerSdEELUAg3CnixALM+Gbh0s8YzqQdm0+j9SxV1t4bAzXlql7s0va8USCHMEPBmvvlt4n1viUKJzNYDuA7ABjo3s5viL8bJQtjbuD6cO59k7Ge1NbgxSsNkFmfgeNLi5k30fm0JlEeWLUaSrCAZylSoeiazRZLqjXBP4v0pRduWy9X6+5eRfCA3+pHOTSJZP6JD+e2ywzA27z+1SZLkPXTu6bZAkobLbBeAE3PDrYn30w+KZOAqokL4EOQFeaw4fvQ2K1w1oM0S8EqhcA/FgDaoZ1GaxjSN89Gg1W6EXSLp0YL15ryAhzrCRsXjy+2/r8j5dO6pMtUP55B/DLLszkM25DfSZbZAUvOnS/wM2pjEtDr3Tf4ZFF1i/5mQAbMIXAlgxKCCbRo1hqxQAyqEawXEKe/UAyzu3QTuovf17lwZpuOHYtEzTomS5oM8uyswaTvJvqqOfcAKlTTG0TC7OAPOJXAWgDrgDkmfJuTHB/KPhpZO3dVbH2ajIaXsMLPUwh9xQP8ByxouQ0TfJrAAAAAASUVORK5CYII="/>
+          <form class=" flex-col p-4 md:p-8 mx-auto my-10 mb-16 bg-gray-300 opacity-90 text-center md:w-2/5 lg:w-2/3 xl:w-2/3 rounded-xl">
+            <div>
+               <h2 class="pb-4 text-2xl text-blue-950">Log in</h2>
+            </div>
+            <input class="input p-2 px-5 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" id="login-mail" placeholder="Ingrese aqui su e-mail"required="@" type="email">
+            <input class="input p-2 px-5 m-3 text-blue-950 italic opacity-80 rounded-xl placeholder-red-700" id ="login-contrasena"  placeholder="Ingrese aqui su password" required="" type="pass">             
+              <div class= "p-10">
+                <button type="submit" class="login-ingresar p-2 px-4 text-lg border-2 border-gray-500 hover:bg-rose-800 bg-rose-500 rounded-xl text-white cursor-pointer mt-3">Log In</button>
+              </div>
+          </form>
         </aside>
       </section> 
       <!-- alert crear cuenta -->

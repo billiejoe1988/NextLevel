@@ -324,7 +324,6 @@ class BaseDeDatos {
       registroPorCategoria(categoria) {
         return this.productos.filter((producto) => producto.categoria === categoria);
       }
-              // Función para cargar el carrito desde localStorage    
     }
   class Carrito{
     constructor (){
@@ -338,6 +337,9 @@ class BaseDeDatos {
       this.listar();
     }
      
+    obtenerProductos() {
+      return this.productos || []; 
+    }
     // Método para vaciar el carrito
     vaciar() {
       //todo lo q implica este metodo reiniciar 
@@ -367,31 +369,47 @@ class BaseDeDatos {
 
     //metodo quitar el ultimo elemento por id
     quitar(id) {
-      // Obento el índice de un producto según el ID, porque el
+      // Obtener el índice de un producto según el ID, porque el
       // método splice requiere el índice
       const indice = this.carrito.findIndex((producto) => producto.id === id);
-      // Si la cantidad es mayor a 1, le resto la cantidad en 1
-      if (this.carrito[indice].cantidad > 1) {
-        this.carrito[indice].cantidad--;
-      } else {
-        // Y sino, borramos del carrito el producto a quitar
-        this.carrito.splice(indice, 1);
+    
+      if (indice !== -1) {
+        const productoEnCarrito = this.carrito[indice];
+    
+        // Si la cantidad es mayor a 1, le resto la cantidad en 1
+        if (productoEnCarrito.cantidad > 1) {
+          productoEnCarrito.cantidad--;
+        } else {
+          // Y sino, borramos del carrito el producto a quitar
+          this.carrito.splice(indice, 1);
+        }
+    
+        // Obtener el producto original de la base de datos
+        const productoOriginal = bd.registroPorId(id);
+    
+        // Incrementar el stock del producto original
+        if (productoOriginal) {
+          productoOriginal.stock++;
+        }
+    
+        Toastify({
+          text: `Se eliminó el producto de su carrito!!!`,
+          gravity: "bottom",
+          classList: "toastify",
+          position: "left",
+          style: {
+            background: "linear-gradient(to right, #b80e31, #c9c33d)",
+            color: "white",
+            position: "fixed",
+          },
+        }).showToast();
+    
+        // Actualizo el storage
+        localStorage.setItem("carrito", JSON.stringify(this.carrito));
+    
+        // Muestro los productos en el HTML
+        this.listar();
       }
-      Toastify({
-        text: `Se elimino el producto de su carrito!!!`,
-        gravity: "bottom",
-        classList: "toastify",
-        position: "left",
-        style: {
-          background: "linear-gradient(to right, #b80e31, #c9c33d)",
-          color: "white",
-          position: "fixed",
-        },
-      }).showToast();
-      // Actualizo el storage
-      localStorage.setItem("carrito", JSON.stringify(this.carrito));
-      // Muestro los productos en el HTML
-      this.listar();
     }
  
     //prodcutos al HTML
@@ -433,9 +451,11 @@ class BaseDeDatos {
        this.quitar(idProducto);
      });
    }
-   // Actualizo los contadores del HTML
+   // actualizar cantidad header y total
    spanCantidadProductos.innerText = this.cantidadProductos;
    spanTotalCarrito.innerText = this.total;
+      // actualizar cantidad carrito
+   carritoCantidadProductos.innerText = this.cantidadProductos;
   }   
 }
 
@@ -443,6 +463,7 @@ class BaseDeDatos {
 const bd = new BaseDeDatos();
 
  // Elementos HTML
+ const carritoCantidadProductos = document.querySelector("#cantidadProductos2");
  const spanCantidadProductos = document.querySelector("#cantidadProductos");
  const spanTotalCarrito = document.querySelector("#totalCarrito");
  const divProductosPorFiltro = document.querySelector("#productos");
@@ -500,19 +521,41 @@ function agregarProductoAlCarrito(event) {
   const boton = event.target;
   const idProducto = Number(boton.dataset.id);
   const producto = bd.registroPorId(idProducto);
-  Toastify({
-    text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
-    classList: "toastify",
-    gravity: "bottom",
-    position: "left",
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-      color: "white",
-      position: "fixed",
-    },
-  }).showToast();
-  carrito.agregar(producto);
+
+  // Verificar si hay suficiente stock disponible
+  if (producto.stock > 0) {
+    // Restar una unidad del stock
+    producto.stock--;
+    // Agregar el producto al carrito
+    carrito.agregar(producto);
+
+    Toastify({
+      text: `Se agregó ${producto.nombre} con un valor de $ ${producto.precio} al carrito.`,
+      classList: "toastify",
+      gravity: "bottom",
+      position: "left",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        color: "white",
+        position: "fixed",
+      },
+    }).showToast();
+  } else {
+    Toastify({
+      text: `No hay stock disponible para ${producto.nombre}.`,
+      classList: "toastify",
+      gravity: "bottom",
+      position: "left",
+      style: {
+        background: "linear-gradient(to right, #FF0000, #FF6347)",
+        color: "white",
+        position: "fixed",
+      },
+    }).showToast();
+  }
 }
+
+
 
 function comprar() {
   //verificar si esta vacio o lleno el carrito para dar distintos mensajes midiendo su longitud
@@ -536,22 +579,39 @@ function comprar() {
       }
 }
 function vaciar() {
-   // Llama al método vaciar de carrito
+  // Obtener la lista de productos en el carrito
+  const productosEnCarrito = carrito.obtenerProductos();
+
+  // Verificar si hay productos en el carrito antes de usar forEach
+  if (productosEnCarrito) {
+    // Iterar sobre los productos en el carrito y restasura stock
+    productosEnCarrito.forEach((productoEnCarrito) => {
+      const productoOriginal = bd.registroPorId(productoEnCarrito.id);
+      if (productoOriginal) {
+        productoOriginal.stock += productoEnCarrito.cantidad;
+      }
+    });
+  }
+//elminar del carrito
   carrito.vaciar();
 
   // Vaciar el contenedor de elementos de la lista del carrito
   const divCarrito = document.getElementById("listaProductos");
   divCarrito.innerHTML = "";
-  //alert y reiniciar
+
+  // Alerta de éxito y reiniciar
   Swal.fire({
     position: 'center',
     icon: 'success',
     title: 'Su carrito ha sido borrado!',
     showConfirmButton: false,
     timer: 5000
-  })  
-  listar();
+  });
+  // Actualizar la vista de productos y contadores 
+  carrito.listar();
 }
+
+
 
 const botonVaciar = document.querySelector('.vaciar-carrito');
 botonVaciar.addEventListener('click', vaciar);
