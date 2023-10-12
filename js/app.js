@@ -273,34 +273,12 @@ class Producto {
 class BaseDeDatos {
   constructor() {
     this.productos = [];
-      //creando articulos de estreno
-      this.agregarRegistro(101, "Zelda Tears the kingdom", 60000, 10, "Estrenos", "zelda_tears.png", "Juego", "Increible aventura de Link en el nuevo juego, nominado a Game of the Year");
-      this.agregarRegistro(102, "Mario Kart 8 DLC Wave 4", 20000, 10, "Estrenos", "Banner-Mario-Kart-Deluxe-8-W4.jpg", "Juego", "Adquiere la cuarta wave de circuitos y personajes en Mario Kart 8");
-      this.agregarRegistro(103, "Pokemon Scarlet DLC Area zero", 35000, 10, "Estrenos", "PokemonScarletViolet-Banner.jpg", "Juego", "Vive las aventuras en el nuevo DLC de la franquicia exitosa de Nintendo");
-      this.agregarRegistro(104, "Amiibo Link y Ganon", 30000, 10, "Estrenos", "amiibos-zelda-ganondorf.webp", "Accesorio", "Llegaron los nuevos Amiibos, la princesa Zelda y El gran villano Ganon, con los skins vistos en Zelda: Tears of the kingdom");
-      
-      //creando articulos de ofertas
-      this.agregarRegistro(201, "Game Boy Color Amarillo", 35000, 1, "Ofertas", "gb_color.jpg", "Consola", "Perfecto estado, Game boy color amarilla, viene con juego de regalo!.");
-      this.agregarRegistro(202, "Mario Kart 8", 20000, 10, "Ofertas", "mario_kart.jpg", "Juego", "Adquiere Mario Kart 8 este maravilloso juego multijugador divertido para jugar con amigos o familia");
-      this.agregarRegistro(203, "Vampire Survivor", 5000, 10, "Ofertas", "vampire_survivors.jpg", "Juego", "Uno de los mejores juegos de este último tiempo, ¡en precio de locos!");
-      this.agregarRegistro(204, "Mario Maker 2", 40000, 10, "Ofertas", "switch_mario_maker.jpg", "Juego", "No te puedes perder esta oportunidad, Mario Maker 2, ¡Increíble online de Nintendo Switch, con esta rebaja!");
-      
-      //creando articulos en retro
-      this.agregarRegistro(301, "Nintendo 64 con joystick gris", 80000, 1, "Retro", "n64.jpg", "Consola", "Mítica consola de Nintendo, en perfecto estado, color tradicional.");
-      this.agregarRegistro(302, "Nintendo Usada", 90000, 1, "Retro", "nes.webp", "Consola", "Consola NES, traída desde Japón, sin desperfectos, con caja y cables originales");
-      this.agregarRegistro(303, "Joystick GameCube Naranja", 15000, 10, "Retro", "joystick_naranja_gamecube.png", "Accesorio", "Joystick Naranja de GameCube en perfecto estado, sin detalles");
-      this.agregarRegistro(304, "Game Boy Advance Violeta", 40000, 10, "Retro", "gb_advance.jpg", "Consola", "Consola, con detalles estéticos en la pintura, trae la tapa trasera, y con juego");
-      
-      //creando articulos en preventas 
-      this.agregarRegistro(401, "Super Mario Wonder", 70000, 99, "Preventas", "mario_wonder.jpg", "Juego", "Prepárate para las aventuras de Mario con su hermano en este fabuloso mundo");
-      this.agregarRegistro(402, "Super Mario RPG", 70000, 99, "Preventas", "mario_rpg.jpg", "Juego", "Reaviva este hermoso juego traído a la última consola de Nintendo!");
-      this.agregarRegistro(403, "Picmin 4", 70000, 99, "Preventas", "picmin4.jpg", "Juego", "Vive las aventuras de esta fabulosa franquicia exitosa de Nintendo en esta 4ta entrega.");
-      this.agregarRegistro(404, "FS 24", 60000, 99, "Preventas", "fc_24.jpg", "Juego", "Ha llegado Nintendo Switch la nueva entrega de este mítico juego de fútbol.");
-      }
-      // metodo profe que agregar objetos y almacena array catalogo
-      agregarRegistro(id, nombre, precio, stock, categoria, imagen, tipo, texto) {
-        const producto = new Producto(id, nombre, precio, stock, categoria, imagen, tipo, texto);
-        this.productos.push(producto);
+    this.cargarRegistros();
+  }
+    // objetos importados desde bd.json
+      async cargarRegistros(){
+        const resultado = await fetch("./json/bd.json");
+        this.productos = await resultado.json();
       }
       //devuelve todo el catalogo de productos
       traerRegistro(){
@@ -459,6 +437,7 @@ class BaseDeDatos {
   }   
 }
 
+
 // Creación de instancias
 const bd = new BaseDeDatos();
 
@@ -481,6 +460,31 @@ const carrito = new Carrito();
 // Llamar a la función listar de la instancia carrito
 carrito.listar();
 
+// Código para cargar productos desde JSON con el "then", para que se cargue una vez, que se complete la carga de registro.(retorna cumpliendo la promesa) 
+//ya que sino esta esto, se carga antes de q la base de datos este correctamente cargada y no se ven al cargar la web.
+bd.cargarRegistros().then(() => {
+  // Carga los productos en los sliders
+  const productosEstrenos = bd.registroPorCategoria("Estrenos");
+  cargarProductos(productosEstrenos, sliderEstrenos);
+  asignarEventosAgregarAlCarrito();
+
+  const productosSale = bd.registroPorCategoria("Ofertas");
+  cargarProductos(productosSale, sliderSale);
+  asignarEventosAgregarAlCarrito();
+
+  const productosRetro = bd.registroPorCategoria("Retro");
+  cargarProductos(productosRetro, sliderRetro);
+  asignarEventosAgregarAlCarrito();
+
+  const productosPreventas = bd.registroPorCategoria("Preventas");
+  cargarProductos(productosPreventas, sliderPreventas);
+  asignarEventosAgregarAlCarrito();
+
+  //cumplida la promesa, retorna y carga productos del catálogo en div de tipos antes de ser divididos por el usuario con los iconos
+  const productosCatalogo = bd.traerRegistro();
+  cargarProductos(productosCatalogo, divProductosPorFiltro);
+  asignarEventosAgregarAlCarrito();
+});
  // Mostramos el catalogo de db, al cargar la pagina
 cargarProductos(bd.traerRegistro(), divProductosPorFiltro, sliderSale, sliderRetro, sliderPreventas, sliderEstrenos);
 
@@ -653,23 +657,6 @@ btnMostrarConsolas.addEventListener("click", () => {
   asignarEventosAgregarAlCarrito();
   });
 
-//cargar productos a sliders por Categorias
-const productosEstrenos= bd.registroPorCategoria("Estrenos");
-cargarProductos(productosEstrenos, sliderEstrenos);
-asignarEventosAgregarAlCarrito();
-
-const productosSale= bd.registroPorCategoria("Ofertas");
-cargarProductos(productosSale, sliderSale);
-asignarEventosAgregarAlCarrito();
-
-const productosRetro= bd.registroPorCategoria("Retro");
-cargarProductos(productosRetro, sliderRetro);
-asignarEventosAgregarAlCarrito();
-
-const productosPreventas= bd.registroPorCategoria("Preventas");
-cargarProductos(productosPreventas, sliderPreventas);
-asignarEventosAgregarAlCarrito();
- 
 // Buscador
 inputBuscar.addEventListener("input", () => {
   const palabra = inputBuscar.value.toLowerCase();

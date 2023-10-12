@@ -1,0 +1,163 @@
+[
+    {
+      "id": 101,
+      "nombre": "Zelda Tears the kingdom",
+      "precio": 60000,
+      "stock": 10,
+      "categoria": "Estrenos",
+      "imagen": "zelda_tears.png",
+      "tipo": "Juego",
+      "texto": "Increible aventura de Link en el nuevo juego, nominado a Game of the Year"
+    },
+    {
+      "id": 102,
+      "nombre": "Mario Kart 8 DLC Wave 4",
+      "precio": 20000,
+      "stock": 10,
+      "categoria": "Estrenos",
+      "imagen": "Banner-Mario-Kart-Deluxe-8-W4.jpg",
+      "tipo": "Juego",
+      "texto": "Adquiere la cuarta wave de circuitos y personajes en Mario Kart 8"
+    },
+    {
+      "id": 103,
+      "nombre": "Pokemon Scarlet DLC Area zero",
+      "precio": 35000,
+      "stock": 10,
+      "categoria": "Estrenos",
+      "imagen": "PokemonScarletViolet-Banner.jpg",
+      "tipo": "Juego",
+      "texto": "Vive las aventuras en el nuevo DLC de la franquicia exitosa de Nintendo"
+    },
+    {
+      "id": 104,
+      "nombre": "Amiibo Link y Ganon",
+      "precio": 30000,
+      "stock": 10,
+      "categoria": "Estrenos",
+      "imagen": "amiibos-zelda-ganondorf.webp",
+      "tipo": "Accesorio",
+      "texto": "Llegaron los nuevos Amiibos, la princesa Zelda y El gran villano Ganon, con los skins vistos en Zelda: Tears of the kingdom"
+    },
+    {
+      "id": 201,
+      "nombre": "Game Boy Color Amarillo",
+      "precio": 35000,
+      "stock": 1,
+      "categoria": "Ofertas",
+      "imagen": "gb_color.jpg",
+      "tipo": "Consola",
+      "texto": "Perfecto estado, Game boy color amarilla, viene con juego de regalo!."
+    },
+    {
+      "id": 202,
+      "nombre": "Mario Kart 8",
+      "precio": 20000,
+      "stock": 10,
+      "categoria": "Ofertas",
+      "imagen": "mario_kart.jpg",
+      "tipo": "Juego",
+      "texto": "Adquiere Mario Kart 8 este maravilloso juego multijugador divertido para jugar con amigos o familia"
+    },
+    {
+      "id": 203,
+      "nombre": "Vampire Survivor",
+      "precio": 5000,
+      "stock": 10,
+      "categoria": "Ofertas",
+      "imagen": "vampire_survivors.jpg",
+      "tipo": "Juego",
+      "texto": "Uno de los mejores juegos de este último tiempo, ¡en precio de locos!"
+    },
+    {
+      "id": 204,
+      "nombre": "Mario Maker 2",
+      "precio": 40000,
+      "stock": 10,
+      "categoria": "Ofertas",
+      "imagen": "switch_mario_maker.jpg",
+      "tipo": "Juego",
+      "texto": "No te puedes perder esta oportunidad, Mario Maker 2, ¡Increíble online de Nintendo Switch, con esta rebaja!"
+    },
+    {
+      "id": 301,
+      "nombre": "Nintendo 64 con joystick gris",
+      "precio": 80000,
+      "stock": 1,
+      "categoria": "Retro",
+      "imagen": "n64.jpg",
+      "tipo": "Consola",
+      "texto": "Mítica consola de Nintendo, en perfecto estado, color tradicional."
+    },
+    {
+      "id": 302,
+      "nombre": "Nintendo Usada",
+      "precio": 90000,
+      "stock": 1,
+      "categoria": "Retro",
+      "imagen": "nes.webp",
+      "tipo": "Consola",
+      "texto": "Consola NES, traída desde Japón, sin desperfectos, con caja y cables originales"
+    },
+    {
+      "id": 303,
+      "nombre": "Joystick GameCube Naranja",
+      "precio": 15000,
+      "stock": 10,
+      "categoria": "Retro",
+      "imagen": "joystick_naranja_gamecube.png",
+      "tipo": "Accesorio",
+      "texto": "Joystick Naranja de GameCube en perfecto estado, sin detalles"
+    },
+    {
+      "id": 304,
+      "nombre": "Game Boy Advance Violeta",
+      "precio": 40000,
+      "stock": 10,
+      "categoria": "Retro",
+      "imagen": "gb_advance.jpg",
+      "tipo": "Consola",
+      "texto": "Consola, con detalles estéticos en la pintura, trae la tapa trasera, y con juego"
+    },
+    {
+      "id": 401,
+      "nombre": "Super Mario Wonder",
+      "precio": 70000,
+      "stock": 99,
+      "categoria": "Preventas",
+      "imagen": "mario_wonder.jpg",
+      "tipo": "Juego",
+      "texto": "Prepárate para las aventuras de Mario con su hermano en este fabuloso mundo"
+    },
+    {
+      "id": 402,
+      "nombre": "Super Mario RPG",
+      "precio": 70000,
+      "stock": 99,
+      "categoria": "Preventas",
+      "imagen": "mario_rpg.jpg",
+      "tipo": "Juego",
+      "texto": "Reaviva este hermoso juego traído a la última consola de Nintendo!"
+    },
+    {
+      "id": 403,
+      "nombre": "Picmin 4",
+      "precio": 70000,
+      "stock": 99,
+      "categoria": "Preventas",
+      "imagen": "picmin4.jpg",
+      "tipo": "Juego",
+      "texto": "Vive las aventuras de esta fabulosa franquicia exitosa de Nintendo en esta 4ta entrega."
+    },
+    {
+      "id": 404,
+      "nombre": "FS 24",
+      "precio": 60000,
+      "stock": 99,
+      "categoria": "Preventas",
+      "imagen": "fc_24.jpg",
+      "tipo": "Juego",
+      "texto": "Ha llegado Nintendo Switch la nueva entrega de este mítico juego de fútbol."
+    }
+  ]
+  
