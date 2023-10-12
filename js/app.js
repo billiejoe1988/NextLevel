@@ -277,7 +277,7 @@ class BaseDeDatos {
   }
     // objetos importados desde bd.json
       async cargarRegistros(){
-        const resultado = await fetch('../Json/bd.json');
+        const resultado = await fetch('./Json/bd.json');
         this.productos = await resultado.json();
       }
       //devuelve todo el catalogo de productos
