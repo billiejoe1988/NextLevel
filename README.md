@@ -1,54 +1,56 @@
-# Proyecto para Coderhoyse curso JavaScript, NEXT LEVEL! ... E-shop de Tienda de Consolas y Juegos de Nintendo
+# Next Level JavaScript Course Project: Nintendo Console and Games E-shop
 
-Este proyecto es una tienda en línea que ofrece consolas y juegos de Nintendo, tanto nuevos como retro. El desarrollo se ha realizado utilizando HTML, Tailwind CSS, y se ha agregado un toque de CSS personalizado, JavaScript Vainilla.
+This project is an online store that offers Nintendo consoles and games, both new and retro. The development has been done using HTML, Tailwind CSS, with a touch of custom CSS, and Vanilla JavaScript.
 
-## Entra desde cualquier dispositivo.
-- acceder al sitio desde una computadora, tablet y celular para tener la misma experiencia de navegacion, solo que en pc, al moverte por el lado derecho, se abre solo el aside de carrito, mas alla de que hay un boton por accesibilidad.
+## Seamless Cross-Device Experience
+Access the site from a computer, tablet, or mobile for a consistent browsing experience. On desktop, the cart sidebar opens automatically when you move to the right, and there's also an accessibility button.
   
-### Catálogo
-- Puedes agregar artículos de cualquier parte, sea del div de resultado de busqueda, como en los sliders por categoria o debajo en filtrado por tipo.
-- El carrito incluye total parcial, total de articulos, posibilidad de eliminar el articulo de manera  individual o vaciar el mismo.
+### Catalog
+Add items from various sections, including search results, category sliders, or filtered items below.
+The cart includes partial total, total items, and options to remove individual items or clear the entire cart.
 
-### Usuarios con local Storage
--Puedes registrarte y crear tu cuenta, se almacenan en local storage al igual que el contenido del carrito
+### User Accounts with Local Storage
+Register and create an account, and user data is stored in local storage, just like cart contents.
 
-### Búsqueda
-- Utilice un array de base de datos para el buscador en todas las páginas (dataBase). Se utiliza el input de la pagina, dando resultados parciales debajo con el articulo, mas su precio, distingue mayusculas y minusculas. Recomendamos utilizar palabras como "Mario", "Zelda" o "Joystick".
+### Search
+Utilize a database array for the search functionality across all pages (dataBase). It provides partial results beneath the input, including the item and its price, and it's case-sensitive. We recommend using keywords like "Mario," "Zelda," or "Joystick."
 
-### Funcionalidades Implementadas con JS
+### JS Implemented Features
 
-- Sliders tanto de imagenes de presentacion como de cards de manera automatica o de botones de sliders para una experiencia de navegación dinámica.
-- Accion de busqueda desde su imput, de manera parcial ando resultados y draw a tiempo real.
-- Desplazamiento del carrito y navegación.
-- Acciones en los íconos de carrito (billete), login y sign in.
-- Botones para agregar artículos al carrito desde toda la app web.
-- Funcionalidad completa del carrito, incluyendo comprar, vaciar y ocultar el carrito.
-- Agregar artículos al carrito en tiempo real después de hacer clic en "Agregar al carrito"
-- Botón "X" para eliminar artículos individualmente del carrito.
-- Función para calcular el total del carrito utilizando un bucle forEach y la cantidad de articulos individual y el total.
-- Actualización en tiempo real del valor total en el HTML al agregar, quitar o vaciar el carrito.
-- Devolver stock cuando quitamos un articulo, desde vaciar carrito o quitando indivicualmente por indice.
-- Busqueda en tiempo real, a los resultados parciales por debajo de lo ingresado por su input sobre nuestra base de datos, con nombre y precio de articulo. 
-- En desktop, al mover le mouse por el 2% del margen derecho de la web se desliza el carrito haciendose visible, al sacar el mouse del carrito, se oculta automaticamente.  En el caso de dispositivo movil, se hacer un toque en este 5% para q se abra el aside o abrirlo desde el boton del nav.
-- Login funcional, con sus respectivos alertas de bienvenida o error al importar datos.
-- Filtrado de articulos por tipo en tiempo real con la posibilida de comprar desde alli.
-- Almacenamiento de datos de creacion de cuenta y contenido carrito en local storage.
-- Base de datos dinamica y cargado en tiempo real de articulos, en cada seccion, con filtros.
-- Agregado de class lists y funciones de botones con eventos en tiempo real una vez dibujados.
-- Acccion slider movimiento automatico y divs de cards tambien en cateogrias.
-- Dibujado en divs el resultado de busqueda, adaptando un div solo para eso, modificandole su tamano de manera individual.
-- Utilizacion de libreria en estetica de Alerts.
-- Asincronismo.
-- Ajax y fetch.
-- Funcion desplegable con terminos y condiciones en el main para hacer un primer intento de SAP.
-- Todas las funciones de ingreso de deciciones, tiene su verificacion, tanto login sin contenido, como sign in o querer comprar con el carrito vacio.
+Automatic image and card sliders for a dynamic browsing experience.
+Real-time search functionality with partial results and dynamic drawing.
+Cart navigation and scrolling actions.
+Actions on cart, login, and sign-in icons.
+Buttons to add items to the cart from any part of the web app.
+Full cart functionality, including buy, clear, and hide.
+Real-time cart updates after clicking "Add to Cart."
+"X" button to individually remove items from the cart.
+Function to calculate the cart total using forEach loop for individual items and the overall total.
+Real-time updating of the total value in HTML when adding, removing, or clearing items.
+Restoring stock when removing an item, whether by clearing the cart or individually removing by index.
+Real-time search with partial results below the input, displaying item name and price.
+On desktop, the cart slides in when moving the mouse within 2% of the right margin and hides when the mouse is outside the cart. On mobile, tap within 5% to open the cart or use the nav button.
+Functional login with welcome or error alerts for data import.
+Real-time item filtering by type with the option to purchase directly.
+Storage of account creation data and cart content in local storage.
+Dynamic database loading and real-time item rendering in each section with filters.
+Addition of class lists and button functions with real-time events once drawn.
+Slider movement and card divs in categories with automatic movement.
+Drawing search results in divs, adapting a specific div for that purpose with individual size modification.
+Aesthetic use of the Alerts library.
+Asynchrony.
+Ajax and fetch.
+Expandable terms and conditions section in the main for an initial attempt at SAP.
+All decision input functions have verification, whether it's login without content, sign-in, or attempting to buy with an empty cart.
 
-#Autor
-- **Mauricio Arbelaiz**
+#Author
+- **Mauri Arbelaiz**
 
-librerias:
+## Final Note: 10
+
+Libraries Used:
 https://animate.style/
 https://sweetalert2.github.io/
 https://apvarun.github.io/toastify-js/
 
-¡Gracias por visitar nuestro proyecto!
+Thank you for visiting our project!
