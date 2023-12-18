@@ -45,7 +45,7 @@
 -Expandable terms and conditions section in the main for an initial attempt at SAP.
 -All decision input functions have verification, whether it's login without content, sign-in, or attempting to buy with an empty cart.
 
-#Author
+## Author
 - **Mauri Arbelaiz**
 
 ## Final Note: 10
